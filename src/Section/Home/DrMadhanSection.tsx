@@ -1,3 +1,99 @@
+import { useState } from "react";
+import { Mail } from "lucide-react";
+
+const socialIcons = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/",
+    icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg",
+    alt: "LinkedIn",
+    mail: false,
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/",
+    icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg",
+    alt: "Facebook",
+    mail: false,
+  },
+  {
+    name: "Email",
+    url: "mailto:info@dmif.com",
+    icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg",
+    alt: "Email",
+    mail: true,
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/",
+    icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg",
+    alt: "Instagram",
+    mail: false,
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/",
+    icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg",
+    alt: "YouTube",
+    mail: false,
+  },
+];
+
+function SocialMediaCard() {
+  const [selected, setSelected] = useState(0);
+  return (
+    <div
+      className="flex flex-row justify-center items-center p-3 absolute bg-white shadow-[0px_12px_64px_rgba(28,25,25,0.12)] rounded-[4px] gap-3 sm:gap-4"
+      style={{
+        width: 268,
+        height: 80,
+        left: 59,
+        top: 377,
+        minWidth: 220,
+        maxWidth: '90vw',
+      }}
+    >
+      {socialIcons.map((icon, idx) => (
+        <a
+          key={icon.name}
+          href={icon.url}
+          target={icon.mail ? undefined : "_blank"}
+          rel={icon.mail ? undefined : "noopener noreferrer"}
+          aria-label={icon.name}
+          onClick={e => {
+            setSelected(idx);
+          }}
+          className={`w-12 h-12 rounded-[4px] flex items-center justify-center transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#003579] ${
+            selected === idx ? "bg-[#003579]" : "bg-white hover:bg-[#f0f4fa]"
+          }`}
+          style={selected === idx ? { boxShadow: "0 0 0 2px #003579" } : {}}
+        >
+          {icon.name === "Email" ? (
+            <Mail
+              size={24}
+              stroke={selected === idx ? "#fff" : "#003579"}
+              strokeWidth={2}
+              fill="none"
+              className="w-6 h-6"
+            />
+          ) : (
+            <img
+              src={icon.icon}
+              alt={icon.alt}
+              className={`w-6 h-6 ${selected === idx ? "filter brightness-200 invert-0" : ""}`}
+              style={
+                selected === idx
+                  ? { filter: "invert(1) brightness(2)" }
+                  : { filter: 'invert(16%) sepia(99%) saturate(7496%) hue-rotate(203deg) brightness(92%) contrast(101%)' }
+              }
+            />
+          )}
+        </a>
+      ))}
+    </div>
+  );
+}
+
 const DrMadhanSection = () => {
   return (
     <section className="w-full py-[112px] px-[112px]">
@@ -5,28 +101,16 @@ const DrMadhanSection = () => {
         {/* Left - Image and Social */}
         <div className="relative w/[424px] h/[457px]">
           {/* Main Image */}
-          <div className="w-[424px] h-[417px] bg-gray-200 rounded-[10px] border border-[#F0F1F3] flex items-center justify-center">
-            <span className="text-gray-500">Dr. Madhan Photo Placeholder</span>
+          <div className="w-[424px] h-[417px] bg-gray-200 rounded-[10px] border border-[#F0F1F3] flex items-center justify-center overflow-hidden">
+            <img
+              src="/HOME/Dr.MadhanPhoto.svg"
+              alt="Dr. Madhan Kumar Srinivasan"
+              className="w-full h-full object-contain"
+            />
           </div>
 
-          {/* Social Media Card */}
-          <div className="absolute bottom-0 left-[59px] w-[268px] h-[79px] bg-white shadow-[0px_12px_64px_rgba(28,25,25,0.12)] rounded-[4px] flex items-center justify-center p-[12px] gap-[15px]">
-            <div className="w-[48px] h-[48px] bg-[#003579] rounded-[4px] flex items-center justify-center">
-              <div className="w-[18px] h-[18px] bg-white rounded"></div>
-            </div>
-            <div className="w-[48px] h-[48px] bg-white rounded-[4px] flex items-center justify-center">
-              <div className="w/[18px] h/[18px] bg-[#003579] rounded"></div>
-            </div>
-            <div className="w-[48px] h-[48px] bg-white rounded-[4px] flex items-center justify-center">
-              <div className="w/[18px] h/[18px] bg-gray-300 rounded"></div>
-            </div>
-            <div className="w/[48px] h/[48px] bg-white rounded-[4px] flex items-center justify-center">
-              <div className="w/[18px] h/[18px] bg-[#003579] rounded"></div>
-            </div>
-            <div className="w/[52px] h/[52px] bg-white rounded-[4px] flex items-center justify-center">
-              <div className="w/[22px] h/[22px] bg-gray-300 rounded"></div>
-            </div>
-          </div>
+          {/* Social Media Card - Interactive */}
+          <SocialMediaCard />
         </div>
 
         {/* Right - Content */}
