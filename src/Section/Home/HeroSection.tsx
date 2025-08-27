@@ -1,158 +1,111 @@
 const HeroSection = () => {
   return (
-    <section className="relative w-[1536px] h-[690px] flex-none order-1 self-stretch">
-      {/* DMIF Logo - SVG only, no background */}
+    <section className="relative w-full min-h-screen lg:h-[690px] flex flex-col lg:block px-4 lg:px-0">
+      {/* DMIF Logo - Hidden on mobile, visible on desktop */}
       <img
         src="/HOME/logo.svg"
         alt="DMIF Logo"
-        className="absolute w-[320px] h-[320px] left-[120px] top-[85px] object-contain"
+        className="hidden lg:block absolute w-[200px] xl:w-[320px] h-[200px] xl:h-[320px] left-4 xl:left-[120px] top-4 xl:top-[85px] object-contain"
       />
 
-      {/* Dr. Madhan Image - SVG only, no background */}
+      {/* Dr. Madhan Image - Hidden on mobile, visible on desktop */}
       <img
         src="/HOME/MadhanSir.svg"
         alt="Dr. Madhan Kumar Srinivasan"
-        className="absolute w-[200px] h-[300px] left-[1105px] top-[92px] object-contain opacity-[0.86]"
+        className="hidden lg:block absolute w-[150px] xl:w-[200px] h-[225px] xl:h-[300px] right-4 xl:right-[231px] top-4 xl:top-[92px] object-contain opacity-[0.86]"
       />
 
-      {/* Central Content - Frame 1000004510 */}
-      <div className="absolute flex flex-col items-center gap-[60px] w-[573px] h-[264px] left-[502px] top-[59px]">
-        {/* Students Badge - Frame 1000004507 */}
-        <div className="flex flex-row items-start gap-[11px] w-[307px] h-[40px] flex-none order-0">
-          {/* Avatar Group - Frame 1000004506 */}
-          <div className="flex flex-row items-center w-[121px] h-[40px] flex-none order-0">
-            {/* Avatar 1 */}
+      {/* Central Content */}
+      <div className="flex flex-col items-center gap-5 lg:gap-[30px] w-full max-w-[573px] mx-auto pt-8 lg:absolute lg:left-1/2 lg:top-[40px] lg:-translate-x-1/2 lg:w-[573px] lg:h-[264px]">
+        {/* Students Badge */}
+        <div className="flex flex-row items-center gap-2 lg:gap-[11px] w-full max-w-[307px] h-[40px]">
+          {/* Avatar Group */}
+          <div className="flex flex-row items-center w-[100px] lg:w-[121px] h-[40px]">
             <img
               src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt="Student 1"
-              className="w-[37px] h-[40px] rounded-full object-cover border-2 border-white -ml-[9px]"
-              style={{ zIndex: 4 }}
+              className="w-[30px] lg:w-[37px] h-[32px] lg:h-[40px] rounded-full object-cover border-2 border-white z-10"
             />
-            {/* Avatar 2 */}
             <img
               src="https://randomuser.me/api/portraits/women/44.jpg"
-              alt="Student 2"
-              className="w-[37px] h-[40px] rounded-full object-cover border-2 border-white -ml-[9px]"
-              style={{ zIndex: 3 }}
+              className="w-[30px] lg:w-[37px] h-[32px] lg:h-[40px] rounded-full object-cover border-2 border-white -ml-[8px] lg:-ml-[9px] z-9"
             />
-            {/* Avatar 3 */}
             <img
               src="https://randomuser.me/api/portraits/men/65.jpg"
-              alt="Student 3"
-              className="w-[37px] h-[40px] rounded-full object-cover border-2 border-white -ml-[9px]"
-              style={{ zIndex: 2 }}
+              className="w-[30px] lg:w-[37px] h-[32px] lg:h-[40px] rounded-full object-cover border-2 border-white -ml-[8px] lg:-ml-[9px] z-8"
             />
-            {/* Avatar 4 */}
             <img
               src="https://randomuser.me/api/portraits/women/68.jpg"
-              alt="Student 4"
-              className="w-[37px] h-[40px] rounded-full object-cover border-2 border-white -ml-[9px]"
-              style={{ zIndex: 1 }}
+              className="w-[30px] lg:w-[37px] h-[32px] lg:h-[40px] rounded-full object-cover border-2 border-white -ml-[8px] lg:-ml-[9px] z-7"
             />
           </div>
-          {/* Badge Text - 50+ students Outcomes */}
-          <div className="w-[175px] h-[37px] font-medium text-[15px] leading-[37px] flex items-center tracking-[0.0417847px] text-black flex-none order-1">
+
+          {/* Badge Text */}
+          <div className="font-medium text-sm lg:text-[15px] leading-[37px] flex items-center tracking-[0.0417847px] text-black">
             50+ students Outcomes
           </div>
         </div>
 
-        {/* Title Section - Frame 1000004509 */}
-        <div className="flex flex-col justify-center items-center gap-[12px] w-[595px] h-[182px] flex-none order-1">
-          
-{/* Main Title - Dr. Madhan Institute of Future */}
-<h1 className="font-bold text-[40px] md:text-[64px] leading-tight text-center tracking-wide">
-  <span className="text-[#7F0001]">Dr. Madhan </span>
-  <span className="text-[#003579]">Institute of Future</span>
-</h1>
+        {/* Title Section */}
+        <div className="flex flex-col justify-center items-center gap-3 lg:gap-[12px] w-full text-center">
+          <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-[60px] leading-tight tracking-wide">
+            <span className="text-[#7F0001]">Dr. Madhan</span> <br />
+            <span className="text-[#003579]">Institute of Future</span>
+          </h1>
 
-          
           {/* Subtitle */}
-          <p className="w-[595px] h-[54px] font-normal text-[14px] leading-[18px] text-center tracking-[0.4px] uppercase text-[#4C4C4C] flex-none order-1 self-stretch">
-            Don't teach. Mentor the Mind. Shape the Future. Don't teach. Mentor the Mind. Shape the Future.Don't teach. Mentor.
+          <p className="w-full max-w-[595px] font-normal text-xs sm:text-sm lg:text-[14px] leading-4 lg:leading-[18px] text-center tracking-[0.4px] uppercase text-[#4C4C4C] px-4 lg:px-0">
+            Don't teach. Mentor the Mind. Shape the Future. Don't teach. Mentor
+            the Mind. Shape the Future. Don't teach. Mentor.
           </p>
         </div>
       </div>
 
-      {/* Stats Container - Frame 1000004511 */}
-      <div className="absolute flex flex-col items-start p-[53px_65px] gap-[10px] w-[1392px] h-[223px] left-[81px] top-[380px] bg-[#25262A] rounded-[44px]">
-        
-        {/* Stats Row - Frame 1000004521 */}
-        <div className="flex flex-row items-start gap-[63px] w-[1290px] h-[117px] flex-none order-0">
-          
-          {/* Join Learners Card - Frame 1000004512 */}
-          <div className="flex flex-row items-center w-[394px] h-[117px] bg-[#003579] rounded-[35px] flex-none order-0 self-stretch relative pl-[0px] pr-[18px]">
-            {/* Text Content - Frame 1000004517 */}
-            <div className="flex flex-col justify-center items-center w-[230px] h-[48px] flex-none order-0 flex-grow ml-[24px]">
-              {/* Join Text */}
-              <h3 className="w-full h-[24px] font-bold text-[24px] leading-[24px] flex items-center text-left tracking-[0.0417847px] text-white flex-none order-0">
-                Join 50K+ Learners
-              </h3>
-              {/* Subtitle */}
-              <p className="w-full h-[24px] font-normal text-[16px] leading-[24px] flex items-center text-left tracking-[-0.008em] capitalize text-white flex-none order-1">
-                This is my website
-              </p>
-            </div>
-            {/* Icon Container - Frame 1000004516 */}
-            <div className="flex flex-col items-start p-[10px] gap-[10px] w-[100px] h-[100px] bg-white rounded-[28px] flex-none order-1 absolute right-[18px] top-1/2 -translate-y-1/2">
-            </div>
+      <div className="w-full max-w-7xl mx-auto mt-8 lg:mt-0 lg:absolute lg:left-1/2 lg:top-[380px] lg:-translate-x-1/2 bg-[#25262A] rounded-2xl lg:rounded-[44px] p-4 sm:p-6 lg:p-[40px] flex flex-col lg:flex-row items-center justify-between gap-6">
+        {/* Left Join Learners Card */}
+        <div className="flex flex-row items-center justify-between w-full lg:w-[420px] h-[100px] lg:h-[117px] bg-[#003579] rounded-2xl lg:rounded-[35px] px-6">
+          <div className="flex flex-col justify-center">
+            <h3 className="font-bold text-lg lg:text-[22px] leading-6 text-white">
+              Join 50K+ Learners
+            </h3>
+            <p className="font-normal text-sm lg:text-[16px] leading-5 capitalize text-white mt-1">
+              This is my website
+            </p>
+          </div>
+          <div className="w-[65px] lg:w-[85px] h-[65px] lg:h-[85px] bg-white rounded-xl lg:rounded-[28px] flex items-center justify-center">
+            {/* Add an icon if needed */}
+          </div>
+        </div>
+
+        {/* Right Stats Cards */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 lg:gap-6 w-full lg:flex-1">
+          {/* 50K+ */}
+          <div className="flex flex-col justify-center items-center w-full sm:w-1/3 lg:w-[230px] h-[100px] lg:h-[117px] bg-white rounded-2xl lg:rounded-[35px] p-4">
+            <h3 className="font-bold text-2xl lg:text-[30px] text-[#25262A]">
+              50K+
+            </h3>
+            <p className="text-base lg:text-[18px] text-[#2B2B2B] mt-1">
+              Global Learners
+            </p>
           </div>
 
-          {/* Stats Cards Container - Frame 1000004522 */}
-          <div className="flex flex-row items-center gap-[37px] w-[833px] h-[117px] flex-none order-1 self-stretch">
-            
-            {/* 50K+ Card - Frame 1000004513 */}
-            <div className="flex flex-col justify-between items-center gap-[44px] w-[253px] h-[117px] bg-white rounded-[35px] flex-none order-0 self-stretch">
-              <div className="flex flex-col justify-center items-center gap-[14px] w-[253px] h-[117px] flex-none order-0 self-stretch flex-grow">
-                <div className="flex flex-col items-center gap-[1px] w-[147px] h-[86px] flex-none order-0">
-                  
-                  {/* 50K+ Number */}
-                  <h3 className="w-[86px] h-[37px] font-bold text-[32px] leading-[37px] flex items-center tracking-[0.0417847px] text-[#25262A] flex-none order-0">
-                    50K+
-                  </h3>
-                  
-                  {/* Global Learners */}
-                  <p className="w-[147px] h-[48px] font-normal text-[20px] leading-[48px] flex items-center text-center tracking-[-0.008em] capitalize text-[#2B2B2B] flex-none order-1">
-                    Global Learners
-                  </p>
-                </div>
-              </div>
-            </div>
+          {/* 500+ */}
+          <div className="flex flex-col justify-center items-center w-full sm:w-1/3 lg:w-[230px] h-[100px] lg:h-[117px] bg-white rounded-2xl lg:rounded-[35px] p-4">
+            <h3 className="font-bold text-2xl lg:text-[30px] text-[#25262A]">
+              500+
+            </h3>
+            <p className="text-base lg:text-[18px] text-[#2B2B2B] mt-1">
+              Innovative Projects
+            </p>
+          </div>
 
-            {/* 500+ Card - Frame 1000004519 */}
-            <div className="flex flex-col justify-between items-center gap-[44px] w-[253px] h-[117px] bg-white rounded-[35px] flex-none order-1 self-stretch">
-              <div className="flex flex-col justify-center items-center gap-[14px] w-[253px] h-[117px] flex-none order-0 self-stretch flex-grow">
-                <div className="flex flex-col items-center gap-[1px] w-[177px] h-[86px] flex-none order-0">
-                  
-                  {/* 500+ Number */}
-                  <h3 className="w-[87px] h-[37px] font-bold text-[32px] leading-[37px] flex items-center tracking-[0.0417847px] text-[#25262A] flex-none order-0">
-                    500+
-                  </h3>
-                  
-                  {/* Innovative Projects */}
-                  <p className="w-[177px] h-[48px] font-normal text-[20px] leading-[48px] flex items-center text-center tracking-[-0.008em] capitalize text-[#2B2B2B] flex-none order-1">
-                    Innovative Projects
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* 100+ Card - Frame 1000004520 */}
-            <div className="flex flex-col justify-between items-center gap-[44px] w-[253px] h-[117px] bg-white rounded-[35px] flex-none order-2 self-stretch">
-              <div className="flex flex-col justify-center items-center gap-[14px] w-[253px] h-[117px] flex-none order-0 self-stretch flex-grow">
-                <div className="flex flex-col items-center gap-[1px] w-[172px] h-[86px] flex-none order-0">
-                  
-                  {/* 100+ Number */}
-                  <h3 className="w-[82px] h-[37px] font-bold text-[32px] leading-[37px] flex items-center tracking-[0.0417847px] text-[#25262A] flex-none order-0">
-                    100+
-                  </h3>
-                  
-                  {/* Mentorship Expert */}
-                  <p className="w-[172px] h-[48px] font-normal text-[20px] leading-[48px] flex items-center text-center tracking-[-0.008em] capitalize text-[#2B2B2B] flex-none order-1">
-                    Mentorship Expert
-                  </p>
-                </div>
-              </div>
-            </div>
+          {/* 100+ */}
+          <div className="flex flex-col justify-center items-center w-full sm:w-1/3 lg:w-[230px] h-[100px] lg:h-[117px] bg-white rounded-2xl lg:rounded-[35px] p-4">
+            <h3 className="font-bold text-2xl lg:text-[30px] text-[#25262A]">
+              100+
+            </h3>
+            <p className="text-base lg:text-[18px] text-[#2B2B2B] mt-1">
+              Mentorship Expert
+            </p>
           </div>
         </div>
       </div>
