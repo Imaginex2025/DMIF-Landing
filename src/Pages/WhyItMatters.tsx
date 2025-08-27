@@ -1,10 +1,14 @@
+import CreativeEconomy from "../Section/WhyitMatters/CreativeEconomy"
+import CreativityInAI from "../Section/WhyitMatters/CreativityInAI"
+import ResearchAndIP from "../Section/WhyitMatters/ResearchAndIp"
 
 
 const WhyItMatters = () => {
   return (
     <div>
-      <h1>Why It Matters</h1>
-      <p>This section explains why the topic is important.</p>
+        <CreativityInAI/>
+        <CreativeEconomy/>
+        <ResearchAndIP/>
     </div>
   )
 }

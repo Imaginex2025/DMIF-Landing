@@ -5,6 +5,36 @@
   font-family: 'Inter', sans-serif;
 }
 
+.para {
+  font-size: 16px;
+  font-weight: 400; /* regular */
+  color: #525252;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Tablet: width <= 1024px */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 32px;
+  }
+
+  .para {
+    font-size: 15px;
+  }
+}
+
+/* Mobile: width <= 768px */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 28px;
+  }
+
+  .para {
+    font-size: 14px;
+  }
+}
+
+
 /* globals.css */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
