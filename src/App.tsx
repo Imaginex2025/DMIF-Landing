@@ -10,6 +10,7 @@ import About from "./Pages/About";
 import WhyItMatters from "./Pages/WhyItMatters";
 import ScrollToTop from "./utils/Navigate";
 import ScrollToTopButton from "./Components/Common/ScrollToTopButton";
+import FeatureDetail from "./Pages/FeatureDetails";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           <Route path={APPROUTES.CONTACT_US} element={<Contact />} />
           <Route path={APPROUTES.ABOUT} element={<About />} />
           <Route path={APPROUTES.WHY_IT_MATTERS} element={<WhyItMatters />} />
-    
+          <Route path={APPROUTES.FEATURE_DETAILS} element={<FeatureDetail />} />
         </Routes>
               <ScrollToTopButton/>
       </MainLayout>
