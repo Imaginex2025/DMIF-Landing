@@ -1,11 +1,15 @@
-
+import OverviewSection from '../Section/About/OverviewSection';
+import MentorshipSection from '../Section/About/MentorshipSection';
+import UniqueSection from '../Section/About/UniqueSection';
 
 const About = () => {
   return (
-    <div>
-        <p>You are in about Page</p>
+    <div className="min-h-screen bg-white font-sans">
+      <OverviewSection />
+      <MentorshipSection />
+      <UniqueSection />
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
