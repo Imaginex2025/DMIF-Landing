@@ -1,5 +1,6 @@
 import Accordion from "../../Components/Programs/AccordionProps";
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 const ProgramInfo = () => {
   const accordionData = [
@@ -48,20 +49,51 @@ const ProgramInfo = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-gray-100 items-center px-5 py-5   md:px-20 md:py-20">
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-gray-100 items-center px-5 py-5 md:px-20 md:py-20"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       {/* Left Section */}
-      <div className="flex flex-col gap-3 ">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#003579] mb-2">
+      <div className="flex flex-col gap-3">
+        <motion.h2
+          className="text-2xl md:text-3xl font-bold text-[#003579] mb-2"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           Track 1: Patents – The Innovation Engine
-        </h2>
-        <p className="text-gray-600 mb-6">
+        </motion.h2>
+
+        <motion.p
+          className="text-gray-600 mb-6"
+          initial={{ opacity: 0, y: -15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           Learn how to transform your ideas into patents, fueling innovation and
           academic/professional success.
-        </p>
+        </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {features.map((feature, i) => (
-            <div key={i} className="flex items-start space-x-3">
+            <motion.div
+              key={i}
+              className="flex items-start space-x-3"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: i * 0.2,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+            >
               {/* Blue Circle Icon */}
               <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#003579] flex items-center justify-center mt-1">
                 <Check className="w-4 h-4 text-white" />
@@ -72,16 +104,21 @@ const ProgramInfo = () => {
                 <p className="font-semibold text-gray-800">{feature.title}</p>
                 <p className="text-sm text-gray-500">{feature.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Right Section - Accordion */}
-      <div>
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+        viewport={{ once: true }}
+      >
         <Accordion items={accordionData} />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

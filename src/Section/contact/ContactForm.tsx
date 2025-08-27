@@ -3,6 +3,7 @@ import Input from "../../Components/Common/Input";
 import { Mail } from "lucide-react";
 import IconButton from "../../Components/Common/Button";
 import DropdownSelect from "../../Components/Common/Dropdown";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const [firstname, setFirstName] = useState("");
@@ -14,12 +15,26 @@ const ContactForm = () => {
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center py-10 px-4">
       {/* Heading */}
-      <h2 className="heading text-center mb-10">Contact Us</h2>
+      <motion.h2
+        className="heading text-center mb-10"
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        Contact Us
+      </motion.h2>
 
       {/* Content Wrapper */}
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Section */}
-        <div className="flex flex-col gap-6">
+        <motion.div
+          className="flex flex-col gap-6"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
           <p className="text-gray-600 text-base leading-relaxed">
             We’d love to hear from you! If you have any questions, feedback, or
             business inquiries, feel free to reach out to us through our contact
@@ -30,14 +45,25 @@ const ContactForm = () => {
             <p className="text-sm font-semibold text-[#003579] uppercase ">
               Email Address :
             </p>
-            <div className="flex flex-col cursor-pointer text-gray-700" onClick={() => (window.location.href = "mailto:reach@drmadhan.in")}>
+            <div
+              className="flex flex-col cursor-pointer text-gray-700"
+              onClick={() =>
+                (window.location.href = "mailto:reach@drmadhan.in")
+              }
+            >
               <p>reach@drmadhan.in</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Section (Form) */}
-        <div className="bg-white shadow-sm rounded-lg p-6 md:p-8">
+        <motion.div
+          className="bg-white shadow-sm rounded-lg p-6 md:p-8"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <h3 className="text-lg font-semibold mb-2">Get In Touch</h3>
           <p className="text-sm text-gray-500 mb-6">
             Feel free contact with us, we love to make new partners & friends
@@ -97,14 +123,19 @@ const ContactForm = () => {
             </div>
 
             {/* Submit button */}
-            <IconButton
-              label="Send Message"
-              icon={<Mail size={18} />}
-              iconPosition="right"
-              onClick={() => alert("Message Sent!")}
-            />
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <IconButton
+                label="Send Message"
+                icon={<Mail size={18} />}
+                iconPosition="right"
+                onClick={() => alert("Message Sent!")}
+              />
+            </motion.div>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
