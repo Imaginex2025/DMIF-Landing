@@ -1,0 +1,15 @@
+.heading {
+  font-size: 38px;
+  font-weight: 600; /* semi-bold */
+  color: #003579;
+  font-family: 'Inter', sans-serif;
+}
+
+/* globals.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
