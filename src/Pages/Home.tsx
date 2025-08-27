@@ -1,9 +1,10 @@
+import TestimonialsCarousel from "../Section/Home/Testimonials";
 
 
 const Home = () => {
   return (
     <div>
-      <p>this is Home Page</p>
+      <TestimonialsCarousel/>
 
     </div>
   );

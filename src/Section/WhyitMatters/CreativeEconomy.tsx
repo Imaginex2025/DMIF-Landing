@@ -1,5 +1,5 @@
-
-import { Globe, Zap, Users, BarChart2 } from 'lucide-react';
+import { Globe, Zap, Users, BarChart2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const CreativeEconomy = () => {
   // Data for the cards
@@ -33,19 +33,41 @@ const CreativeEconomy = () => {
   return (
     <div className="py-16 bg-gray-50">
       {/* Section Header */}
-      <div className="max-w-4xl mx-auto px-4 text-center mb-12">
+      <motion.div
+        className="max-w-4xl mx-auto px-4 text-center mb-12"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         <h2 className="heading mb-2">The Rise of the Creative Economy</h2>
         <p className="para">
           We offer comprehensive digital solutions tailored to your business needs
         </p>
-      </div>
+      </motion.div>
 
       {/* Grid Layout - Cards */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
         {cards.map((card, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-white border border-gray-200 rounded-lg p-6  transition-shadow duration-300"
+            className="bg-white border border-gray-200 rounded-lg p-6 cursor-pointer"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: index * 0.2,
+                duration: 0.6,
+                ease: "easeOut",
+              },
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 8px 24px rgba(0,0,0,0.1)",
+              transition: { duration: 0.3 },
+            }}
           >
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 bg-blue-100 rounded-md flex items-center justify-center flex-shrink-0">
@@ -54,7 +76,7 @@ const CreativeEconomy = () => {
               <h3 className="font-semibold text-lg text-gray-900">{card.title}</h3>
             </div>
             <p className="para">{card.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
