@@ -23,11 +23,11 @@ const CTASection = () => {
 
         {/* Right Image */}
         <div className="relative w-[648px] h-[382px]">
-          <div className="absolute w-[200px] h-[291px] bg-[#FF6636] left-[769px] top-[113px] transform -translate-x-[769px] translate-y-[-113px]"></div>
-          <div className="absolute w-[424px] h-[382px] bg-[#FF6636] left-[993px] top-[22px] transform -translate-x-[993px] translate-y-[-22px]"></div>
-          <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-            <span className="text-gray-500">CTA Image Placeholder</span>
-          </div>
+          <img
+            src="/HOME/StartDMIF.svg"
+            alt="Start DMIF"
+            className="w-full h-full object-contain"
+          />
         </div>
       </div>
     </section>
