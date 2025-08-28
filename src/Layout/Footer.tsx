@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-gray-50 border-t">
-      <div className="max-w-7xl mx-auto px-8 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
         {/* Left - Logo & Info */}
-        <div className="flex flex-col items-start gap-4 max-w-xs">
+        <div className="flex flex-col items-center sm:items-start gap-4 max-w-xs mx-auto sm:mx-0">
           <img
             src="/Logo-bgRemovced.png"
             alt="Logo"
-            className="h-16 w-auto object-contain"
+            className="h-12 sm:h-16 w-auto object-contain"
           />
-          <p className="text-sm text-gray-600 leading-relaxed">
+          <p className="text-sm text-gray-600 leading-relaxed text-center sm:text-left">
             Dr. Madhan Institute of Future (DMIF) is a next-generation
             mentorship platform
           </p>
@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div>
+        <div className="text-center sm:text-left">
           <h4 className="font-semibold text-gray-800 mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm">
             {["Faq", "Contact Us", "Apply Now", "Media & Talks"].map((item) => (
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
 
         {/* Main Menu */}
-        <div>
+        <div className="text-center sm:text-left">
           <h4 className="font-semibold text-gray-800 mb-3">Main Menu</h4>
           <ul className="space-y-2 text-sm">
             {[
@@ -63,9 +63,9 @@ const Footer = () => {
         </div>
 
         {/* Social Media */}
-        <div>
+        <div className="text-center sm:text-left">
           <h4 className="font-semibold text-gray-800 mb-3">Social Media</h4>
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-center sm:justify-start">
             <a
               href="#"
               className="p-2 rounded-md bg-blue-100 text-blue-600 hover:bg-blue-200"
@@ -89,8 +89,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t py-4 text-sm text-gray-600 flex justify-center px-8 max-w-7xl mx-auto">
-        <p>
+      <div className="border-t py-4 text-xs sm:text-sm text-gray-600 flex justify-center px-4 sm:px-8 max-w-7xl mx-auto">
+        <p className="text-center">
           Copyright © {new Date().getFullYear()} Dr. Madhan Institute of Future.
           All rights reserved.
         </p>
