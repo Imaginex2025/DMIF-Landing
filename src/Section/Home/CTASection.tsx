@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import IconButton from "../../Components/Common/Button";
+import { APPROUTES } from "../../Routes/appRoutes";
 
 const CTASection = () => {
+
+  const navigate = useNavigate();
   return (
     <section className="w-full bg-[#F9F9F9]  px-6 md:px-16 py-12 flex flex-col justify-center md:flex-row items-center md:justify-between gap-10">
       {/* Left Content */}
@@ -16,7 +20,7 @@ const CTASection = () => {
           </p>
         </div>
 
-        <IconButton className="max-w-sm" label="Register Now" />
+        <IconButton className="max-w-sm" onClick={() => { navigate(APPROUTES.CONTACT_US) }} label="Register Now" />
       </div>
 
       {/* Right Image */}

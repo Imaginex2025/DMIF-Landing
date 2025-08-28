@@ -2,12 +2,14 @@ import { useRef, useEffect, useState } from "react";
 import ProgramCard from "../../Components/Programs/ProgramCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { APPROUTES } from "../../Routes/appRoutes";
+import { useNavigate } from "react-router-dom";
 
 const ProgramCards = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-
+  const navigate = useNavigate();
   const cards = [
     {
       logo: "/Logo.png",
@@ -141,7 +143,7 @@ const ProgramCards = () => {
       discountPrice={card.discountPrice}
       oldPrice={card.oldPrice}
       buttonText="Apply Now"
-      onApply={() => alert(`Applied to ${card.title}!`)}
+      onApply={() => { navigate(APPROUTES.CONTACT_US) }}
     />
   </motion.div>
 ))}

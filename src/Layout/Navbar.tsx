@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Menu, X, Mail } from "lucide-react";
 import IconButton from "../Components/Common/Button";
 import { APPROUTES } from "../Routes/appRoutes";
@@ -14,6 +14,8 @@ const Navbar = () => {
     { label: "Why It Matters", path: APPROUTES.WHY_IT_MATTERS },
     { label: "Contact Us", path: APPROUTES.CONTACT_US },
   ];
+
+  const navigate = useNavigate();
 
   return (
     <nav className="flex justify-between items-center px-6 py-4 shadow-sm bg-white relative">
@@ -50,7 +52,7 @@ const Navbar = () => {
           label="Apply Now"
           icon={<Mail size={18} />}
           iconPosition="right"
-          onClick={() => alert("Application Submitted!")}
+          onClick={() => { navigate(APPROUTES.CONTACT_US) }}
         />
       </div>
 

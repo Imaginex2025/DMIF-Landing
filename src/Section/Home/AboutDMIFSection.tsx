@@ -1,6 +1,11 @@
 import { MapPin, Building2, Clock, Award } from "lucide-react"; // Lucide icons
+import IconButton from "../../Components/Common/Button";
+import { APPROUTES } from "../../Routes/appRoutes";
+import { useNavigate } from "react-router-dom";
 
 const AboutDMIFSection = () => {
+
+  const navigate= useNavigate()
   return (
     <section className="w-full bg-[#F9FBFD] py-12 px-4 sm:py-16 sm:px-8  lg:px-[88px]">
       <div className="max-w-[1366px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-[82px]">
@@ -20,11 +25,12 @@ const AboutDMIFSection = () => {
             dive into real-world innovation and research, gaining outcomes like
             patents, publications, and startup-ready ideas.
           </p>
-          <button className="w-full sm:w-[262px] h-[40px] bg-[#003579] rounded-[4px] flex items-center justify-center mx-auto lg:mx-0">
-            <span className="font-bold text-sm sm:text-[14px] leading-[18px] text-white tracking-[0.3px]">
-              Learn More
-            </span>
-          </button>
+
+          <IconButton
+          label="Learn More"
+          onClick={() => navigate(APPROUTES.ABOUT)}
+          className="max-w-sm"
+          />
         </div>
 
         {/* Divider */}
