@@ -64,15 +64,15 @@ const KeyFeature = () => {
         {features.map((feature) => (
           <div
             key={feature.id}
-            className="flex gap-6 hover:scale-105 duration-200 transition-transform items-start cursor-pointer"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 hover:scale-105 duration-200 transition-transform items-start cursor-pointer"
             onClick={() => navigate(`/feature/${feature.id}`)}
           >
             {/* Left - Image */}
-            <div>
+            <div className="w-full sm:w-auto">
               <img
                 src={feature.image}
                 alt={feature.title}
-                className="rounded-lg "
+                className="rounded-lg w-full sm:w-[120px] md:w-auto"
               />
             </div>
 
