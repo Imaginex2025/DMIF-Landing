@@ -1,8 +1,8 @@
 const MentorshipSection = () => {
   return (
-    <section className="py-12 px-8">
+    <section className="py-20 px-8">
       {/* Image above content on mobile, side-by-side on desktop */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-24">
+      <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-24">
         
         {/* Left - Illustration */}
         <div className="flex justify-center w-full lg:w-1/2 mb-6 lg:mb-0">

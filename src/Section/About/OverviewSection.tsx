@@ -1,11 +1,11 @@
 const OverviewSection = () => {
   return (
-    <section className="py-12 px-8 max-w-7xl mx-auto">
+    <section className="py-12 px-8 ">
       {/* Order flips: column-reverse on mobile, row on large screens */}
       <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-14">
         
         {/* Left Content */}
-        <div className="flex flex-col items-start gap-4 max-w-4xl w-full">
+        <div className="flex flex-col items-start gap-4 max-w-5xl w-full">
         <h1 className="heading text-left leading-tight">
             An Overview & Detailed Explanation.
         </h1>
@@ -65,7 +65,7 @@ const OverviewSection = () => {
           <img
             src="/About/logo.svg"
             alt="DMIF Logo"
-            className="w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 object-contain"
+            className="w-40 h-40 sm:w-56 sm:h-56 lg:w-80 lg:h-80 object-contain"
           />
         </div>
       </div>
