@@ -65,7 +65,7 @@ const DrMadhanSection = () => {
 
         {/* Right - Content */}
         <div className="flex w-full flex-col gap-6">
-          <h2 className="heading text-center lg:text-left">
+          <h2 className="heading text-center md:mt-0 mt-10 lg:text-left">
             DR.MADHAN KUMAR SRINIVASAN
           </h2>
           <p className="font-normal text-base sm:text-lg leading-relaxed text-[#556070] text-justify">
