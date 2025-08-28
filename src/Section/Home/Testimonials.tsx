@@ -36,7 +36,6 @@ const TestimonialsCarousel = () => {
       text: `Over a decade at Accenture, I had the privilege of spending more than half that time working closely with Madhan—an experience that shaped both my career and character. He welcomed me during a difficult professional period, overlooking past biases and believing in my potential when few others did. That trust opened doors to transformative work, including my first steps into the world of intellectual property and patents. When I needed to move back home to support my family, he extended full remote flexibility—long before it became common. He also championed my academic aspirations, going out of his way to secure funding for me to present at an international conference, even though it lay outside our immediate scope of work. What always stood out was not just his deep technical acumen—rooted in his PhD in cloud computing and his strong grip on big data and analytics—but also his ability to build diverse, high-performing teams. I worked alongside colleagues from neuroscience, business, and physics—testament to his belief in cross-disciplinary innovation. As he steps into his new entrepreneurial and educational venture, it feels like a natural evolution—one that aligns perfectly with his vision and values. His ambition to blend AR, VR, AI, and Cloud to redefine the future of education is inspiring. I have no doubt his efforts will leave a lasting impact—not just on learners, but on society at large. Wishing him all the success he truly deserves.`,
       image: "/Testimonials/Kishore Kumar Gajula .jpg",
     },
-  // ...existing testimonials...
     {
       id: 6,
       name: "Gagan Deep Khosla",
@@ -86,7 +85,6 @@ const TestimonialsCarousel = () => {
     testimonials[(currentSlide + 1) % testimonials.length];
 
   // Determine if the testimonial text is long
-  const MAX_LINES = 7; // Adjust as needed for photo height
   const isLongText = currentTestimonial.text.split('\n').join(' ').length > 400;
 
   return (
