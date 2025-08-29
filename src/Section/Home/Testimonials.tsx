@@ -7,6 +7,7 @@ const TestimonialsCarousel = () => {
   const [showFull, setShowFull] = useState(false);
 
   // ✅ All data lives here
+  // ✅ All data lives here
   const testimonials = [
     {
       id: 1,
@@ -68,97 +69,71 @@ const TestimonialsCarousel = () => {
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+    setShowFull(false);
   };
 
   const prevSlide = () => {
     setCurrentSlide(
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
+    setShowFull(false);
   };
 
   const currentTestimonial = testimonials[currentSlide];
   const prevTestimonial =
-    testimonials[
-      (currentSlide - 1 + testimonials.length) % testimonials.length
-    ];
+    testimonials[(currentSlide - 1 + testimonials.length) % testimonials.length];
   const nextTestimonial =
     testimonials[(currentSlide + 1) % testimonials.length];
 
-  // Determine if the testimonial text is long
-  const isLongText = currentTestimonial.text.split('\n').join(' ').length > 400;
+  const isLongText =
+    currentTestimonial.text.split("\n").join(" ").length > 400;
 
   return (
-    <div className={`relative py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 ${showFull ? 'min-h-[750px]' : 'min-h-[600px]'} overflow-hidden transition-all duration-300`}>
-      {/* Background Title */}
-<div className="relative inset-0 flex items-center justify-between mb-8">
-    <div>
-        
-    </div>
-  {/* Centered Text */}
-  <h1
-    className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent uppercase tracking-widest select-none text-center"
-    style={{
-      WebkitTextStroke: "0.5px gray",
-    }}
-  >
-    Testimonials
-  </h1>
-
-  {/* Image in Right Corner */}
-  <img
-    src="/Testimonial.png"
-    className="opacity-30 w-16 sm:w-24 md:w-32 lg:max-w-sm"
-    alt="Testimonials"
-  />
-</div>
+    <div
+      className={`relative py-12 px-4 sm:px-6 lg:px-10 ${
+        showFull ? "min-h-[750px]" : "min-h-[600px]"
+      } overflow-hidden transition-all duration-300`}
+    >
+      {/* Section Heading */}
+      <div className="relative inset-0 flex items-center justify-between mb-10">
+        <h1
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent uppercase tracking-widest select-none text-center w-full"
+          style={{ WebkitTextStroke: "0.5px gray" }}
+        >
+          Testimonials
+        </h1>
+        <img
+          src="/Testimonial.png"
+          className="opacity-30 w-16 hidden md:flex sm:w-24 md:w-32 lg:max-w-sm"
+          alt="Testimonials"
+        />
+      </div>
 
       {/* Carousel Container */}
-      <div className="relative z-10 flex-col flex px-2 sm:px-4 md:px-8 lg:px-30">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-2 items-center justify-center min-h-[400px]">
-          {/* Left Side Image (Previous) - Hidden on mobile/tablet */}
-          <div className="hidden xl:flex flex-col gap-4 items-end w-48 h-64 mr-8">
-            <img
-              src={prevTestimonial.image}
-              alt={prevTestimonial.name}
-              className="w-full h-full object-cover opacity-40 shadow-lg rounded-lg"
-            />
-            <IconButton
-              label="Previous"
-              onClick={prevSlide}
-              icon={<ChevronLeft size={24} />}
-              className="bg-blue-800 hover:bg-blue-700 text-white p-4 rounded-none transition-colors duration-300 mr-8 z-20"
-            />
-          </div>
+      <div className="relative flex items-center justify-center gap-8 lg:gap-16">
+        {/* Previous Image (fixed size) */}
+        <div className="hidden xl:flex flex-col items-center w-[180px] h-[240px]">
+          <img
+            src={prevTestimonial.image}
+            alt={prevTestimonial.name}
+            className="w-full h-full object-cover opacity-40 shadow-md rounded-lg"
+          />
+          <IconButton
+            label="Previous"
+            onClick={prevSlide}
+            icon={<ChevronLeft size={22} />}
+            className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 mt-3 rounded-lg transition-colors duration-300"
+          />
+        </div>
 
-          {/* Mobile/Tablet Navigation Buttons */}
-          <div className="xl:hidden flex justify-between w-full mb-4">
-            <IconButton
-              label="Previous"
-              onClick={prevSlide}
-              icon={<ChevronLeft size={20} />}
-              className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-300"
-            />
-            <IconButton
-              label="Next"
-              onClick={nextSlide}
-              icon={<ChevronRight size={20} />}
-              className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-300"
-            />
-          </div>
-
-          {/* Center Content */}
-          <div className="flex items-center justify-center flex-1 relative">
-            <div
-              className={`rounded-lg p-4 sm:p-6 md:p-8 w-full max-w-4xl mx-auto flex flex-col lg:flex-row items-center lg:items-start min-h-[300px] transition-all duration-300 relative bg-white shadow-md ${showFull ? 'min-h-[400px]' : ''}`}
-              style={{
-                width: showFull ? (window.innerWidth < 768 ? '95%' : '900px') : (window.innerWidth < 768 ? '90%' : '700px'),
-                maxWidth: '100%',
-                left: '50%',
-                transform: 'translateX(-50%)',
-              }}
-            >
-              {/* Current Person Image */}
-              <div className="w-full lg:w-88 h-64 sm:h-80 lg:h-104 mb-6 lg:mb-0 lg:mr-8 flex-shrink-0">
+        {/* Center Content (always centered) */}
+        <div className="flex-1 max-w-4xl mx-auto flex justify-center">
+          <div
+            className={`rounded-lg p-6 sm:p-8 bg-white shadow-lg w-full transition-all duration-300`}
+          >
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6">
+              {/* Image */}
+              <div className="w-full max-w-[320px] h-[280px] sm:h-[340px] lg:h-[380px] flex-shrink-0">
                 {currentTestimonial.image ? (
                   <img
                     src={currentTestimonial.image}
@@ -166,72 +141,94 @@ const TestimonialsCarousel = () => {
                     className="w-full h-full object-cover rounded-lg shadow-md"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-lg sm:text-xl">
+                  <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-lg">
                     No Image
                   </div>
                 )}
               </div>
 
               {/* Text Content */}
-              <div className="flex-1 flex flex-col justify-between h-full w-full lg:w-auto">
-                <div>
-                  <p
-                    className={`text-gray-700 text-sm sm:text-[14px] leading-relaxed mb-4 sm:mb-6 transition-all duration-300 ${!showFull && isLongText ? 'line-clamp-7' : ''}`}
-                    style={{ maxHeight: !showFull && isLongText ? '10.5em' : 'none', overflow: 'hidden' }}
+              <div className="flex-1 flex flex-col justify-between">
+                <p
+                  className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4"
+                  style={{
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    WebkitLineClamp: !showFull && isLongText ? 6 : "unset",
+                  }}
+                >
+                  {currentTestimonial.text}
+                </p>
+
+                {isLongText && (
+                  <button
+                    className="text-blue-800 font-semibold text-sm focus:outline-none hover:underline mb-4"
+                    onClick={() => setShowFull((prev) => !prev)}
                   >
-                    {currentTestimonial.text}
-                  </p>
-                  {isLongText && (
-                    <button
-                      className="text-blue-800 font-semibold text-sm focus:outline-none hover:underline mb-4"
-                      onClick={() => setShowFull((prev) => !prev)}
-                    >
-                      {showFull ? 'Show less' : 'Show more'}
-                    </button>
-                  )}
-                </div>
+                    {showFull ? "Show less" : "Show more"}
+                  </button>
+                )}
+
                 <div className="text-center lg:text-left">
-                  <h3 className="text-xl sm:text-2xl lg:text-[32px] font-bold text-gray-900 mb-1">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
                     {currentTestimonial.name}
                   </h3>
-                  <p className="text-xs sm:text-[12px] text-gray-600">
+                  <p className="text-xs sm:text-sm text-gray-600">
                     {currentTestimonial.position}
                   </p>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Right Side Image (Next) - Hidden on mobile/tablet */}
-          <div className="hidden xl:flex flex-col gap-4 items-end h-64">
-            <img
-              src={nextTestimonial.image}
-              alt={nextTestimonial.name}
-              className="w-full h-full object-cover opacity-40 rounded-lg shadow-lg"
-            />
-            <IconButton
-              label="Next"
-              onClick={nextSlide}
-              icon={<ChevronRight size={24} />}
-              className="bg-blue-800 hover:bg-blue-700 text-white p-4 rounded-none transition-colors duration-300 mr-8 z-20"
-            />
-          </div>
         </div>
 
-        {/* Dots Indicator */}
-        <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-300 ${
-                index === currentSlide
-                  ? "bg-blue-800"
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
-            />
-          ))}
+        {/* Next Image (fixed size) */}
+        <div className="hidden xl:flex flex-col items-center w-[180px] h-[240px]">
+          <img
+            src={nextTestimonial.image}
+            alt={nextTestimonial.name}
+            className="w-full h-full object-cover opacity-40 shadow-md rounded-lg"
+          />
+          <IconButton
+            label="Next"
+            onClick={nextSlide}
+            icon={<ChevronRight size={22} />}
+            className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 mt-3 rounded-lg transition-colors duration-300"
+          />
         </div>
+      </div>
+
+      {/* Dots Indicator */}
+      <div className="flex justify-center mt-6 space-x-2">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-300 ${
+              index === currentSlide
+                ? "bg-blue-800"
+                : "bg-gray-300 hover:bg-gray-400"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Mobile/Tablet Navigation */}
+      <div className="xl:hidden flex justify-between w-full mt-6">
+        <IconButton
+          label="Previous"
+          onClick={prevSlide}
+          icon={<ChevronLeft size={20} />}
+          className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-300"
+        />
+        <IconButton
+          label="Next"
+          onClick={nextSlide}
+          icon={<ChevronRight size={20} />}
+          className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-300"
+        />
       </div>
     </div>
   );
