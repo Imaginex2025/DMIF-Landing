@@ -7,14 +7,14 @@ const AboutDMIFSection = () => {
 
   const navigate= useNavigate()
   return (
-    <section className="w-full bg-[#F9FBFD] py-12 px-4 sm:py-16 sm:px-8  lg:px-[88px]">
-      <div className="max-w-[1366px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-[82px]">
+    <section className="w-full bg-[#F9FBFD] py-8 sm:py-12 md:py-16 px-4 sm:px-8 lg:px-[88px]">
+      <div className="max-w-[1366px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-10 lg:gap-[82px]">
         {/* Left Content */}
-        <div className="flex flex-col gap-6 w-full lg:w-[525px] text-center lg:text-left">
-          <h2 className="font-semibold text-2xl sm:text-3xl lg:text-[38px] leading-tight text-[#003579] tracking-[-0.01em]">
+        <div className="flex flex-col gap-4 sm:gap-6 w-full lg:w-[525px] text-center lg:text-left">
+          <h2 className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-[38px] leading-tight text-[#003579] tracking-[-0.01em] px-2 sm:px-0">
             About DMIF
           </h2>
-          <p className="font-medium text-sm text-justify sm:text-base leading-6 sm:leading-7 lg:leading-[32px] text-[#404040]">
+          <p className="font-medium text-sm sm:text-base leading-6 sm:leading-7 lg:leading-[32px] text-[#404040] text-justify px-2 sm:px-0">
             Dr. Madhan Institute of Future (DMIF) is a next-generation mentorship
             platform where students learn by creating, not memorizing. From Day 1,
             learners dive into real-world innovation and research, gaining outcomes
@@ -26,18 +26,20 @@ const AboutDMIFSection = () => {
             patents, publications, and startup-ready ideas.
           </p>
 
-          <IconButton
-          label="Learn More"
-          onClick={() => navigate(APPROUTES.ABOUT)}
-          className="max-w-sm"
-          />
+          <div className="flex justify-center lg:justify-start px-2 sm:px-0">
+            <IconButton
+            label="Learn More"
+            onClick={() => navigate(APPROUTES.ABOUT)}
+            className="max-w-sm w-full sm:w-auto"
+            />
+          </div>
         </div>
 
         {/* Divider */}
         <div className="hidden lg:block w-px h-[412px] bg-[#D2E0EA]"></div>
 
         {/* Right Content - Feature Cards */}
-        <div className="flex flex-col gap-8 w-full lg:w-[664px]">
+        <div className="flex flex-col gap-6 sm:gap-8 w-full lg:w-[664px]">
           {/* Top Row */}
           <div className="flex flex-col md:flex-row gap-6 md:gap-[41px]">
             {/* Facilities Card */}

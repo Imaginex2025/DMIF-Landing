@@ -93,13 +93,13 @@ const KeyFeature = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="px-4 md:px-16 py-8 md:py-12">
-      <h2 className="heading mb-4 text-[24px] md:text-[38px] leading-[32px] md:leading-[48px]">
+    <section className="px-4 sm:px-6 md:px-12 lg:px-16 py-6 sm:py-8 md:py-12">
+      <h2 className="heading mb-4 text-[20px] sm:text-[24px] md:text-[32px] lg:text-[38px] leading-[28px] sm:leading-[32px] md:leading-[40px] lg:leading-[48px] text-center">
         Key Program Features
       </h2>
 
       {/* Grid layout */}
-      <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
         {features.map((feature) => (
           <div
             key={feature.id}

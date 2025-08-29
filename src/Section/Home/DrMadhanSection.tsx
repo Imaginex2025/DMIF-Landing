@@ -46,11 +46,11 @@ function SocialMediaCard() {
 
 const DrMadhanSection = () => {
   return (
-    <section className="w-full py-6 px-4 sm:px-8 lg:px-16">
-      <div className="w-full mx-auto bg-white shadow-[0px_36px_105px_rgba(43,56,76,0.1)] rounded-xl p-6 sm:p-10 lg:p-20 flex flex-col lg:flex-row items-center gap-10">
+    <section className="w-full py-4 sm:py-6 px-4 sm:px-8 lg:px-16">
+      <div className="w-full mx-auto bg-white shadow-[0px_36px_105px_rgba(43,56,76,0.1)] rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-10 lg:p-20 flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-10">
         
         {/* Left - Image and Social */}
-        <div className="relative w-full max-w-md relative flex-shrink-0 flex flex-col items-center">
+        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md flex-shrink-0 flex flex-col items-center">
           <div className="w-full bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
             <img
               src="/HOME/Dr.MadhanPhoto.svg"
@@ -58,17 +58,17 @@ const DrMadhanSection = () => {
               className="w-full h-auto object-contain"
             />
           </div>
-          <div className="absolute -bottom-10">
+          <div className="absolute -bottom-6 sm:-bottom-8 lg:-bottom-10">
             <SocialMediaCard />
           </div>
         </div>
 
         {/* Right - Content */}
-        <div className="flex w-full flex-col gap-6">
-          <h2 className="heading text-center md:mt-0 mt-10 lg:text-left">
+        <div className="flex w-full flex-col gap-4 sm:gap-6 mt-8 sm:mt-10 lg:mt-0">
+          <h2 className="heading text-center lg:text-left px-2 sm:px-0">
             DR.MADHAN KUMAR SRINIVASAN
           </h2>
-          <p className="font-normal text-base sm:text-lg leading-relaxed text-[#556070] text-justify">
+          <p className="font-normal text-sm sm:text-base lg:text-lg leading-relaxed text-[#556070] text-justify px-2 sm:px-0">
             Dr. Madhan Kumar Srinivasan, Ph.D., EPBA (IIM Calcutta), is a serial entrepreneur, innovator, Chief Mentor and professor with 22+ years of global experience in Cloud, AI, and Big Data. An Accenture Prolific Inventor, he holds 127 patents and 96 grants, many transformed into successful products across the US, UK, Europe, Singapore, and India. He is the Founder & CEO of ImagineX Innovations and Wise Work, and Co-founder of Hue Learn Singapore & Longer Life Tech, advising Fortune 500 companies, startups, and governments worldwide.
             <br /><br />
             A pioneer in India's cloud journey, he built the first private cloud at Infosys (2012) and created Accenture's Cloud AI business line, deploying its flagship Cloud AI product. Recognized as a 3x TEDx Speaker, Davos 2024 Invitee, and recipient of global awards including the Top 100 Scientists Award (IBC, Cambridge), Dr. Madhan continues to drive innovation, education, and entrepreneurship across industries and academia.
