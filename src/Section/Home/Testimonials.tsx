@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import IconButton from "../../Components/Common/Button";
+import { motion, AnimatePresence } from "framer-motion";
 
 const TestimonialsCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showFull, setShowFull] = useState(false);
 
-  // ✅ All data lives here
-  // ✅ All data lives here
   const testimonials = [
     {
       id: 1,
@@ -73,9 +72,7 @@ const TestimonialsCarousel = () => {
   };
 
   const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
+    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     setShowFull(false);
   };
 
@@ -85,8 +82,7 @@ const TestimonialsCarousel = () => {
   const nextTestimonial =
     testimonials[(currentSlide + 1) % testimonials.length];
 
-  const isLongText =
-    currentTestimonial.text.split("\n").join(" ").length > 400;
+  const isLongText = currentTestimonial.text.split("\n").join(" ").length > 400;
 
   return (
     <div
@@ -95,7 +91,12 @@ const TestimonialsCarousel = () => {
       } overflow-hidden transition-all duration-300`}
     >
       {/* Section Heading */}
-      <div className="relative inset-0 flex items-center justify-between mb-10">
+      <motion.div
+        className="relative inset-0 flex items-center justify-between mb-10"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1
           className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent uppercase tracking-widest select-none text-center w-full"
           style={{ WebkitTextStroke: "0.5px gray" }}
@@ -107,127 +108,154 @@ const TestimonialsCarousel = () => {
           className="opacity-30 w-16 hidden md:flex sm:w-24 md:w-32 lg:max-w-sm"
           alt="Testimonials"
         />
-      </div>
+      </motion.div>
 
-      {/* Carousel Container */}
+      {/* Carousel */}
       <div className="relative flex items-center justify-center gap-8 lg:gap-16">
-        {/* Previous Image (fixed size) */}
-        <div className="hidden xl:flex flex-col items-center w-[180px] h-[240px]">
+        {/* Prev */}
+        <motion.div
+          className="hidden xl:flex flex-col items-center w-[180px] h-[240px]"
+          initial={{ opacity: 0.3, scale: 0.9 }}
+          animate={{ opacity: 0.4, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <img
             src={prevTestimonial.image}
             alt={prevTestimonial.name}
-            className="w-full h-full object-cover opacity-40 shadow-md rounded-lg"
+            className="w-full h-full object-cover shadow-md rounded-lg"
           />
           <IconButton
             label="Previous"
             onClick={prevSlide}
             icon={<ChevronLeft size={22} />}
-            className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 mt-3 rounded-lg transition-colors duration-300"
+            className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 mt-3 rounded-lg"
           />
-        </div>
+        </motion.div>
 
-        {/* Center Content (always centered) */}
+        {/* Center */}
         <div className="flex-1 max-w-4xl mx-auto flex justify-center">
-          <div
-            className={`rounded-lg p-6 sm:p-8 bg-white shadow-lg w-full transition-all duration-300`}
-          >
-            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6">
-              {/* Image */}
-              <div className="w-full max-w-[320px] h-[280px] sm:h-[340px] lg:h-[380px] flex-shrink-0">
-                {currentTestimonial.image ? (
-                  <img
-                    src={currentTestimonial.image}
-                    alt={currentTestimonial.name}
-                    className="w-full h-full object-cover rounded-lg shadow-md"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-lg">
-                    No Image
-                  </div>
-                )}
-              </div>
-
-              {/* Text Content */}
-              <div className="flex-1 flex flex-col justify-between">
-                <p
-                  className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4"
-                  style={{
-                    display: "-webkit-box",
-                    WebkitBoxOrient: "vertical",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                    WebkitLineClamp: !showFull && isLongText ? 6 : "unset",
-                  }}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentTestimonial.id}
+              className="rounded-lg p-6 sm:p-8 bg-white shadow-lg w-full"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6">
+                {/* Image */}
+                <motion.div
+                  className="w-full max-w-[320px] h-[280px] sm:h-[340px] lg:h-[380px] flex-shrink-0"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  {currentTestimonial.text}
-                </p>
+                  {currentTestimonial.image ? (
+                    <img
+                      src={currentTestimonial.image}
+                      alt={currentTestimonial.name}
+                      className="w-full h-full object-cover rounded-lg shadow-md"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-lg">
+                      No Image
+                    </div>
+                  )}
+                </motion.div>
 
-                {isLongText && (
-                  <button
-                    className="text-blue-800 font-semibold text-sm focus:outline-none hover:underline mb-4"
-                    onClick={() => setShowFull((prev) => !prev)}
-                  >
-                    {showFull ? "Show less" : "Show more"}
-                  </button>
-                )}
-
-                <div className="text-center lg:text-left">
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
-                    {currentTestimonial.name}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-600">
-                    {currentTestimonial.position}
-                  </p>
-                </div>
+                {/* Text */}
+                <motion.div
+                  className="flex flex-col h-full justify-between"
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <div>
+                    <p
+                      className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4"
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        WebkitLineClamp: !showFull && isLongText ? 6 : "unset",
+                      }}
+                    >
+                      {currentTestimonial.text}
+                    </p>
+                    {isLongText && (
+                      <button
+                        className="text-blue-800 cursor-pointer text-end font-semibold text-sm hover:underline mb-4"
+                        onClick={() => setShowFull((prev) => !prev)}
+                      >
+                        {showFull ? "Show less" : "Show more"}
+                      </button>
+                    )}
+                  </div>
+                  <div className="text-center lg:text-end">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
+                      {currentTestimonial.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-600">
+                      {currentTestimonial.position}
+                    </p>
+                  </div>
+                </motion.div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        {/* Next Image (fixed size) */}
-        <div className="hidden xl:flex flex-col items-center w-[180px] h-[240px]">
+        {/* Next */}
+        <motion.div
+          className="hidden xl:flex flex-col items-center w-[180px] h-[240px]"
+          initial={{ opacity: 0.3, scale: 0.9 }}
+          animate={{ opacity: 0.4, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <img
             src={nextTestimonial.image}
             alt={nextTestimonial.name}
-            className="w-full h-full object-cover opacity-40 shadow-md rounded-lg"
+            className="w-full h-full object-cover shadow-md rounded-lg"
           />
           <IconButton
             label="Next"
             onClick={nextSlide}
             icon={<ChevronRight size={22} />}
-            className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 mt-3 rounded-lg transition-colors duration-300"
+            className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 mt-3 rounded-lg"
           />
-        </div>
+        </motion.div>
       </div>
 
-      {/* Dots Indicator */}
+      {/* Dots */}
       <div className="flex justify-center mt-6 space-x-2">
         {testimonials.map((_, index) => (
-          <button
+          <motion.button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-300 ${
-              index === currentSlide
-                ? "bg-blue-800"
-                : "bg-gray-300 hover:bg-gray-400"
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
+              index === currentSlide ? "bg-blue-800" : "bg-gray-300"
             }`}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
           />
         ))}
       </div>
 
-      {/* Mobile/Tablet Navigation */}
+      {/* Mobile Controls */}
       <div className="xl:hidden flex justify-between w-full mt-6">
         <IconButton
           label="Previous"
           onClick={prevSlide}
           icon={<ChevronLeft size={20} />}
-          className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-300"
+          className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
         />
         <IconButton
           label="Next"
           onClick={nextSlide}
           icon={<ChevronRight size={20} />}
-          className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-300"
+          className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
         />
       </div>
     </div>

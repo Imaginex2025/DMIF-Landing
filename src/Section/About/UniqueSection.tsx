@@ -1,13 +1,26 @@
-import IconButton from '../../Components/Common/Button';
+import { motion } from "framer-motion";
+import IconButton from "../../Components/Common/Button";
 
 const UniqueSection = () => {
   return (
-    <section className="py-20 px-6 bg-[#F9FBFD]">
+    <motion.section
+      className="py-20 px-6 bg-[#F9FBFD]"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       {/* Flip order on mobile: image first, text below */}
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row justify-center items-center gap-20">
         
         {/* Left Content */}
-        <div className="flex flex-col items-start gap-6 max-w-lg">
+        <motion.div
+          className="flex flex-col items-start gap-6 max-w-lg"
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h2 className="heading leading-tight">
             What Makes DMIF Unique
           </h2>
@@ -24,11 +37,15 @@ const UniqueSection = () => {
           </p>
           
           {/* Apply Now Button */}
-          <div className="pt-6">
+          <motion.div
+            className="pt-6"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <IconButton
               label="Apply Now"
               onClick={() => {
-                window.location.href = '/contact-us';
+                window.location.href = "/contact-us";
               }}
               className="bg-[#003579] hover:bg-blue-800 px-6 py-3 text-base font-semibold flex items-center gap-3 font-sans"
               icon={
@@ -44,19 +61,25 @@ const UniqueSection = () => {
               }
               iconPosition="right"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         
         {/* Right Content - Group Image */}
-        <div className="flex justify-center w-full max-w-xl">
+        <motion.div
+          className="flex justify-center w-full max-w-xl"
+          initial={{ x: 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <img
             src="/About/group.svg"
             alt="What Makes DMIF Unique"
             className="w-full h-auto object-contain"
           />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

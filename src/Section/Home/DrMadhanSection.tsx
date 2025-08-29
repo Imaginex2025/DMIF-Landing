@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Linkedin, Facebook, Instagram, Youtube } from "lucide-react";
+import { motion } from "framer-motion";
 
 const socialIcons = [
   { name: "LinkedIn", url: "https://www.linkedin.com/", icon: Linkedin, mail: false },
@@ -13,14 +14,18 @@ function SocialMediaCard() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div
+    <motion.div
       className="flex flex-row justify-center items-center p-3 bg-white shadow-[0px_12px_64px_rgba(28,25,25,0.12)] rounded-md gap-3 sm:gap-4 mt-4 w-full max-w-sm mx-auto"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.6, duration: 0.8, type: "spring" }}
+      viewport={{ once: true }}
     >
       {socialIcons.map((icon, idx) => {
         const IconComp = icon.icon;
         const isSelected = selected === idx;
         return (
-          <a
+          <motion.a
             key={icon.name}
             href={icon.url}
             target={icon.mail ? undefined : "_blank"}
@@ -30,6 +35,10 @@ function SocialMediaCard() {
             className={`group w-12 h-12 rounded-md flex items-center justify-center transition-all duration-200 ${
               isSelected ? "bg-[#003579]" : "bg-white hover:bg-[#003579]"
             }`}
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.7 + idx * 0.1, duration: 0.5, type: "spring" }}
+            viewport={{ once: true }}
           >
             <IconComp
               size={24}
@@ -37,34 +46,55 @@ function SocialMediaCard() {
               strokeWidth={2}
               className="w-6 h-6 transition-colors duration-200 group-hover:stroke-white"
             />
-          </a>
+          </motion.a>
         );
       })}
-    </div>
+    </motion.div>
   );
 }
 
 const DrMadhanSection = () => {
   return (
     <section className="w-full py-4 sm:py-6 px-4 sm:px-8 lg:px-16">
-      <div className="w-full mx-auto bg-white shadow-[0px_36px_105px_rgba(43,56,76,0.1)] rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-10 lg:p-20 flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-10">
-        
+      <motion.div
+        className="w-full mx-auto bg-white shadow-[0px_36px_105px_rgba(43,56,76,0.1)] rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-10 lg:p-20 flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-10"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, type: "spring" }}
+        viewport={{ once: true }}
+      >
         {/* Left - Image and Social */}
-        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md flex-shrink-0 flex flex-col items-center">
+        <motion.div
+          className="relative w-full max-w-xs sm:max-w-sm md:max-w-md flex-shrink-0 flex flex-col items-center"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, type: "spring" }}
+          viewport={{ once: true }}
+        >
           <div className="w-full bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-            <img
+            <motion.img
               src="/HOME/Dr.MadhanPhoto.svg"
               alt="Dr. Madhan Kumar Srinivasan"
               className="w-full h-auto object-contain"
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, type: "spring" }}
+              viewport={{ once: true }}
             />
           </div>
           <div className="absolute -bottom-6 sm:-bottom-8 lg:-bottom-10">
             <SocialMediaCard />
           </div>
-        </div>
+        </motion.div>
 
         {/* Right - Content */}
-        <div className="flex w-full flex-col gap-4 sm:gap-6 mt-8 sm:mt-10 lg:mt-0">
+        <motion.div
+          className="flex w-full flex-col gap-4 sm:gap-6 mt-8 sm:mt-10 lg:mt-0"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, type: "spring", delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           <h2 className="heading text-center lg:text-left px-2 sm:px-0">
             DR.MADHAN KUMAR SRINIVASAN
           </h2>
@@ -73,8 +103,8 @@ const DrMadhanSection = () => {
             <br /><br />
             A pioneer in India's cloud journey, he built the first private cloud at Infosys (2012) and created Accenture's Cloud AI business line, deploying its flagship Cloud AI product. Recognized as a 3x TEDx Speaker, Davos 2024 Invitee, and recipient of global awards including the Top 100 Scientists Award (IBC, Cambridge), Dr. Madhan continues to drive innovation, education, and entrepreneurship across industries and academia.
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
