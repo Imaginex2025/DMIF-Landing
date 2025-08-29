@@ -4,39 +4,44 @@ import { motion } from "framer-motion";
 import OverviewSection from "../Section/About/OverviewSection";
 import MentorshipSection from "../Section/About/MentorshipSection";
 import UniqueSection from "../Section/About/UniqueSection";
+import { useIsMobile } from "../lib/useIsMobile";
 
-const containerVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      staggerChildren: 0.3,
-    },
-  },
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const About = () => {
+  const isMobile = useIsMobile();
   return (
-    <motion.div
-      className="min-h-screen bg-white font-sans"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.div variants={containerVariants}>
+    <div className="min-h-screen bg-white font-sans">
+      {/* Overview Section */}
+      {isMobile ? (
+        <motion.div variants={fadeUp} initial="hidden" animate="visible">
+          <OverviewSection />
+        </motion.div>
+      ) : (
         <OverviewSection />
-      </motion.div>
+      )}
 
-      <motion.div variants={containerVariants}>
+      {/* Mentorship Section */}
+      {isMobile ? (
+        <motion.div variants={fadeUp} initial="hidden" animate="visible">
+          <MentorshipSection />
+        </motion.div>
+      ) : (
         <MentorshipSection />
-      </motion.div>
+      )}
 
-      <motion.div variants={containerVariants}>
+      {/* Unique Section */}
+      {isMobile ? (
+        <motion.div variants={fadeUp} initial="hidden" animate="visible">
+          <UniqueSection />
+        </motion.div>
+      ) : (
         <UniqueSection />
-      </motion.div>
-    </motion.div>
+      )}
+    </div>
   );
 };
 
