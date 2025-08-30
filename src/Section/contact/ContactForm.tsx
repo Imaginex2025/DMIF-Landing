@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Input from "../../Components/Common/Input";
-import { Mail } from "lucide-react";
+import { Mail, CheckCircle2, XCircle } from "lucide-react";
 import IconButton from "../../Components/Common/Button";
 import DropdownSelect from "../../Components/Common/Dropdown";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ContactForm = () => {
   const [firstname, setFirstName] = useState("");
@@ -11,6 +11,57 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [track, setTrack] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
+
+  // ✅ Replace with your Web3Forms Access Key
+  const WEB3FORMS_ACCESS_KEY = "2901d84b-5a50-43c2-bf60-8c8276c62725";
+
+  const handleSubmit = async (e?: React.FormEvent) => {
+    e?.preventDefault();
+    setLoading(true);
+
+    const formData = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: "New Contact Form Submission",
+      from_name: "DMIF Website",
+      firstname,
+      mobNo,
+      email,
+      track,
+      message,
+    };
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setStatus("success");
+        // reset form
+        setFirstName("");
+        setMobNo("");
+        setEmail("");
+        setTrack("");
+        setMessage("");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center py-8 sm:py-10 px-4 sm:px-6 lg:px-8">
@@ -25,7 +76,6 @@ const ContactForm = () => {
         Contact Us
       </motion.h2>
 
-      {/* Content Wrapper */}
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
         {/* Left Section */}
         <motion.div
@@ -58,19 +108,20 @@ const ContactForm = () => {
 
         {/* Right Section (Form) */}
         <motion.div
-          className="bg-white shadow-sm rounded-lg p-4 sm:p-6 md:p-8"
+          className="bg-white shadow-sm rounded-lg p-4 sm:p-6 md:p-8 relative"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-base sm:text-lg font-semibold mb-2">Get In Touch</h3>
+          <h3 className="text-base sm:text-lg font-semibold mb-2">
+            Get In Touch
+          </h3>
           <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">
             Feel free contact with us, we love to make new partners & friends
           </p>
 
-          <form className="flex flex-col gap-3 sm:gap-4">
-            {/* Row: First Name + Mob No */}
+          <form className="flex flex-col gap-3 sm:gap-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <Input
                 label="First Name"
@@ -108,33 +159,68 @@ const ContactForm = () => {
               ]}
             />
 
-            {/* Message textarea */}
             <div className="flex flex-col gap-2">
-              <label className="text-gray-800 text-sm font-medium">
-                Message
-              </label>
+              <label className="text-gray-800 text-sm font-medium">Message</label>
               <textarea
                 placeholder="Message Subject"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                 rows={4}
+                required
               />
             </div>
 
-            {/* Submit button */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <IconButton
-                label="Send Message"
+                type="submit"
+                label={loading ? "Sending..." : "Send Message"}
                 icon={<Mail size={18} />}
                 iconPosition="right"
-                onClick={() => alert("Message Sent!")}
               />
             </motion.div>
           </form>
+
+          {/* ✅ Success / Error Popup */}
+          <AnimatePresence>
+            {status && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.3 }}
+                className={`absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center rounded-lg shadow-md`}
+              >
+                {status === "success" ? (
+                  <>
+                    <CheckCircle2 className="text-green-600 w-12 h-12 mb-2" />
+                    <p className="text-lg font-semibold text-green-700">
+                      Thank you for contacting us!
+                    </p>
+                    <p className="text-gray-600 text-sm mt-1 text-center px-4">
+                      Our team will get back to you soon.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <XCircle className="text-red-600 w-12 h-12 mb-2" />
+                    <p className="text-lg font-semibold text-red-700">
+                      Oops! Something went wrong.
+                    </p>
+                    <p className="text-gray-600 text-sm mt-1 text-center px-4">
+                      Please try again later.
+                    </p>
+                  </>
+                )}
+                <button
+                  onClick={() => setStatus(null)}
+                  className="mt-4 px-4 py-2 text-sm bg-blue-900 text-white rounded-md hover:bg-blue-800"
+                >
+                  Close
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       </div>
     </div>

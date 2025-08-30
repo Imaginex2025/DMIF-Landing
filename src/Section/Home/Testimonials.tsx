@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import IconButton from "../../Components/Common/Button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const TestimonialsCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showFull, setShowFull] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const testimonials = [
     {
@@ -64,6 +65,13 @@ const TestimonialsCarousel = () => {
       text: `It was a truly enriching experience collaborating with Madhan during his tenure at Accenture.\nWhen it comes to mentorship in the area of patent filing, I could speak at length about his contributions—but I’ll attempt to capture the essence here. Coming from a core Cloud and Infrastructure background, my focus over the past eight years has shifted toward leading enterprise automation and AI/Analytics initiatives across various business portfolios. Like many others in the infrastructure space, my efforts had primarily centered around building scalable products and driving adoption—considered key success metrics in our field.\nIt wasn’t until I met Madhan that I truly understood the significance and potential of patenting innovative ideas. He introduced me to the world of intellectual property and helped me recognize the impact that patents can create—not just in the corporate landscape, but also in society at large.\nMadhan’s mentorship was instrumental in shaping my approach toward identifying and articulating unique, value-driven ideas. His motivation, support, and deep knowledge made the entire patent filing journey seamless for me. With his guidance, I was able to file multiple patents—one of which was officially granted in April 2024, with others currently in progress.\nMadhan’s mastery in the patenting process, combined with his strong domain expertise in IT and product development, truly makes him a “Patent Guru”—or as I often say, a walking Wikipedia on the subject.\nHaving closely witnessed his transition from a successful IT professional to a visionary entrepreneur in the AI/GenAI space, I am both inspired and confident in his journey ahead. I wish him continued success in all his endeavors and sincerely hope to collaborate again on more innovative patent opportunities—should his time allow.`,
       image: "/Testimonials/Abdul Hammed Sheik .jpg",
     },
+        {
+      id: 10,
+      name: "Keerthi BS",
+      position: "Senior Manager - Software Development Engineering, Oracle Texas USA",
+      text: `Madhan’s mentorship was pivotal during a collaborative phase at Infosys, where we expanded my undergraduate research into multiple peer reviewed publications with prestigious venues including Springer and ACM. Beyond subject matter expertise, Madhan has a rare ability to translate ideas into rigorous, publishable work, guiding the full journey from framing research questions to shaping manuscripts and navigating submission processes. His structured feedback, clarity of thought, and consistent encouragement elevated the quality and impact of the research, resulting in tangible outcomes and scholarly recognition for me. I strongly recommend Madhan to students and early career professionals seeking to transform novelty into solid, well crafted research. His mentorship accelerates progress and builds confidence at every step`,
+      image: "/Testimonials/Keerthi.jpg",
+    },
   ];
 
   const nextSlide = () => {
@@ -76,6 +84,28 @@ const TestimonialsCarousel = () => {
     setShowFull(false);
   };
 
+  // ✅ Start auto-slide
+  const startAutoSlide = () => {
+    if (intervalRef.current) return; // already running
+    intervalRef.current = setInterval(() => {
+      nextSlide();
+    }, 3000);
+  };
+
+  // ✅ Stop auto-slide
+  const stopAutoSlide = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  // Run once on mount
+  useEffect(() => {
+    startAutoSlide();
+    return () => stopAutoSlide(); // cleanup on unmount
+  }, []);
+
   const currentTestimonial = testimonials[currentSlide];
   const prevTestimonial =
     testimonials[(currentSlide - 1 + testimonials.length) % testimonials.length];
@@ -86,6 +116,7 @@ const TestimonialsCarousel = () => {
 
   return (
     <div
+
       className={`relative py-12 px-4 sm:px-6 lg:px-10 ${
         showFull ? "min-h-[750px]" : "min-h-[600px]"
       } overflow-hidden transition-all duration-300`}
@@ -133,7 +164,8 @@ const TestimonialsCarousel = () => {
         </motion.div>
 
         {/* Center */}
-        <div className="flex-1 max-w-4xl mx-auto flex justify-center">
+        <div       onMouseEnter={stopAutoSlide} // 👈 pause on hover
+      onMouseLeave={startAutoSlide} className="flex-1 max-w-4xl mx-auto flex justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTestimonial.id}

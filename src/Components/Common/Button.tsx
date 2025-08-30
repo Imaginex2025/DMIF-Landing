@@ -1,13 +1,13 @@
-
 import type { ReactNode } from "react";
 import { cn } from "../../lib/utils"; // optional if you're using clsx/classnames
 
 interface IconButtonProps {
   label: string;
-  icon?: ReactNode| null; 
+  icon?: ReactNode | null;
   onClick?: () => void;
   iconPosition?: "left" | "right";
   className?: string;
+  type?: "button" | "submit" | "reset"; // ✅ added button type
 }
 
 const IconButton = ({
@@ -16,9 +16,11 @@ const IconButton = ({
   onClick,
   iconPosition = "left",
   className = "",
+  type = "button", // ✅ default to "button"
 }: IconButtonProps) => {
   return (
     <button
+      type={type}
       onClick={onClick}
       className={cn(
         "flex items-center gap-2 bg-blue-900 justify-center cursor-pointer text-white px-4 py-2 rounded-md hover:bg-blue-800 transition-colors",

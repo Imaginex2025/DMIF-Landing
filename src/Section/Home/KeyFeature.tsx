@@ -1,7 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { APPROUTES } from "../../Routes/appRoutes";
-import IconButton from "../../Components/Common/Button";
+
 import { motion } from "framer-motion";
 
 export const features = [
@@ -55,56 +54,7 @@ export const features = [
   },
 ];
 
-export const FeatureContent = ({ feature }: { feature: typeof features[0] }) => {
-  const navigate = useNavigate();
 
-  return (
-    <section className="w-full bg-[#F9FBFD] py-12 px-4 sm:py-16 sm:px-8 lg:px-[88px]">
-      <div className="max-w-[1366px] mx-auto">
-        <motion.div
-          className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          {/* Image */}
-          <motion.div
-            className="w-full lg:w-[400px] flex-shrink-0"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="bg-[#F9FBFD] rounded-[5px] p-6 flex items-center justify-center">
-              <img
-                src={feature.image}
-                alt={feature.title}
-                className="w-full max-w-[300px] h-auto"
-              />
-            </div>
-          </motion.div>
-
-          {/* Details */}
-          <motion.div
-            className="flex-1"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h1 className="heading text-[#003579] mb-6">{feature.title}</h1>
-            <p className="font-medium text-base leading-7 text-[#404040] mb-8">
-              {feature.description}
-            </p>
-            <IconButton
-              label="Contact Us"
-              onClick={() => navigate(APPROUTES.CONTACT_US)}
-              className="bg-[#003579] text-white hover:bg-[#002347]"
-            />
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
 
 const KeyFeature = () => {
   const navigate = useNavigate();
@@ -142,7 +92,6 @@ const KeyFeature = () => {
               show: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
           >
             {/* Left - Image */}
