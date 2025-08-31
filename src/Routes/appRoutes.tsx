@@ -6,4 +6,5 @@ export const APPROUTES = {
   CONTACT_US: "/contact-us",
   PROGRAMS: "/programs",
   FEATURE_DETAILS: "/feature/:id",
+  FAQ: "/faq",
 };

@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  const stats = [
+  { value: "50K+", label: "Global Learners" },
+  { value: "500+", label: "Innovative Projects" }, { value: "500+", label: "Innovative Projects" },
+  { value: "100+", label: "Mentorship Experts" },
+];
   return (
     <>
       {/* ✅ Mobile Hero (below md) */}
@@ -93,12 +98,12 @@ const HeroSection = () => {
 
   {/* 🔹 Bottom 50K+ Experience Section */}
   <div className="bg-black text-white rounded-3xl z-20 w-full mt-10 py-8 px-6 grid grid-cols-2 gap-4 text-center">
-    {["50K+ Years Experience", "50K+ Years Experience", "50K+ Years Experience", "50K+ Years Experience"].map((i) => (
-      <div key={i} className="bg-white p-4 rounded-2xl">
-        <h3 className="text-xl text-black font-bold">50K+</h3>
-        <p className="text-sm text-black">Years Experience</p>
-      </div>
-    ))}
+   {stats.map((item) => (
+    <div key={item.label} className="bg-white p-4 rounded-2xl text-center">
+      <h3 className="text-xl text-black font-bold">{item.value}</h3>
+      <p className="text-sm text-black">{item.label}</p>
+    </div>
+  ))}
   </div>
 </section>
 

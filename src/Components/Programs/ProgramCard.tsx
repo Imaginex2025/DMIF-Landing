@@ -31,7 +31,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
       {/* Left Section */}
       <div className="flex flex-col items-center sm:items-start justify-between 
         w-full sm:w-[40%] px-4 sm:px-6 py-4 border-b sm:border-b-0 border-gray-200 text-center sm:text-left">
-        <img src={logo} alt="Program Logo" className="w-16 sm:w-20 mb-3 mx-auto sm:mx-0" />
+        <img src={logo} alt="Program Logo" className="w-36 " />
         <div className="text-2xl mt-2">
           <span className="text-orange-500 font-bold">${discountPrice}</span>
           <span className="text-gray-400 line-through ml-2 text-base">${oldPrice}</span>

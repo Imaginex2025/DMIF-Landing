@@ -84,15 +84,13 @@ const TestimonialsCarousel = () => {
     setShowFull(false);
   };
 
-  // ✅ Start auto-slide
   const startAutoSlide = () => {
-    if (intervalRef.current) return; // already running
+    if (intervalRef.current) return;
     intervalRef.current = setInterval(() => {
       nextSlide();
     }, 3000);
   };
 
-  // ✅ Stop auto-slide
   const stopAutoSlide = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -100,10 +98,9 @@ const TestimonialsCarousel = () => {
     }
   };
 
-  // Run once on mount
   useEffect(() => {
     startAutoSlide();
-    return () => stopAutoSlide(); // cleanup on unmount
+    return () => stopAutoSlide();
   }, []);
 
   const currentTestimonial = testimonials[currentSlide];
@@ -116,7 +113,6 @@ const TestimonialsCarousel = () => {
 
   return (
     <div
-
       className={`relative py-12 px-4 sm:px-6 lg:px-10 ${
         showFull ? "min-h-[750px]" : "min-h-[600px]"
       } overflow-hidden transition-all duration-300`}
@@ -143,7 +139,7 @@ const TestimonialsCarousel = () => {
 
       {/* Carousel */}
       <div className="relative flex items-center justify-center gap-8 lg:gap-16">
-        {/* Prev */}
+        {/* Prev (Desktop only) */}
         <motion.div
           className="hidden xl:flex flex-col items-center w-[180px] h-[240px]"
           initial={{ opacity: 0.3, scale: 0.9 }}
@@ -164,8 +160,11 @@ const TestimonialsCarousel = () => {
         </motion.div>
 
         {/* Center */}
-        <div       onMouseEnter={stopAutoSlide} // 👈 pause on hover
-      onMouseLeave={startAutoSlide} className="flex-1 max-w-4xl mx-auto flex justify-center">
+        <div
+          onMouseEnter={stopAutoSlide}
+          onMouseLeave={startAutoSlide}
+          className="flex-1 max-w-4xl mx-auto flex justify-center"
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTestimonial.id}
@@ -239,7 +238,7 @@ const TestimonialsCarousel = () => {
           </AnimatePresence>
         </div>
 
-        {/* Next */}
+        {/* Next (Desktop only) */}
         <motion.div
           className="hidden xl:flex flex-col items-center w-[180px] h-[240px]"
           initial={{ opacity: 0.3, scale: 0.9 }}
@@ -275,20 +274,20 @@ const TestimonialsCarousel = () => {
         ))}
       </div>
 
-      {/* Mobile Controls */}
-      <div className="xl:hidden flex justify-between w-full mt-6">
-        <IconButton
-          label="Previous"
+      {/* Mobile Floating Arrows */}
+      <div className="xl:hidden absolute top-1/2 left-4 right-4 flex justify-between items-center -translate-y-1/2">
+        <button
           onClick={prevSlide}
-          icon={<ChevronLeft size={20} />}
-          className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
-        />
-        <IconButton
-          label="Next"
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-800 text-white shadow-md hover:bg-blue-700"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
           onClick={nextSlide}
-          icon={<ChevronRight size={20} />}
-          className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
-        />
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-800 text-white shadow-md hover:bg-blue-700"
+        >
+          <ChevronRight size={20} />
+        </button>
       </div>
     </div>
   );
