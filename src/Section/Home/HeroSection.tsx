@@ -91,7 +91,7 @@ const HeroSection = () => {
 
   {/* 🔹 Madhan Sir Image */}
   <img
-    src="/HOME/MadhanSir.svg"
+    src="/HOME/UpdatedMadhanSir.png"
     alt="Dr. Madhan Kumar Srinivasan"
     className="z-10 mt-6 -mb-13 transform scale-x-[-1] w-48"
   />
@@ -127,9 +127,9 @@ const HeroSection = () => {
 
         {/* Dr. Madhan Image */}
         <motion.img
-          src="/HOME/MadhanSir.svg"
+          src="/HOME/UpdatedMadhanSir.png"
           alt="Dr. Madhan Kumar Srinivasan"
-          className="hidden lg:block absolute w-[130px] xl:w-[200px] h-[195px] xl:h-[300px] right-2 xl:right-[231px] top-2 xl:top-[92px] object-contain opacity-[0.86]"
+          className="hidden lg:block absolute w-[130px] xl:w-[240px] h-[195px] xl:h-[350px] right-2 xl:right-[231px] top-2 xl:top-[55px] object-contain opacity-[0.86]"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -149,14 +149,37 @@ const HeroSection = () => {
               },
             }}
           >
+              <div className="flex items-center justify-start gap-2 z-10 mb-6">
+<div className="flex -space-x-2">
+  <img
+    src="https://randomuser.me/api/portraits/men/32.jpg"
+    alt="student1"
+    className="w-8 h-8 rounded-full border"
+  />
+  <img
+    src="https://randomuser.me/api/portraits/women/44.jpg"
+    alt="student2"
+    className="w-8 h-8 rounded-full border"
+  />
+  <img
+    src="https://randomuser.me/api/portraits/men/65.jpg"
+    alt="student3"
+    className="w-8 h-8 rounded-full border"
+  />
+</div>
+
+  <div>
+      <p className="text-sm font-medium">50+ students Outcomes</p>
+  </div>
+  </div>
             <motion.h1
-              className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[60px] leading-tight tracking-wide px-2 sm:px-0"
+              className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[60px]  tracking-wide px-2 sm:px-0"
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-[#7F0001]">Dr. Madhan</span> <br />
-              <span className="text-[#003579]">Institute of Future</span>
+              <span className="text-[#7F0001]" style={{ fontFamily: "League Spartan, sans-serif" }}>Dr. Madhan</span> <br />
+              <span className="text-[#003579]" style={{ fontFamily: "League Spartan, sans-serif" }}>Institute of Future</span>
             </motion.h1>
 
             <motion.p
@@ -165,8 +188,7 @@ const HeroSection = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Don't teach. Mentor the Mind. Shape the Future. Inspire the Soul.
-              Empower the Journey. Unlock Potential.
+              The innovators today, Entrepreneurs tomorrow
             </motion.p>
           </motion.div>
         </div>

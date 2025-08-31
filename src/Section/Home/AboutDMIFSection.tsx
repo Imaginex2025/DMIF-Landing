@@ -13,8 +13,8 @@ const AboutDMIFSection = () => {
         
         {/* Left Content */}
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
           className="flex flex-col gap-4 sm:gap-6 w-full lg:w-[525px] text-center lg:text-left"
@@ -23,9 +23,13 @@ const AboutDMIFSection = () => {
             About DMIF
           </h2>
           <p className="font-medium text-sm sm:text-base leading-6 sm:leading-7 lg:leading-[32px] text-[#404040] text-justify px-2 sm:px-0">
-The Dr. Madhan Institute of Future (DMIF) is a national initiative founded by Dr. Madhan Kumar Srinivasan, an innovator with 127 patents (96 granted), 30+ research papers, 11 book chapters, and global recognition as a TEDx speaker, serial entrepreneur, innovation advisor to the Government of India, and Professor of Practice at leading universities like VIT and SRM.
-
-DMIF is dedicated to preparing India’s youth for the AI-driven creative economy, where success depends not only on technical knowledge but also on original thinking, creativity, and intellectual property (IP) creation. 
+            The Dr. Madhan Institute of Future (DMIF) is a national initiative founded by Dr. Madhan Kumar Srinivasan, 
+            an innovator with 127 patents (96 granted), 30+ research papers, 11 book chapters, and global recognition as 
+            a TEDx speaker, serial entrepreneur, innovation advisor to the Government of India, and Professor of Practice 
+            at leading universities like VIT and SRM.
+            <br /><br />
+            DMIF is dedicated to preparing India’s youth for the AI-driven creative economy, where success depends not 
+            only on technical knowledge but also on original thinking, creativity, and intellectual property (IP) creation. 
           </p>
 
           <div className="flex justify-center lg:justify-start px-2 sm:px-0">
@@ -39,30 +43,31 @@ DMIF is dedicated to preparing India’s youth for the AI-driven creative econom
 
         {/* Divider */}
         <motion.div
-          initial={{ opacity: 0, scaleY: 0 }}
-          whileInView={{ opacity: 1, scaleY: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
           className="hidden lg:block w-px h-[412px] bg-[#D2E0EA]"
         />
 
         {/* Right Content - Feature Cards */}
         <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
           className="flex flex-col gap-6 sm:gap-8 w-full lg:w-[664px]"
         >
           {/* Top Row */}
           <div className="flex flex-col md:flex-row gap-6 md:gap-[41px]">
+            
             {/* Facilities Card */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[5px] shadow-[0px_4px_10px_rgba(0,0,0,0.05)] p-6 w-full md:w-[311px] h-auto min-h-[250px]"
+              className="bg-white rounded-[5px] shadow-[0px_4px_10px_rgba(0,0,0,0.05)] p-6 w-full md:w-[311px] min-h-[250px]"
             >
               <div className="flex flex-col gap-6 h-full">
                 <div className="flex flex-col gap-3 items-center md:items-start">
@@ -75,7 +80,7 @@ DMIF is dedicated to preparing India’s youth for the AI-driven creative econom
                 </div>
                 <p className="font-medium text-sm leading-6 text-[#404040] flex-1 text-center md:text-left">
                   Live mentorship sessions, research and patent toolkits, and guided
-                  documentation support for innovation outcomes.
+                  documentation support for achieving real innovation outcomes.
                 </p>
               </div>
             </motion.div>
@@ -86,7 +91,7 @@ DMIF is dedicated to preparing India’s youth for the AI-driven creative econom
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[5px] shadow-[0px_4px_10px_rgba(0,0,0,0.05)] p-6 w-full md:w-[311px] h-auto min-h-[250px]"
+              className="bg-white rounded-[5px] shadow-[0px_4px_10px_rgba(0,0,0,0.05)] p-6 w-full md:w-[311px] min-h-[250px]"
             >
               <div className="flex flex-col gap-6 h-full">
                 <div className="flex flex-col gap-3 items-center md:items-start">
@@ -107,13 +112,14 @@ DMIF is dedicated to preparing India’s youth for the AI-driven creative econom
 
           {/* Bottom Row */}
           <div className="flex flex-col md:flex-row gap-6 md:gap-[41px]">
+            
             {/* History Card */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[5px] shadow-[0px_4px_10px_rgba(0,0,0,0.05)] p-6 w-full md:w-[311px] h-auto min-h-[250px]"
+              className="bg-white rounded-[5px] shadow-[0px_4px_10px_rgba(0,0,0,0.05)] p-6 w-full md:w-[311px] min-h-[250px]"
             >
               <div className="flex flex-col gap-6 h-full">
                 <div className="flex flex-col gap-3 items-center md:items-start">
@@ -125,8 +131,8 @@ DMIF is dedicated to preparing India’s youth for the AI-driven creative econom
                   </h3>
                 </div>
                 <p className="font-medium text-sm leading-6 text-[#404040] flex-1 text-center md:text-left">
-                  Founded by Dr. Madhan Kumar Srinivasan, holder of 127 patents and 30+
-                  global publications.
+                  Founded by Dr. Madhan Kumar Srinivasan, a leader with 127 patents and 30+ 
+                  global publications in research and innovation.
                 </p>
               </div>
             </motion.div>
@@ -137,7 +143,7 @@ DMIF is dedicated to preparing India’s youth for the AI-driven creative econom
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[5px] shadow-[0px_4px_10px_rgba(0,0,0,0.05)] p-6 w-full md:w-[311px] h-auto min-h-[250px]"
+              className="bg-white rounded-[5px] shadow-[0px_4px_10px_rgba(0,0,0,0.05)] p-6 w-full md:w-[311px] min-h-[250px]"
             >
               <div className="flex flex-col gap-6 h-full">
                 <div className="flex flex-col gap-3 items-center md:items-start">
@@ -149,8 +155,8 @@ DMIF is dedicated to preparing India’s youth for the AI-driven creative econom
                   </h3>
                 </div>
                 <p className="font-medium text-sm leading-6 text-[#404040] flex-1 text-center md:text-left">
-                  DMIF learners have published in IEEE, Springer, ACM, filed patents, and
-                  built strong portfolios for Ivy League admissions.
+                  DMIF learners have published in IEEE, Springer, ACM, filed patents, 
+                  and built strong portfolios for Ivy League admissions.
                 </p>
               </div>
             </motion.div>

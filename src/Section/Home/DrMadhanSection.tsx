@@ -16,7 +16,7 @@ function SocialMediaCard() {
   return (
     <motion.div
       className="flex flex-row justify-center items-center p-3 bg-white shadow-[0px_12px_64px_rgba(28,25,25,0.12)] rounded-md gap-3 sm:gap-4 mt-4 w-full max-w-sm mx-auto"
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6, duration: 0.8, type: "spring" }}
       viewport={{ once: true }}
@@ -35,8 +35,8 @@ function SocialMediaCard() {
             className={`group w-12 h-12 rounded-md flex items-center justify-center transition-all duration-200 ${
               isSelected ? "bg-[#003579]" : "bg-white hover:bg-[#003579]"
             }`}
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 + idx * 0.1, duration: 0.5, type: "spring" }}
             viewport={{ once: true }}
           >
@@ -58,7 +58,7 @@ const DrMadhanSection = () => {
     <section className="w-full py-4 sm:py-6 px-4 sm:px-8 lg:px-16">
       <motion.div
         className="w-full mx-auto bg-white shadow-[0px_36px_105px_rgba(43,56,76,0.1)] rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-10 lg:p-20 flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-10"
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, type: "spring" }}
         viewport={{ once: true }}
@@ -66,9 +66,9 @@ const DrMadhanSection = () => {
         {/* Left - Image and Social */}
         <motion.div
           className="relative w-full max-w-xs sm:max-w-sm md:max-w-md flex-shrink-0 flex flex-col items-center"
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.3 }}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, type: "spring", delay: 0.3 }}
           viewport={{ once: true }}
         >
           <div className="w-full bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
@@ -76,6 +76,9 @@ const DrMadhanSection = () => {
               src="/HOME/Dr.MadhanPhoto.svg"
               alt="Dr. Madhan Kumar Srinivasan"
               className="w-full h-auto object-contain"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, type: "spring", delay: 0.4 }}
               viewport={{ once: true }}
             />
           </div>
@@ -87,9 +90,9 @@ const DrMadhanSection = () => {
         {/* Right - Content */}
         <motion.div
           className="flex w-full flex-col gap-4 sm:gap-6 mt-8 sm:mt-10 lg:mt-0"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, type: "spring", delay: 0.3 }}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, type: "spring", delay: 0.5 }}
           viewport={{ once: true }}
         >
           <h2 className="heading text-center lg:text-left px-2 sm:px-0">
