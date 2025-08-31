@@ -84,8 +84,7 @@ const HeroSection = () => {
 </h1>
 
     <p className="para mt-2 z-10">
-      Don’t teach. Mentor the Mind. Shape the Future. Inspire the Soul. 
-      Empower the Journey. Unlock Potential.
+       Innovators today, Entrepreneurs tomorrow!
     </p>
   </div>
 
@@ -188,7 +187,7 @@ const HeroSection = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              The innovators today, Entrepreneurs tomorrow
+             Innovators today, Entrepreneurs tomorrow !
             </motion.p>
           </motion.div>
         </div>
