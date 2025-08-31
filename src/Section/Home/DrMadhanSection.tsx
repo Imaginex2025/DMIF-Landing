@@ -3,11 +3,11 @@ import { Mail, Linkedin, Facebook, Instagram, Youtube } from "lucide-react";
 import { motion } from "framer-motion";
 
 const socialIcons = [
-  { name: "LinkedIn", url: "https://www.linkedin.com/", icon: Linkedin, mail: false },
-  { name: "Facebook", url: "https://www.facebook.com/", icon: Facebook, mail: false },
-  { name: "Email", url: "mailto:info@dmif.com", icon: Mail, mail: true },
-  { name: "Instagram", url: "https://www.instagram.com/", icon: Instagram, mail: false },
-  { name: "YouTube", url: "https://www.youtube.com/", icon: Youtube, mail: false },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/drmadhaniimcal/", icon: Linkedin, mail: false },
+  { name: "Facebook", url: "https://www.facebook.com/madhankrs?mibextid=wwXIfr", icon: Facebook, mail: false },
+  { name: "Email", url: "mailto:reach@drmadhan.in", icon: Mail, mail: true },
+  { name: "Instagram", url: "https://www.instagram.com/madhankrs?igsh=MWNleTI1Mmh1bmF5dQ==", icon: Instagram, mail: false },
+  { name: "YouTube", url: "https://youtube.com/@madhankumarsrinivasan?si=ZlsMu3wkHyBedF3K", icon: Youtube, mail: false },
 ];
 
 function SocialMediaCard() {

@@ -24,7 +24,10 @@ const Input: React.FC<InputProps> = ({
   return (
     <div className="flex flex-col gap-2 w-full">
       {label && (
-        <label className="text-gray-800 text-sm font-medium">{label}</label>
+        <label className="text-gray-800 text-sm font-medium">
+          {label}
+          {required && <span className="text-[#003579] ml-1">*</span>}
+        </label>
       )}
       <input
         type={type}

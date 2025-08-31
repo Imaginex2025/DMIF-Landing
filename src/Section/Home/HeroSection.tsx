@@ -58,8 +58,8 @@ const HeroSection = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-Don't teach. Mentor the Mind. Shape the Future. Inspire the Soul. Empower the Journey. Unlock Potential.
-
+            Don't teach. Mentor the Mind. Shape the Future. Inspire the Soul.
+            Empower the Journey. Unlock Potential.
           </motion.p>
         </motion.div>
       </div>

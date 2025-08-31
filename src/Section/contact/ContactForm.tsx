@@ -133,6 +133,7 @@ const ContactForm = () => {
               <Input
                 label="Mob No"
                 placeholder="91+"
+                required
                 value={mobNo}
                 onChange={(e) => setMobNo(e.target.value)}
               />
@@ -150,6 +151,7 @@ const ContactForm = () => {
             <DropdownSelect
               label="Choose a Track"
               name="track"
+              required
               value={track}
               onChange={setTrack}
               options={[
@@ -167,11 +169,11 @@ const ContactForm = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                 rows={4}
-                required
+                
               />
             </div>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileTap={{ scale: 0.95 }}>
               <IconButton
                 type="submit"
                 label={loading ? "Sending..." : "Send Message"}

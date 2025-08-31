@@ -20,6 +20,7 @@ const DropdownSelect: React.FC<DropdownProps> = ({
   label,
   value: propValue,
   onChange,
+  required,
   options,
   className = "",
 }) => {
@@ -39,7 +40,12 @@ const DropdownSelect: React.FC<DropdownProps> = ({
 
   return (
     <div className="flex flex-col gap-2 w-full relative">
-      {label && <label className="text-gray-800 text-sm font-medium">{label}</label>}
+            {label && (
+        <label className="text-gray-800 text-sm font-medium">
+          {label}
+          {required && <span className="text-[#003579] ml-1">*</span>}
+        </label>
+      )}
 
       <div
         className={`border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-700 bg-white cursor-pointer flex justify-between items-center focus-within:ring-2 focus-within:ring-blue-500 transition ${className}`}
