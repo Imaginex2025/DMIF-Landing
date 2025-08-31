@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import IconButton from "../../Components/Common/Button";
+import { APPROUTES } from "../../Routes/appRoutes";
+import { useNavigate } from "react-router-dom";
 
 const UniqueSection = () => {
+  const navigate = useNavigate();
   return (
     <motion.section
       className="py-20 px-6 bg-[#F9FBFD]"
@@ -45,7 +48,7 @@ const UniqueSection = () => {
             <IconButton
               label="Apply Now"
               onClick={() => {
-                window.location.href = "/contact-us";
+                navigate(APPROUTES.CONTACT_US)
               }}
               className="bg-[#003579] hover:bg-blue-800 px-6 py-3 text-base font-semibold flex items-center gap-3 font-sans"
               icon={

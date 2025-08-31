@@ -66,9 +66,9 @@ const DrMadhanSection = () => {
         {/* Left - Image and Social */}
         <motion.div
           className="relative w-full max-w-xs sm:max-w-sm md:max-w-md flex-shrink-0 flex flex-col items-center"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, type: "spring" }}
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
           viewport={{ once: true }}
         >
           <div className="w-full bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
@@ -76,9 +76,6 @@ const DrMadhanSection = () => {
               src="/HOME/Dr.MadhanPhoto.svg"
               alt="Dr. Madhan Kumar Srinivasan"
               className="w-full h-auto object-contain"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, type: "spring" }}
               viewport={{ once: true }}
             />
           </div>
