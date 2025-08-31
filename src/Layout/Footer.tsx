@@ -42,11 +42,7 @@ const Footer = () => {
                 Apply Now
               </Link>
             </li>
-            <li>
-              <Link to={APPROUTES.HOME} className="text-gray-600 hover:text-blue-900 transition">
-                Media & Talks
-              </Link>
-            </li>
+            
           </ul>
         </div>
 
