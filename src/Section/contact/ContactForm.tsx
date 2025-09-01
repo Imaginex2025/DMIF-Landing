@@ -11,6 +11,8 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [track, setTrack] = useState("");
   const [message, setMessage] = useState("");
+  const [linkedin, setLinkedin] = useState(""); // ✅ new LinkedIn field
+const [profileFile, setProfileFile] = useState<string>(""); // ✅ string now
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
 
@@ -21,25 +23,23 @@ const ContactForm = () => {
     e?.preventDefault();
     setLoading(true);
 
-    const formData = {
-      access_key: WEB3FORMS_ACCESS_KEY,
-      subject: "New Contact Form Submission",
-      from_name: "DMIF Website",
-      firstname,
-      mobNo,
-      email,
-      track,
-      message,
-    };
+    const formData = new FormData();
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+    formData.append("subject", "New Contact Form Submission");
+    formData.append("from_name", "DMIF Website");
+    formData.append("firstname", firstname);
+    formData.append("mobNo", mobNo);
+    formData.append("email", email);
+    formData.append("track", track);
+    formData.append("message", message);
+    if (linkedin) formData.append("linkedin", linkedin); // optional
+if (profileFile) formData.append("profileDetails", profileFile);
+
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formData,
       });
 
       const result = await res.json();
@@ -52,6 +52,8 @@ const ContactForm = () => {
         setEmail("");
         setTrack("");
         setMessage("");
+        setLinkedin("");
+        setProfileFile("");
       } else {
         setStatus("error");
       }
@@ -161,6 +163,31 @@ const ContactForm = () => {
               ]}
             />
 
+            {/* ✅ LinkedIn (optional) */}
+            <Input
+              label="LinkedIn Profile"
+              placeholder="https://linkedin.com/in/username"
+              type="url"
+              value={linkedin}
+              onChange={(e) => setLinkedin(e.target.value)}
+            />
+
+            {/* ✅ File Upload (optional, docx/pdf) */}
+            {/* ✅ Profile Details (instead of file upload) */}
+<div className="flex flex-col gap-2">
+  <label className="text-gray-800 text-sm font-medium">
+    Profile Details
+  </label>
+  <textarea
+    placeholder="Write about your profile, experience, or background..."
+    value={profileFile ? String(profileFile) : ""} // replace file state with text
+    onChange={(e) => setProfileFile(e.target.value as any)}
+    className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+    rows={4}
+  />
+</div>
+
+
             <div className="flex flex-col gap-2">
               <label className="text-gray-800 text-sm font-medium">Message</label>
               <textarea
@@ -169,7 +196,6 @@ const ContactForm = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                 rows={4}
-                
               />
             </div>
 

@@ -21,7 +21,7 @@ const Navbar = () => {
     <nav className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 shadow-sm bg-white relative">
       {/* Logo */}
       <div className="flex items-center">
-        <img src="/Logo.png" alt="Logo" className="h-10 sm:h-12 md:h-16" />
+        <img src="/logoHori.png" alt="Logo" className="h-10 sm:h-12 md:h-16" />
       </div>
 
       {/* Desktop Nav Links */}
