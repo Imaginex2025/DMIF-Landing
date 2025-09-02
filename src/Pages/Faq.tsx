@@ -83,7 +83,7 @@ const DATA: Record<SectionKey, QA[]> = {
     },
     { 
       q: "How can I pay?", 
-      a: "Payments can be made securely online via credit card, debit card, or net banking. For students who need flexibility, we may also provide installment options upon request." 
+      a: "Payments can be made securely online via credit card, debit card, or net banking." 
     },
     { 
       q: "Are seats limited?", 

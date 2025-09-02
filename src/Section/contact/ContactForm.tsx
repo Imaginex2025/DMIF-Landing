@@ -157,7 +157,7 @@ if (profileFile) formData.append("profileDetails", profileFile);
               value={track}
               onChange={setTrack}
               options={[
-                { label: "Patent_track", value: "Patent_track" },
+                { label: "Patent-Track", value: "Patent-Track" },
                 { label: "Research-Track", value: "Research-Track" },
                 { label: "Both", value: "Both" },
               ]}
