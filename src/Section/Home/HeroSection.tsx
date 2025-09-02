@@ -79,7 +79,7 @@ const HeroSection = () => {
   {/* 🔹 Main Title & Tagline */}
   <div className="flex flex-col px-3 text-left">
 <h1 className="text-[36px] font-bold leading-tight">
-  <span className="text-[#A30000]">DR. Madhan</span> <br />
+  <span className="text-[#A30000]">DR.Madhan</span> <br />
   <span className="text-[#003579]">Institute of Future</span>
 </h1>
 

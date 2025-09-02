@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Mail, Linkedin, Facebook, Instagram, Youtube } from "lucide-react";
+import { Mail, Linkedin, Facebook, Instagram, Youtube, CalendarIcon } from "lucide-react";
 import { motion } from "framer-motion";
+import IconButton from "../../Components/Common/Button";
 
 const socialIcons = [
   { name: "LinkedIn", url: "https://www.linkedin.com/in/drmadhaniimcal/", icon: Linkedin, mail: false },
@@ -64,47 +65,65 @@ const DrMadhanSection = () => {
         viewport={{ once: true }}
       >
         {/* Left - Image and Social */}
-        <motion.div
-          className="relative w-full max-w-xs sm:max-w-sm md:max-w-md flex-shrink-0 flex flex-col items-center"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, type: "spring", delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="w-full bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-            <motion.img
-              src="/HOME/Dr.MadhanPhoto.svg"
-              alt="Dr. Madhan Kumar Srinivasan"
-              className="w-full h-auto object-contain"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, type: "spring", delay: 0.4 }}
-              viewport={{ once: true }}
-            />
-          </div>
-          <div className="absolute -bottom-6 sm:-bottom-8 lg:-bottom-10">
-            <SocialMediaCard />
-          </div>
-        </motion.div>
+{/* Left - Image and Social */}
+<motion.div
+  className="relative w-full max-w-xs sm:max-w-sm md:max-w-md flex-shrink-0 flex flex-col items-center"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, type: "spring", delay: 0.3 }}
+  viewport={{ once: true }}
+>
+  <div className="w-full bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+    <motion.img
+      src="/HOME/Dr.MadhanPhoto.svg"
+      alt="Dr. Madhan Kumar Srinivasan"
+      className="w-full h-auto object-contain"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, type: "spring", delay: 0.4 }}
+      viewport={{ once: true }}
+    />
+  </div>
+
+  {/* Social Icons */}
+  <div className="absolute -bottom-24 sm:-bottom-20  lg:-bottom-15 flex flex-col items-center gap-4">
+    <SocialMediaCard />
+
+    {/* Book a Meet Button */}
+    <IconButton
+      label="Book a Meet"
+      icon={<CalendarIcon />}
+      onClick={() => window.open("https://calendly.com/drmadhan/dmif-enquiry", "_blank")}
+    />
+  </div>
+</motion.div>
+
 
         {/* Right - Content */}
-        <motion.div
-          className="flex w-full flex-col gap-4 sm:gap-6 mt-8 sm:mt-10 lg:mt-0"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, type: "spring", delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="heading text-center lg:text-left px-2 sm:px-0">
-            DR.MADHAN KUMAR SRINIVASAN
-          </h2>
-          <p className="font-normal text-sm sm:text-base lg:text-lg leading-relaxed text-[#556070] text-justify px-2 sm:px-0">
-            Dr. Madhan Kumar Srinivasan, Ph.D., EPBA (IIM Calcutta), is a serial entrepreneur, innovator, Chief Mentor and professor with 22+ years of global experience in Cloud, AI, and Big Data. An Accenture Prolific Inventor, he holds 127 patents and 96 grants, many transformed into successful products across the US, UK, Europe, Singapore, and India. He is the Founder & CEO of ImagineX Innovations and Wise Work, and Co-founder of Hue Learn Singapore & Longer Life Tech, advising Fortune 500 companies, startups, and governments worldwide.
-            <br /><br />
-            A pioneer in India's cloud journey, he built the first private cloud at Infosys (2012) and created Accenture's Cloud AI business line, deploying its flagship Cloud AI product. Recognized as a 3x TEDx Speaker, Davos 2024 Invitee, and recipient of global awards including the Top 100 Scientists Award (IBC, Cambridge), Dr. Madhan continues to drive innovation, education, and entrepreneurship across industries and academia.
-          </p>
-        </motion.div>
+  {/* Right - Content */}
+<motion.div
+  className="flex w-full flex-col gap-4 sm:gap-6 mt-22 sm:mt-20 lg:mt-0"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, type: "spring", delay: 0.5 }}
+  viewport={{ once: true }}
+>
+  <h2 className="heading text-center lg:text-left px-2 sm:px-0">
+    DR.MADHAN KUMAR SRINIVASAN
+  </h2>
+  <p className="font-normal text-sm sm:text-base lg:text-lg leading-relaxed text-[#556070] text-justify px-2 sm:px-0">
+    Dr. Madhan Kumar Srinivasan, Ph.D., EPBA (IIM Calcutta), is a serial entrepreneur, innovator, Chief Mentor and professor with 22+ years of global experience in Cloud, AI, and Big Data. An Accenture Prolific Inventor, he holds 127 patents and 96 grants, many transformed into successful products across the US, UK, Europe, Singapore, and India. He is the Founder & CEO of ImagineX Innovations and Wise Work, and Co-founder of Hue Learn Singapore & Longer Life Tech, advising Fortune 500 companies, startups, and governments worldwide.
+    <br /><br />
+    A pioneer in India's cloud journey, he built the first private cloud at Infosys (2012) and created Accenture's Cloud AI business line, deploying its flagship Cloud AI product. Recognized as a 3x TEDx Speaker, Davos 2024 Invitee, and recipient of global awards including the Top 100 Scientists Award (IBC, Cambridge), Dr. Madhan continues to drive innovation, education, and entrepreneurship across industries and academia.
+  </p>
+
+  {/* Book a Meet Button */}
+
+</motion.div>
+
+      
       </motion.div>
+
     </section>
   );
 };
