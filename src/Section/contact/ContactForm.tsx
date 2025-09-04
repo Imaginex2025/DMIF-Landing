@@ -1,22 +1,23 @@
 import { useState } from "react";
-import Input from "../../Components/Common/Input";
 import { Mail, CheckCircle2, XCircle } from "lucide-react";
 import IconButton from "../../Components/Common/Button";
+import Input from "../../Components/Common/Input";
 import DropdownSelect from "../../Components/Common/Dropdown";
 import { motion, AnimatePresence } from "framer-motion";
+import { countryList } from "../../utils/countrycodes";
 
 const ContactForm = () => {
   const [firstname, setFirstName] = useState("");
   const [mobNo, setMobNo] = useState("");
+  const [countryCode, setCountryCode] = useState("+91");
   const [email, setEmail] = useState("");
   const [track, setTrack] = useState("");
   const [message, setMessage] = useState("");
-  const [linkedin, setLinkedin] = useState(""); // ✅ new LinkedIn field
-const [profileFile, setProfileFile] = useState<string>(""); // ✅ string now
+  const [linkedin, setLinkedin] = useState("");
+  const [profileFile, setProfileFile] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
 
-  // ✅ Replace with your Web3Forms Access Key
   const WEB3FORMS_ACCESS_KEY = "2901d84b-5a50-43c2-bf60-8c8276c62725";
 
   const handleSubmit = async (e?: React.FormEvent) => {
@@ -28,13 +29,12 @@ const [profileFile, setProfileFile] = useState<string>(""); // ✅ string now
     formData.append("subject", "New Contact Form Submission");
     formData.append("from_name", "DMIF Website");
     formData.append("firstname", firstname);
-    formData.append("mobNo", mobNo);
+    formData.append("mobNo", `${countryCode} ${mobNo}`);
     formData.append("email", email);
     formData.append("track", track);
     formData.append("message", message);
-    if (linkedin) formData.append("linkedin", linkedin); // optional
-if (profileFile) formData.append("profileDetails", profileFile);
-
+    if (linkedin) formData.append("linkedin", linkedin);
+    if (profileFile) formData.append("profileDetails", profileFile);
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -43,12 +43,11 @@ if (profileFile) formData.append("profileDetails", profileFile);
       });
 
       const result = await res.json();
-
       if (result.success) {
         setStatus("success");
-        // reset form
         setFirstName("");
         setMobNo("");
+        setCountryCode("+91");
         setEmail("");
         setTrack("");
         setMessage("");
@@ -88,20 +87,19 @@ if (profileFile) formData.append("profileDetails", profileFile);
           viewport={{ once: true }}
         >
           <p className="text-gray-600 text-base leading-relaxed">
-            We’d love to hear from you! If you have any questions, feedback, or
-            business inquiries, feel free to reach out to us through our contact
-            form, email, or phone.
+            Take the first step toward your learning journey by filling out this
+            registration form. Once you submit your details, our dedicated team
+            will reach out to guide you through the next steps, answer your
+            questions, and help you secure your spot in the course.
           </p>
 
           <div className="pt-4 border-t flex items-center gap-2">
-            <p className="text-sm font-semibold text-[#003579] uppercase ">
+            <p className="text-sm font-semibold text-[#003579] uppercase">
               Email Address :
             </p>
             <div
               className="flex flex-col cursor-pointer text-gray-700"
-              onClick={() =>
-                (window.location.href = "mailto:reach@drmadhan.in")
-              }
+              onClick={() => (window.location.href = "mailto:reach@drmadhan.in")}
             >
               <p>reach@drmadhan.in</p>
             </div>
@@ -120,25 +118,44 @@ if (profileFile) formData.append("profileDetails", profileFile);
             Get In Touch
           </h3>
           <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">
-            Feel free contact with us, we love to make new partners & friends
+            Feel free to contact us, we love to make new partners & friends
           </p>
 
           <form className="flex flex-col gap-3 sm:gap-4" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              <Input
-                label="First Name"
-                placeholder="First name..."
-                value={firstname}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-              />
-              <Input
-                label="Mob No"
-                placeholder="91+"
-                required
-                value={mobNo}
-                onChange={(e) => setMobNo(e.target.value)}
-              />
+            <Input
+              label="First Name"
+              placeholder="First name..."
+              value={firstname}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
+
+            {/* Mobile Number with Country Code */}
+            <div className="flex flex-col gap-1 w-full">
+              <label className="text-gray-800 text-sm font-medium">
+                Mobile No <span className="text-red-500">*</span>
+              </label>
+              <div className="flex gap-2">
+                <div className="w-32">
+                  <DropdownSelect
+              label=""
+              value={countryCode}
+              onChange={setCountryCode}
+              options={countryList.map((c) => ({
+                label: `${c.value} (${c.dialCode})`,
+                value: c.dialCode,
+              }))}
+            />
+                </div>
+
+                <Input
+                  placeholder="Enter number"
+                  value={mobNo}
+                  className="w-full"
+                  onChange={(e) => setMobNo(e.target.value)}
+                  required
+                />
+              </div>
             </div>
 
             <Input
@@ -163,7 +180,6 @@ if (profileFile) formData.append("profileDetails", profileFile);
               ]}
             />
 
-            {/* ✅ LinkedIn (optional) */}
             <Input
               label="LinkedIn Profile"
               placeholder="https://linkedin.com/in/username"
@@ -172,21 +188,18 @@ if (profileFile) formData.append("profileDetails", profileFile);
               onChange={(e) => setLinkedin(e.target.value)}
             />
 
-            {/* ✅ File Upload (optional, docx/pdf) */}
-            {/* ✅ Profile Details (instead of file upload) */}
-<div className="flex flex-col gap-2">
-  <label className="text-gray-800 text-sm font-medium">
-    Profile Details
-  </label>
-  <textarea
-    placeholder="Write about your profile, experience, or background..."
-    value={profileFile ? String(profileFile) : ""} // replace file state with text
-    onChange={(e) => setProfileFile(e.target.value as any)}
-    className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-    rows={4}
-  />
-</div>
-
+            <div className="flex flex-col gap-2">
+              <label className="text-gray-800 text-sm font-medium">
+                Profile Details
+              </label>
+              <textarea
+                placeholder="Write about your profile, experience, or background..."
+                value={profileFile}
+                onChange={(e) => setProfileFile(e.target.value)}
+                className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                rows={4}
+              />
+            </div>
 
             <div className="flex flex-col gap-2">
               <label className="text-gray-800 text-sm font-medium">Message</label>
@@ -217,7 +230,7 @@ if (profileFile) formData.append("profileDetails", profileFile);
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
-                className={`absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center rounded-lg shadow-md`}
+                className="absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center rounded-lg shadow-md"
               >
                 {status === "success" ? (
                   <>

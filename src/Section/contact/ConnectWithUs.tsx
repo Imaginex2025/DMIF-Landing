@@ -28,9 +28,7 @@ const ConnectWithUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Want to chat? We’d love to hear from you! Get in touch with our
-            Customer Success Team to inquire about speaking events, advertising
-            rates, or just say hello.
+           We’d love to hear from you! Connect with our Customer Success Team to discuss collaborations, speaking engagements, or any general inquiries
           </motion.p>
         </div>
 

@@ -28,7 +28,17 @@ const cards = [
       "Master the art of academic research and publishing. From structuring manuscripts to submitting for global conferences, you’ll create a publication-ready paper that strengthens your resume and higher-education prospects.",
     discountPrice: 599,
     oldPrice: 900,
-  },  {
+  }, 
+  {
+  logo: "/Logo.png",
+  company: "Innovation Academy",
+  title: "Entrepreneurship – From Ideas to Ventures",
+  description:
+    "Transform your patents and research into scalable startups. Learn investor pitching, business model design, fundraising strategies, and gain exposure to incubators, accelerators.",
+  discountPrice: 599,
+  oldPrice: 900,
+},
+  {
     logo: "/Logo.png",
     company: "Innovation Academy",
     title: "Patent – The Innovation Engine",
@@ -45,7 +55,16 @@ const cards = [
       "Master the art of academic research and publishing. From structuring manuscripts to submitting for global conferences, you’ll create a publication-ready paper that strengthens your resume and higher-education prospects.",
     discountPrice: 599,
     oldPrice: 900,
-  },  {
+  },
+    {
+  logo: "/Logo.png",
+  company: "Innovation Academy",
+  title: "Entrepreneurship – From Ideas to Ventures",
+  description:
+    "Transform your patents and research into scalable startups. Learn investor pitching, business model design, fundraising strategies, and gain exposure to incubators, accelerators.",
+  discountPrice: 599,
+  oldPrice: 900,
+},  {
     logo: "/Logo.png",
     company: "Innovation Academy",
     title: "Patent – The Innovation Engine",
@@ -62,7 +81,15 @@ const cards = [
       "Master the art of academic research and publishing. From structuring manuscripts to submitting for global conferences, you’ll create a publication-ready paper that strengthens your resume and higher-education prospects.",
     discountPrice: 599,
     oldPrice: 900,
-  }
+  } , {
+  logo: "/Logo.png",
+  company: "Innovation Academy",
+  title: "Entrepreneurship – From Ideas to Ventures",
+  description:
+    "Transform your patents and research into scalable startups. Learn investor pitching, business model design, fundraising strategies, and gain exposure to incubators, accelerators.",
+  discountPrice: 599,
+  oldPrice: 900,
+},
 ];
 
 

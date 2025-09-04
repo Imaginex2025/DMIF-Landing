@@ -2,49 +2,49 @@ import Accordion from "../../Components/Programs/AccordionProps";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 
-const ProgramInfo = () => {
+const EntrepreneurshipProgramInfo = () => {
   const accordionData = [
     {
       title: "Who is this for?",
       content:
-        "This program is designed for students aiming for Ivy League and other global admissions, aspiring researchers and inventors eager to explore innovation, entrepreneurs and innovators seeking IP protection.",
+        "This track is for aspiring entrepreneurs, innovators, and researchers who want to transform their patents and research into viable startups, gain investor exposure, and build scalable ventures.",
     },
     {
       title: "What students will learn",
       content:
-        "Students will gain practical knowledge in innovation strategy, patent filing, and research methodologies that enhance academic and career opportunities.",
+        "Students will learn startup fundamentals, lean business models, IP commercialization strategies, fundraising tactics, and go-to-market approaches for scaling their ideas globally.",
     },
     {
       title: "Core focus areas",
       content:
-        "Key areas include intellectual property law, product innovation, technology research, and global academic preparation.",
+        "Key areas include business model design, investor readiness, leadership, team building, and IP-driven entrepreneurship.",
     },
     {
-      title: "Sample research paper outcomes",
+      title: "Sample outcomes",
       content:
-        "Students will produce research papers demonstrating innovation, entrepreneurship, and intellectual property strategies for real-world applications.",
+        "Students will develop investor-ready pitch decks, validated business models, exposure to incubators/VCs, and entrepreneurial portfolios ready for global opportunities.",
     },
   ];
 
   const features = [
     {
-      title: "Idea to Patent Journey",
-      description: "Learn how to transform raw ideas into patentable innovations.",
+      title: "Idea to Venture",
+      description: "Convert your patents and research into real-world startups.",
     },
     {
-      title: "Global Exposure",
+      title: "Investor Readiness",
       description:
-        "File patents with real-world commercial value, boosting international profile.",
+        "Build professional pitch decks, financial models, and gain exposure to accelerators and VCs.",
     },
     {
-      title: "Career Edge",
+      title: "Go-to-Market Strategy",
       description:
-        "Strengthens Ivy/PhD admissions, job prospects, and entrepreneurship.",
+        "Learn how to identify customer segments, position products, and scale globally.",
     },
     {
-      title: "Hands-on Mentorship",
+      title: "Entrepreneurial Identity",
       description:
-        "Work with inventors & experts who’ve filed 100+ global patents.",
+        "Transform into a future leader with the mindset to inspire teams and attract co-founders.",
     },
   ];
 
@@ -53,12 +53,12 @@ const ProgramInfo = () => {
       className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-[#003579] items-center px-5 py-5 md:px-20 md:py-20"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >
       {/* Left Section - Accordion */}
       <motion.div
-        className="rounded-xl p-4 "
+        className="rounded-xl p-4"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
@@ -76,11 +76,12 @@ const ProgramInfo = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Track 1: Patents – The Innovation Engine
+          Track 3: Entrepreneurship – From Ideas to Ventures
         </h2>
+
         <p className="text-blue-100 mb-6">
-          Learn how to transform your ideas into patents, fueling innovation and
-          academic/professional success.
+          Learn how to turn patents and research into startups, master pitching,
+          and gain the entrepreneurial edge to launch and scale ventures.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -93,7 +94,7 @@ const ProgramInfo = () => {
               transition={{ duration: 0.5, delay: 0.2 * i }}
               viewport={{ once: true }}
             >
-              {/* White Circle Icon */}
+              {/* White Circle Icon with Blue Check */}
               <div className="flex-shrink-0 w-7 h-7 rounded-full bg-white flex items-center justify-center mt-1">
                 <Check className="w-4 h-4 text-[#003579]" />
               </div>
@@ -111,4 +112,4 @@ const ProgramInfo = () => {
   );
 };
 
-export default ProgramInfo;
+export default EntrepreneurshipProgramInfo;

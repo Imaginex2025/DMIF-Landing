@@ -1,6 +1,6 @@
 import CreativeEconomy from "../Section/WhyitMatters/CreativeEconomy"
 import CreativityInAI from "../Section/WhyitMatters/CreativityInAI"
-import ResearchAndIP from "../Section/WhyitMatters/ResearchAndIp"
+import ResearchAndIp from "../Section/WhyitMatters/ResearchAndIp"
 
 
 const WhyItMatters = () => {
@@ -8,7 +8,7 @@ const WhyItMatters = () => {
     <div>
         <CreativityInAI/>
         <CreativeEconomy/>
-        <ResearchAndIP/>
+        <ResearchAndIp/>
     </div>
   )
 }

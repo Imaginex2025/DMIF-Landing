@@ -15,10 +15,7 @@ const Footer = () => {
             alt="Logo"
             className="h-12 sm:h-16 w-auto object-contain"
           />
-          <p className="text-sm text-gray-600 leading-relaxed text-center sm:text-left">
-            Dr. Madhan Institute of Future (DMIF) is a next-generation
-            mentorship platform
-          </p>
+         
           <p className="text-sm text-gray-700">reach@drmadhan.in</p>
           <p className="text-sm text-gray-700">www.drmadhan.in</p>
         </div>

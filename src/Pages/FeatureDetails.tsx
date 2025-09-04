@@ -153,7 +153,7 @@ export const features = [
  {
     id: 6,
     title: "Brain Science",
-    description: "...",
+    description: "Unlock the mysteries of the human brain and its role in innovation. Learn how memory, cognition, and neuroplasticity influence creativity, problem-solving, and decision-making to enhance your academic, research, and entrepreneurial journey",
     footer: "Mind Science",
     image: "/Programs/image 23.png",
     icon: Brain,

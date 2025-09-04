@@ -2,26 +2,26 @@ import { APPROUTES } from "../../Routes/appRoutes";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
 
-const ResearchAndIP = () => {
+const ResearchAndIp = () => {
   const navigate = useNavigate();
   const cards = [
     {
       number: 1,
       title: "Boosts High-Skill Jobs & Salaries",
       description:
-        "Research and IP drive demand for skilled talent, increasing high-paying roles in tech, biotech, and All other AI sectors globally.",
+        "Research and IP fuel the demand for skilled talent, creating more high-paying opportunities across technology, biotechnology, and other AI-driven sectors worldwide.",
     },
     {
       number: 2,
       title: "Fuels Startup Creation & Growth",
       description:
-        "IP-backed innovation helps startups attract funding, stand out in markets, and scale successfully in competitive industries.",
+        "IP-backed innovation enables startups to attract funding, differentiate in the market, and scale successfully in competitive industries.",
     },
     {
       number: 3,
       title: "Enhances Global Recognition",
       description:
-        "Strong research or IP achievements support Green Card and PR visa applications through recognized excellence pathways.",
+        "Strong research and IP achievements strengthen Green Card and PR visa applications by demonstrating recognized excellence.",
     },
   ];
 
@@ -94,4 +94,4 @@ const ResearchAndIP = () => {
   );
 };
 
-export default ResearchAndIP;
+export default ResearchAndIp;

@@ -5,6 +5,7 @@ import AboutDMIFSection from "../Section/Home/AboutDMIFSection";
 import KeyFeature from "../Section/Home/KeyFeature";
 import TestimonialsCarousel from "../Section/Home/Testimonials";
 import CTASection from "../Section/Home/CTASection";
+// import VisionMissionSection from "../Section/Home/Vision";
 
 const Home = () => {
   return (
@@ -17,6 +18,8 @@ const Home = () => {
 
       {/* About DMIF Section */}
       <AboutDMIFSection />
+
+      {/* <VisionMissionSection /> */}
 
       {/* Key Program Features Section */}
       <KeyFeature />
