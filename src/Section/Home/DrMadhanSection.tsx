@@ -112,9 +112,10 @@
       DR.MADHAN KUMAR SRINIVASAN
     </h2>
     <p className="font-normal text-sm sm:text-base lg:text-lg leading-relaxed text-[#556070] text-justify px-2 sm:px-0">
-      Dr. Madhan Kumar Srinivasan, Ph.D., EPBA (IIM Calcutta), is a serial entrepreneur, innovator, Chief Mentor and professor with 22+ years of global experience in Cloud, AI, and Big Data. An Accenture Prolific Inventor, he holds 127 patents and 96 grants, many transformed into successful products across the US, UK, Europe, Singapore, and India. He is the Founder & CEO of ImagineX Innovations and Wise Work, and Co-founder of Hue Learn Singapore & Longer Life Tech, advising Fortune 500 companies, startups, and governments worldwide.
+      Dr. Madhan Kumar Srinivasan, Ph.D., EPBA (IIM Calcutta), is a serial entrepreneur, innovator, Chief Mentor and professor with 22+ years of global experience in Cloud, AI, and Big Data. An Accenture Prolific Inventor, he holds 120+ patents and 96 grants, many transformed into successful products across the US, UK, Europe, Singapore, and India. He is the Founder & CEO of ImagineX Innovations and Wise Work, and Co-founder of Hue Learn Singapore & Longer Life Tech, advising Fortune 500 companies, startups, and governments worldwide.
       <br /><br />
-      A pioneer in India's cloud journey, he built the first private cloud at Infosys (2012) and created Accenture's Cloud AI business line, deploying its flagship Cloud AI product. Recognized as a 3x TEDx Speaker, Davos 2024 Invitee, and recipient of global awards including the Top 100 Scientists Award (IBC, Cambridge), Dr. Madhan continues to drive innovation, education, and entrepreneurship across industries and academia.
+A pioneer in India's cloud journey, he built the first private cloud at Infosys (2012) and created Accenture's Cloud AI business line, deploying its flagship Cloud AI product. Recognized as a 3x TEDx Speaker, Davos 2024 Invitee, and recipient of global awards including the Top 100 Scientists Award (IBC, Cambridge), Dr. Madhan continues to drive innovation, education, and entrepreneurship across industries and academia.
+
     </p>
 
     {/* Book a Meet Button */}

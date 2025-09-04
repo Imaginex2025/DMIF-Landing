@@ -16,7 +16,7 @@ const cards = [
     company: "Innovation Academy",
     title: "Patent – The Innovation Engine",
     description:
-      "Learn how to turn raw ideas into patents with real-world frameworks. Gain hands-on experience in drafting Invention Disclosure Forms (IDF) and Technical Invention Documents (TID) while building a strong innovation profile.",
+      "Learn how to transform raw ideas into patents using real-world frameworks. Gain practical experience in drafting Invention Disclosure Forms (IDF) and Technical Invention Documents (TID), while building a strong profile in innovation and intellectual property.",
     discountPrice: 899,
     oldPrice: 1200,
   },
@@ -25,25 +25,25 @@ const cards = [
     company: "Innovation Academy",
     title: "Research Paper – The Explorer",
     description:
-      "Master the art of academic research and publishing. From structuring manuscripts to submitting for global conferences, you’ll create a publication-ready paper that strengthens your resume and higher-education prospects.",
+      "Master the process of academic research and publishing. From structuring manuscripts to submitting at global conferences, you will develop a publication-ready paper that enhances your academic profile and strengthens opportunities for higher education.",
     discountPrice: 599,
     oldPrice: 900,
-  }, 
+  },
   {
-  logo: "/Logo.png",
-  company: "Innovation Academy",
-  title: "Entrepreneurship – From Ideas to Ventures",
-  description:
-    "Transform your patents and research into scalable startups. Learn investor pitching, business model design, fundraising strategies, and gain exposure to incubators, accelerators.",
-  discountPrice: 599,
-  oldPrice: 900,
-},
+    logo: "/Logo.png",
+    company: "Innovation Academy",
+    title: "Entrepreneurship – From Ideas to Ventures",
+    description:
+      "Convert your patents and research into scalable startups. Learn business model design, investor pitching, and fundraising strategies, while gaining exposure to incubators and accelerators that can help you turn ideas into market-ready ventures and make your idea better.",
+    discountPrice: 599,
+    oldPrice: 900,
+  },
   {
     logo: "/Logo.png",
     company: "Innovation Academy",
     title: "Patent – The Innovation Engine",
     description:
-      "Learn how to turn raw ideas into patents with real-world frameworks. Gain hands-on experience in drafting Invention Disclosure Forms (IDF) and Technical Invention Documents (TID) while building a strong innovation profile.",
+      "Learn how to transform raw ideas into patents using real-world frameworks. Gain practical experience in drafting Invention Disclosure Forms (IDF) and Technical Invention Documents (TID), while building a strong profile in innovation and intellectual property.",
     discountPrice: 899,
     oldPrice: 1200,
   },
@@ -52,24 +52,25 @@ const cards = [
     company: "Innovation Academy",
     title: "Research Paper – The Explorer",
     description:
-      "Master the art of academic research and publishing. From structuring manuscripts to submitting for global conferences, you’ll create a publication-ready paper that strengthens your resume and higher-education prospects.",
+      "Master the process of academic research and publishing. From structuring manuscripts to submitting at global conferences, you will develop a publication-ready paper that enhances your academic profile and strengthens opportunities for higher education.",
     discountPrice: 599,
     oldPrice: 900,
   },
-    {
-  logo: "/Logo.png",
-  company: "Innovation Academy",
-  title: "Entrepreneurship – From Ideas to Ventures",
-  description:
-    "Transform your patents and research into scalable startups. Learn investor pitching, business model design, fundraising strategies, and gain exposure to incubators, accelerators.",
-  discountPrice: 599,
-  oldPrice: 900,
-},  {
+  {
+    logo: "/Logo.png",
+    company: "Innovation Academy",
+    title: "Entrepreneurship – From Ideas to Ventures",
+    description:
+      "Convert your patents and research into scalable startups. Learn business model design, investor pitching, and fundraising strategies, while gaining exposure to incubators and accelerators that can help you turn ideas into market-ready ventures and make your idea better.",
+    discountPrice: 599,
+    oldPrice: 900,
+  },
+  {
     logo: "/Logo.png",
     company: "Innovation Academy",
     title: "Patent – The Innovation Engine",
     description:
-      "Learn how to turn raw ideas into patents with real-world frameworks. Gain hands-on experience in drafting Invention Disclosure Forms (IDF) and Technical Invention Documents (TID) while building a strong innovation profile.",
+      "Learn how to transform raw ideas into patents using real-world frameworks. Gain practical experience in drafting Invention Disclosure Forms (IDF) and Technical Invention Documents (TID), while building a strong profile in innovation and intellectual property.",
     discountPrice: 899,
     oldPrice: 1200,
   },
@@ -78,18 +79,19 @@ const cards = [
     company: "Innovation Academy",
     title: "Research Paper – The Explorer",
     description:
-      "Master the art of academic research and publishing. From structuring manuscripts to submitting for global conferences, you’ll create a publication-ready paper that strengthens your resume and higher-education prospects.",
+      "Master the process of academic research and publishing. From structuring manuscripts to submitting at global conferences, you will develop a publication-ready paper that enhances your academic profile and strengthens opportunities for higher education.",
     discountPrice: 599,
     oldPrice: 900,
-  } , {
-  logo: "/Logo.png",
-  company: "Innovation Academy",
-  title: "Entrepreneurship – From Ideas to Ventures",
-  description:
-    "Transform your patents and research into scalable startups. Learn investor pitching, business model design, fundraising strategies, and gain exposure to incubators, accelerators.",
-  discountPrice: 599,
-  oldPrice: 900,
-},
+  },
+  {
+    logo: "/Logo.png",
+    company: "Innovation Academy",
+    title: "Entrepreneurship – From Ideas to Ventures",
+    description:
+      "Convert your patents and research into scalable startups. Learn business model design, investor pitching, and fundraising strategies, while gaining exposure to incubators and accelerators that can help you turn ideas into market-ready ventures and make your idea better.",
+    discountPrice: 599,
+    oldPrice: 900,
+  },
 ];
 
 

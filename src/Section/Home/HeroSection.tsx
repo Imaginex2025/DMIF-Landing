@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
+import { GraduationCap } from "lucide-react";
 
 const HeroSection = () => {
   const stats = [
-  { value: "50K+", label: "Global Learners" },
-  { value: "500+", label: "Innovative Projects" }, { value: "500+", label: "Innovative Projects" },
-  { value: "100+", label: "Mentorship Experts" },
+  { value: "1000s", label: "Mentored" },
+{ value: "120+", label: "Patents" },
+              { value: "30+", label: "Papers" },
+              { value: "6", label: "StartUps" },
 ];
   return (
     <>
@@ -208,13 +210,15 @@ const HeroSection = () => {
           >
             <div className="flex flex-col justify-center">
               <h3 className="font-bold text-base sm:text-lg lg:text-[22px] leading-5 sm:leading-6 text-white">
-                Join 50K+ Learners
+                1000s Mentored
               </h3>
               <p className="font-normal text-xs sm:text-sm lg:text-[16px] leading-4 sm:leading-5 capitalize text-white mt-1">
-                This is my website
+                Students & Professionals WorldWide
               </p>
             </div>
-            <div className="w-[50px] sm:w-[65px] lg:w-[85px] h-[50px] sm:h-[65px] lg:h-[85px] bg-white rounded-lg sm:rounded-xl lg:rounded-[28px] flex items-center justify-center"></div>
+            <div className="w-[50px] sm:w-[65px] lg:w-[85px] h-[50px] sm:h-[65px] lg:h-[85px] bg-white rounded-lg sm:rounded-xl lg:rounded-[28px] flex items-center justify-center">
+             <GraduationCap className="text-[#003579] w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
+            </div>
           </motion.div>
 
           {/* Right Stats Cards */}
@@ -230,9 +234,9 @@ const HeroSection = () => {
             }}
           >
             {[
-              { number: "50K+", label: "Global Learners" },
-              { number: "500+", label: "Innovative Projects" },
-              { number: "100+", label: "Mentorship Expert" },
+              { number: "120+", label: "Patents" },
+              { number: "30+", label: "Papers" },
+              { number: "6", label: "Companies Founded" },
             ].map((stat, i) => (
               <motion.div
                 key={i}
