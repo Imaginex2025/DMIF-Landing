@@ -10,18 +10,24 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", path: APPROUTES.HOME },
-    { label: "Testimonials", path: "Testimonials" }, // special case
+    {label: "About", path: "about" },
+ 
     { label: "Programs", path: APPROUTES.PROGRAMS },
     { label: "Why It Matters", path: APPROUTES.WHY_IT_MATTERS },
+       { label: "Testimonials", path: "Testimonials" }, // special case
     { label: "Contact Us", path: APPROUTES.CONTACT_US },
   ];
 
 const handleNavClick = (path: string) => {
-  if (path === "Testimonials") {
+  if (path === "Testimonials" || path === "about") {
+    const sectionId = path.toLowerCase(); // "testimonials" or "about"
+
     if (window.location.pathname === "/") {
-      document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" });
+      // already on home → scroll directly
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate("/", { state: { scrollTo: "testimonials" } }); // 👈 pass state
+      // navigate to home first, then scroll after load
+      navigate("/", { state: { scrollTo: sectionId } });
     }
   } else {
     navigate(path);

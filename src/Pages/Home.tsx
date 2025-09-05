@@ -33,7 +33,9 @@ const Home = () => {
       <DrMadhanSection />
 
       {/* About DMIF Section */}
-      <AboutDMIFSection />
+   <div id="about">
+       <AboutDMIFSection />
+   </div>
 
       {/* <VisionMissionSection /> */}
 
