@@ -58,7 +58,7 @@ const EntrepreneurshipProgramInfo = () => {
     >
       {/* Left Section - Accordion */}
       <motion.div
-        className="rounded-xl p-4"
+        className="rounded-xl md:flex hidden p-4"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
@@ -107,6 +107,15 @@ const EntrepreneurshipProgramInfo = () => {
             </motion.div>
           ))}
         </div>
+      </motion.div>
+           <motion.div
+        className="rounded-xl md:hidden p-4"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <Accordion items={accordionData} />
       </motion.div>
     </motion.div>
   );
