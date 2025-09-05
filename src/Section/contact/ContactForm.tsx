@@ -222,7 +222,7 @@ const ContactForm = () => {
                             ? c.dialCode
                             : `+${c.dialCode}`;
                           return {
-                            id: `+${dial}`, // always store with "+"
+                            id: `${dial}`, // always store with "+"
                             label: dial,
                           };
                         });
