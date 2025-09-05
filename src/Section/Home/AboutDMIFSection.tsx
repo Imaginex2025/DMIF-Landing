@@ -1,11 +1,7 @@
 import { MapPin, Building2, Clock, Award } from "lucide-react"; 
-import IconButton from "../../Components/Common/Button";
-import { APPROUTES } from "../../Routes/appRoutes";
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const AboutDMIFSection = () => {
-  const navigate = useNavigate();
 
   return (
     <section className="w-full bg-[#F9FBFD] py-8 sm:py-12 md:py-16 px-4 sm:px-8 lg:px-[88px]">
