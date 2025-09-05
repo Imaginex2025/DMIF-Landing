@@ -99,7 +99,7 @@ The Dr. Madhan Institute of Future (DMIF) is a global platform for innovation, r
                 </div>
                 <p className="font-medium text-sm leading-6 text-[#404040] flex-1 text-center md:text-left">
                   Fully online with global reach — open to students from India, the US,
-                  Europe, and beyond.
+                  Europe, Australia and beyond.
                 </p>
               </div>
             </motion.div>

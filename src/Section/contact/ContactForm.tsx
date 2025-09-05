@@ -267,11 +267,11 @@ const ContactForm = () => {
               // placeholder="Select a track..."
               options={[
                 {
-                  label: "Entrepreneurship-Track",
+                  label: "Entrepreneurship Track",
                   value: "Entrepreneurship-Track",
                 },
-                { label: "Patent-Track", value: "Patent-Track" },
-                { label: "Research-Track", value: "Research-Track" },
+                { label: "Patent Track", value: "Patent-Track" },
+                { label: "Research Track", value: "Research-Track" },
                 { label: "All", value: "All" },
               ]}
             />

@@ -111,11 +111,11 @@ const DrMadhanSection = () => {
           
           <div className="font-normal text-sm sm:text-base lg:text-lg leading-relaxed text-[#556070] px-2 sm:px-0">
             <ul className="space-y-3">
-              <li>• Dr.Madhan Kumar Srinivasan, Ph.D., EPBA (IIM Calcutta), is a serial entrepreneur, innovator, Chief Mentor and professor with 22+ years of global experience in Cloud, AI, and Big Data.</li>
-              <li>• An Accenture Prolific Inventor, he holds 120+ patents and 96 grants, many transformed into successful products across the US, UK, Europe, Singapore, and India.</li>
-              <li>• He is the Founder & CEO of ImagineX Innovations and Wise Work, and Co-founder of Hue Learn Singapore & Longer Life Tech, advising Fortune 500 companies, startups, and governments worldwide.</li>
-              <li>• A pioneer in India's cloud journey, he built the first private cloud at Infosys (2012) and created Accenture's Cloud AI business line, deploying its flagship Cloud AI product.</li>
-              <li>• Recognized as a 3x TEDx Speaker, Davos 2024 Invitee, and recipient of global awards including the Top 100 Scientists Award (IBC, Cambridge), also an inspiring teacher awardee from Usmania University, Dr. Madhan continues to drive innovation, education, and entrepreneurship across industries and academia.</li>
+              <li>Dr.Madhan Kumar Srinivasan, Ph.D., EPBA (IIM Calcutta), is a CEO and a serial entrepreneur, innovator, Chief Mentor and professor with 22+ years of global experience in Cloud, AI, and Big Data.</li>
+              <li>An Accenture Prolific Inventor, he holds 120+ patents and 96 grants, many transformed into successful products across the US, UK, Europe, Australia, Singapore, and India.</li>
+              <li>He is the Founder & CEO of ImagineX Innovations and Wise Work, and Co-founder of Hue Learn Singapore & Longer Life Tech, advising Fortune 500 companies, startups, and governments worldwide.</li>
+              <li>A pioneer in India's cloud journey, he built the first private cloud at Infosys (2012) and created Accenture's Cloud AI business line, deploying its flagship Cloud AI product.</li>
+              <li>Recognized as a 3x TEDx Speaker, Invited Speaker at Green Accelerator during Davos 2024, and recipient of global awards including the Top 100 Scientists Award (IBC, Cambridge), also an Inspiring Teacher 2010 awardee from Teachers Academy at Osmania University, India, Dr. Madhan continues to drive innovation, education, and entrepreneurship across industries and academia.</li>
             </ul>
           </div>
         </motion.div>
