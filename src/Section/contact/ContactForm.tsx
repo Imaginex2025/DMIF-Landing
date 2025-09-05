@@ -187,7 +187,7 @@ const ContactForm = () => {
                 Mobile No <span className="text-red-500">*</span>
               </label>
               <div className="flex gap-2">
-                <div className="w-21 flex-shrink-0 relative">
+                <div className="w-32 flex-shrink-0 relative">
                   <DebouncedSearchDropdown
                     required
                     className="top-28"
@@ -207,26 +207,30 @@ const ContactForm = () => {
                       setCountryCode(value);
                     }}
                     fetchOptions={async (query?: string) => {
-                      return countryList
-                        .filter((c) => {
-                          if (!query) return true;
-                          const q = query.toLowerCase();
-                          return (
-                            c.label.toLowerCase().includes(q) ||
-                            c.value.toLowerCase().includes(q) ||
-                            c.dialCode.toLowerCase().includes(q)
-                          );
-                        })
-                        .map((c) => {
-                          const dial = c.dialCode.startsWith("+")
-                            ? c.dialCode
-                            : `+${c.dialCode}`;
-                          return {
-                            id: `${dial}`, // always store with "+"
-                            label: dial,
-                          };
-                        });
-                    }}
+  const filtered = countryList
+    .filter((c) => {
+      if (!query) return true;
+      const q = query.toLowerCase();
+      return (
+        c.label.toLowerCase().includes(q) ||
+        c.value.toLowerCase().includes(q) ||
+        c.dialCode.toLowerCase().includes(q)
+      );
+    })
+    .map((c) => {
+  let dial = c.dialCode.startsWith("+") ? c.dialCode : `+${c.dialCode}`;
+  return { id: dial + "-" + c.dialCode, label: `${dial} (${c.label})` };
+});
+
+
+  // remove duplicates by dial code
+  const unique = Array.from(
+    new Map(filtered.map((item) => [item.id, item])).values()
+  );
+
+  return unique;
+}}
+
                     placeholder="Code"
                   />
                 </div>
