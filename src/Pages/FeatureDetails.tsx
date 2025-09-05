@@ -14,7 +14,8 @@ export const features = [
     image: "/Programs/image1.png",
     icon: CheckCircle,
     detailedContent: {
-      overview: "Master the complete patent process from ideation to publication. Our comprehensive patent program equips you with the knowledge and skills to protect intellectual property effectively in today's competitive innovation landscape.",
+      overview:
+        "Master the complete patent process from ideation to publication. This program dives deep into the world of intellectual property protection, enabling you to transform innovative ideas into legally enforceable rights. You will explore the full spectrum of patent drafting, legal frameworks, and international filing systems, while also learning how patents contribute to competitive advantage and long-term business sustainability. By the end, you will understand how to identify patentable innovations, prepare professional documentation, and develop strategies that protect both individuals and organizations in a fast-changing global innovation ecosystem. Beyond technical skills, you will also gain insights into how intellectual property drives entrepreneurship, supports funding opportunities, and strengthens the global innovation economy.",
       keyLearnings: [
         "Patent Law Fundamentals: Understanding the legal framework, types of patents (utility, design, plant), and international patent systems including PCT applications.",
         "Prior Art Research: Advanced techniques for conducting thorough patent searches using professional databases like USPTO, Google Patents, and international patent offices.",
@@ -30,8 +31,8 @@ export const features = [
         "Develop IP strategies for startups and established companies",
         "Analyze patent landscapes in emerging technologies like AI, biotech, and clean energy"
       ],
-      careerOpportunities: "Patent law, IP consulting, technology transfer, innovation management, patent analysis, and entrepreneurship in deep-tech sectors.",
-      duration: "12-week intensive program with ongoing mentorship opportunities"
+      careerOpportunities:
+        "Patent law, IP consulting, technology transfer, innovation management, patent analysis, and entrepreneurship in deep-tech sectors."
     }
   },
   {
@@ -43,7 +44,8 @@ export const features = [
     image: "/Programs/image2.svg",
     icon: BookOpen,
     detailedContent: {
-      overview: "Engage in cutting-edge research across multiple disciplines, working alongside leading academics and industry professionals. Develop sophisticated research methodologies and contribute to advancing human knowledge.",
+      overview:
+        "Engage in cutting-edge research that combines academic rigor with industry relevance. This program equips you with the tools to conduct original investigations, analyze existing literature with a critical lens, and present findings that push the boundaries of knowledge. You’ll learn how to frame impactful research questions, design scientifically sound methodologies, and manage data with integrity. Beyond technical skills, the experience fosters problem-solving, resilience, and adaptability — qualities that define successful researchers in both academia and industry. In addition to hands-on projects, you will also explore how research influences policy, innovation, and social change, preparing you to contribute meaningfully to global challenges.",
       keyLearnings: [
         "Research Methodology: Master quantitative and qualitative research methods, experimental design, statistical analysis, and data interpretation techniques.",
         "Literature Review & Analysis: Advanced techniques for comprehensive literature searches, critical analysis of existing research, and identifying knowledge gaps.",
@@ -59,8 +61,8 @@ export const features = [
         "Co-author research papers with potential for peer-reviewed publication",
         "Develop and execute research proposals with real-world applications"
       ],
-      careerOpportunities: "Academic research, R&D in industry, policy analysis, consulting, graduate school preparation, and research-intensive careers.",
-      duration: "16-week research immersion with options for extended engagement"
+      careerOpportunities:
+        "Academic research, R&D in industry, policy analysis, consulting, graduate school preparation, and research-intensive careers."
     }
   },
   {
@@ -72,7 +74,8 @@ export const features = [
     image: "/Programs/image3.svg",
     icon: Globe,
     detailedContent: {
-      overview: "Develop a truly global perspective through immersive cultural exchanges, international collaborations, and cross-border project work. Build lasting connections with future leaders from around the world.",
+      overview:
+        "Develop a truly global perspective that extends beyond textbooks and theory. Through immersive cultural exchanges and international collaborations, you’ll experience firsthand how ideas, values, and practices differ across societies. This exposure builds adaptability, empathy, and communication skills essential in today’s interconnected world. You’ll also learn to navigate cultural nuances in business, diplomacy, and global problem-solving — preparing you to thrive in multinational organizations, international policymaking, and entrepreneurial ventures with a global footprint. With access to global mentors, international peers, and real-world case studies, you will leave with a strong foundation to lead with cultural intelligence and global awareness.",
       keyLearnings: [
         "Cross-Cultural Communication: Master effective communication strategies across different cultural contexts, including non-verbal communication and cultural sensitivity.",
         "Global Business Practices: Understand international business etiquette, negotiation styles, and market dynamics across major economic regions.",
@@ -88,8 +91,8 @@ export const features = [
         "Engage in diplomatic simulations like Model UN and international negotiations",
         "Complete cultural immersion experiences in at least three different continents"
       ],
-      careerOpportunities: "International business, diplomacy, global NGOs, international law, global consulting, and leadership roles in multinational organizations.",
-      duration: "Year-long program with seasonal international experiences"
+      careerOpportunities:
+        "International business, diplomacy, global NGOs, international law, global consulting, and leadership roles in multinational organizations."
     }
   },
   {
@@ -101,7 +104,8 @@ export const features = [
     image: "/Programs/image4.svg",
     icon: Users,
     detailedContent: {
-      overview: "Comprehensive preparation for admission to the world's most competitive universities. Develop not just academic excellence, but the leadership qualities, personal character, and unique perspectives that top institutions seek.",
+      overview:
+        "This program is a comprehensive roadmap for aspiring students aiming for the world’s most prestigious institutions. It goes far beyond test preparation — nurturing intellectual curiosity, leadership qualities, and personal character. You’ll learn how to build a unique personal brand, articulate your story, and present yourself as a strong candidate who stands out in highly competitive admissions processes. Through mentorship, real-world projects, and continuous feedback, you will acquire the confidence and clarity needed to pursue opportunities at Ivy League schools and other elite universities across the globe. In addition, you will gain exposure to academic practices, competitive profiles of past admits, and strategies to stay ahead in an increasingly selective admissions landscape.",
       keyLearnings: [
         "Academic Excellence: Advanced coursework in core subjects, college-level writing, critical thinking, and analytical reasoning that exceeds high school standards.",
         "Standardized Test Mastery: Comprehensive SAT/ACT preparation with personalized strategies, plus preparation for subject tests and international equivalents.",
@@ -117,8 +121,8 @@ export const features = [
         "Develop independent research projects suitable for college applications",
         "Build relationships with mentors who can provide meaningful recommendation letters"
       ],
-      careerOpportunities: "Access to elite university networks, exclusive internships, leadership roles in top organizations, and accelerated career trajectories.",
-      duration: "18-month comprehensive preparation program with continued support through application process"
+      careerOpportunities:
+        "Access to elite university networks, exclusive internships, leadership roles in top organizations, and accelerated career trajectories."
     }
   },
   {
@@ -130,7 +134,8 @@ export const features = [
     image: "/Programs/image 24.png",
     icon: Lightbulb,
     detailedContent: {
-      overview: "Transform your approach to problem-solving with cutting-edge innovation methodologies used by leading companies and research institutions. Learn to identify opportunities, generate breakthrough ideas, and bring innovations to market.",
+      overview:
+        "Transform your approach to challenges with the principles of innovation and design thinking. This program emphasizes structured creativity — teaching you to empathize with users, reframe problems, and develop solutions that are both imaginative and practical. By combining creativity with business acumen and systems thinking, you will gain the ability to design innovations that not only solve problems but also scale sustainably. This mindset is essential for entrepreneurs, leaders, and professionals who aspire to make lasting impact in a rapidly evolving world. The program also immerses you in real-world innovation ecosystems, equipping you with the ability to collaborate across industries and pioneer breakthrough solutions to pressing global issues.",
       keyLearnings: [
         "Design Thinking Process: Master the complete design thinking framework from empathy and ideation to prototyping and testing.",
         "Systems Thinking: Understand complex systems, identify leverage points, and design interventions that create sustainable change.",
@@ -146,19 +151,21 @@ export const features = [
         "Create innovation frameworks and toolkits for specific industries",
         "Collaborate with startups and established companies on innovation projects"
       ],
-      careerOpportunities: "Product management, innovation consulting, entrepreneurship, R&D leadership, design strategy, and venture capital.",
-      duration: "14-week intensive program with ongoing innovation project mentorship"
+      careerOpportunities:
+        "Product management, innovation consulting, entrepreneurship, R&D leadership, design strategy, and venture capital."
     }
   },
- {
+  {
     id: 6,
     title: "Brain Science",
-    description: "Unlock the mysteries of the human brain and its role in innovation. Learn how memory, cognition, and neuroplasticity influence creativity, problem-solving, and decision-making to enhance your academic, research, and entrepreneurial journey",
+    description:
+      "Unlock the mysteries of the human brain and its role in innovation. Learn how memory, cognition, and neuroplasticity influence creativity, problem-solving, and decision-making to enhance your academic, research, and entrepreneurial journey",
     footer: "Mind Science",
     image: "/Programs/image 23.png",
     icon: Brain,
     detailedContent: {
-      overview: "Unlock the power of your mind through evidence-based neuroscience applications. Learn how to optimize cognitive performance, enhance memory, and apply brain science principles to accelerate learning and personal development.",
+      overview:
+        "Explore the science of human cognition and its applications in personal and professional growth. This program bridges neuroscience with real-world innovation, helping you understand how the brain learns, adapts, and performs under different conditions. You will discover methods to improve memory, focus, and creativity, while also exploring how neuroplasticity shapes lifelong learning and problem-solving. Beyond theory, you will apply neuroscience to enhance productivity, decision-making, and resilience — skills that are invaluable in academics, research, leadership, and entrepreneurship. You will also gain practical insights into how brain science supports well-being, drives innovation, and enables individuals to unlock their full potential in both personal and professional contexts.",
       keyLearnings: [
         "Neuroscience Fundamentals: Understanding brain structure, neural networks, neuroplasticity, and how the brain processes and stores information.",
         "Memory Enhancement Techniques: Advanced memory strategies including spaced repetition, memory palaces, chunking, and evidence-based study methods.",
@@ -174,10 +181,13 @@ export const features = [
         "Develop personalized brain optimization protocols based on individual neural patterns",
         "Research the neuroscience behind peak performance in various fields"
       ],
-      careerOpportunities: "Neuroscience research, educational technology, cognitive training, neurofeedback therapy, and brain-computer interface development.",
-      duration: "16-week comprehensive program with ongoing cognitive coaching support"
-    }}
+      careerOpportunities:
+        "Neuroscience research, educational technology, cognitive training, neurofeedback therapy, and brain-computer interface development."
+    }
+  }
 ];
+
+
 
 
 export const FeatureContent = () => {
@@ -270,10 +280,7 @@ export const FeatureContent = () => {
               <p className="text-[#404040] leading-7 para">
                 {feature.detailedContent.overview}
               </p>
-              <div className="mt-8 p-6 bg-[#F0F8FF] rounded-xl border-l-4 border-[#003579]">
-                <h3 className="font-bold text-[#003579] mb-2">Duration</h3>
-                <p className="text-[#404040] ">{feature.detailedContent.duration}</p>
-              </div>
+          
             </div>
           </motion.div>
         </div>
