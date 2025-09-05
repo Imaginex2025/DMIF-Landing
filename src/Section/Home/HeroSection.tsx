@@ -3,111 +3,109 @@ import { GraduationCap } from "lucide-react";
 
 const HeroSection = () => {
   const stats = [
-  { value: "1000s", label: "Mentored" },
-{ value: "120+", label: "Patents" },
-              { value: "30+", label: "Papers" },
-              { value: "6", label: "StartUps" },
-];
+    { value: "1000s", label: "Mentored" },
+    { value: "50+", label: "Publications" },
+    { value: "30+", label: "Papers" },
+    { value: "3", label: "Unique Track" },
+  ];
   return (
     <>
       {/* ✅ Mobile Hero (below md) */}
-<section className="relative block md:hidden w-full min-h-screen flex flex-col items-center justify-center px-4 py-10 bg-gray-50 overflow-hidden">
-  {/* 🔹 Scrolling Background Logos */}
-<div className="absolute inset-0 flex flex-col justify-center opacity-10 overflow-hidden space-y-12">
-  {/* 🔹 Row 1 */}
-  <motion.div
-    className="flex"
-    animate={{ x: ["0%", "-50%"] }}
-    transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-  >
-    {[...Array(12)].map((_, i) => (
-      <img
-        key={i}
-        src="/HOME/logo.svg"
-        alt="DMIF Logo"
-        className="w-32 h-32 mx-6"
-      />
-    ))}
-  </motion.div>
+      <section className="relative block md:hidden w-full min-h-screen flex flex-col items-center justify-center px-4 py-10 bg-gray-50 overflow-hidden">
+        {/* 🔹 Scrolling Background Logos */}
+        <div className="absolute inset-0 flex flex-col justify-center opacity-10 overflow-hidden space-y-12">
+          {/* 🔹 Row 1 */}
+          <motion.div
+            className="flex"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+          >
+            {[...Array(12)].map((_, i) => (
+              <img
+                key={i}
+                src="/HOME/logs.png"
+                alt="DMIF Logo"
+                className="w-32 h-32 mx-6"
+              />
+            ))}
+          </motion.div>
 
-  {/* Duplicate Row 1 for seamless loop */}
+          {/* Duplicate Row 1 for seamless loop */}
 
+          {/* 🔹 Row 2 */}
+          <motion.div
+            className="flex"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+          >
+            {[...Array(12)].map((_, i) => (
+              <img
+                key={i}
+                src="/HOME/logs.png"
+                alt="DMIF Logo"
+                className="w-32 h-32 mx-6"
+              />
+            ))}
+          </motion.div>
+        </div>
 
-  {/* 🔹 Row 2 */}
-  <motion.div
-    className="flex"
-    animate={{ x: ["0%", "-50%"] }}
-    transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-  >
-    {[...Array(12)].map((_, i) => (
-      <img
-        key={i}
-        src="/HOME/logo.svg"
-        alt="DMIF Logo"
-        className="w-32 h-32 mx-6"
-      />
-    ))}
-  </motion.div>
+        {/* 🔹 Students Outcome */}
+        <div className="flex items-center justify-start gap-2 z-10 mb-6">
+          <div className="flex -space-x-2">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="student1"
+              className="w-8 h-8 rounded-full border"
+            />
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="student2"
+              className="w-8 h-8 rounded-full border"
+            />
+            <img
+              src="https://randomuser.me/api/portraits/men/65.jpg"
+              alt="student3"
+              className="w-8 h-8 rounded-full border"
+            />
+          </div>
 
-</div>
+          <div>
+            <p className="text-sm font-medium">100+ students Outcomes</p>
+          </div>
+        </div>
 
+        {/* 🔹 Main Title & Tagline */}
+        <div className="flex flex-col px-3 text-left">
+          <h1 className="text-[36px] font-bold leading-tight">
+            <span className="text-[#A30000]">DR.Madhan</span> <br />
+            <span className="text-[#003579]">Institute of Future</span>
+          </h1>
 
+          <p className="para mt-2 z-10">
+            Innovators today, Entrepreneurs tomorrow!
+          </p>
+        </div>
 
-  {/* 🔹 Students Outcome */}
-  <div className="flex items-center justify-start gap-2 z-10 mb-6">
-<div className="flex -space-x-2">
-  <img
-    src="https://randomuser.me/api/portraits/men/32.jpg"
-    alt="student1"
-    className="w-8 h-8 rounded-full border"
-  />
-  <img
-    src="https://randomuser.me/api/portraits/women/44.jpg"
-    alt="student2"
-    className="w-8 h-8 rounded-full border"
-  />
-  <img
-    src="https://randomuser.me/api/portraits/men/65.jpg"
-    alt="student3"
-    className="w-8 h-8 rounded-full border"
-  />
-</div>
+        {/* 🔹 Madhan Sir Image */}
+        <img
+          src="/HOME/UpdatedMadhanSir.png"
+          alt="Dr. Madhan Kumar Srinivasan"
+          className="z-10 mt-6 -mb-13 transform scale-x-[-1] w-48"
+        />
 
-  <div>
-      <p className="text-sm font-medium">50+ students Outcomes</p>
-  </div>
-  </div>
-
-  {/* 🔹 Main Title & Tagline */}
-  <div className="flex flex-col px-3 text-left">
-<h1 className="text-[36px] font-bold leading-tight">
-  <span className="text-[#A30000]">DR.Madhan</span> <br />
-  <span className="text-[#003579]">Institute of Future</span>
-</h1>
-
-    <p className="para mt-2 z-10">
-       Innovators today, Entrepreneurs tomorrow!
-    </p>
-  </div>
-
-  {/* 🔹 Madhan Sir Image */}
-  <img
-    src="/HOME/UpdatedMadhanSir.png"
-    alt="Dr. Madhan Kumar Srinivasan"
-    className="z-10 mt-6 -mb-13 transform scale-x-[-1] w-48"
-  />
-
-  {/* 🔹 Bottom 50K+ Experience Section */}
-  <div className="bg-black text-white rounded-3xl z-20 w-full mt-10 py-8 px-6 grid grid-cols-2 gap-4 text-center">
-   {stats.map((item) => (
-    <div key={item.label} className="bg-white p-4 rounded-2xl text-center">
-      <h3 className="text-xl text-black font-bold">{item.value}</h3>
-      <p className="text-sm text-black">{item.label}</p>
-    </div>
-  ))}
-  </div>
-</section>
-
+        {/* 🔹 Bottom 50K+ Experience Section */}
+        <div className="bg-black text-white rounded-3xl z-20 w-full mt-10 py-8 px-6 grid grid-cols-2 gap-4 text-center">
+          {stats.map((item) => (
+            <div
+              key={item.label}
+              className="bg-white p-4 rounded-2xl text-center"
+            >
+              <h3 className="text-xl text-black font-bold">{item.value}</h3>
+              <p className="text-sm text-black">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* ✅ Desktop / Tablet Hero (md and above) */}
       <motion.section
@@ -118,7 +116,7 @@ const HeroSection = () => {
       >
         {/* DMIF Logo */}
         <motion.img
-          src="/HOME/logo.svg"
+          src="/HOME/logs.png"
           alt="DMIF Logo"
           className="hidden lg:block absolute w-[180px] xl:w-[320px] h-[180px] xl:h-[320px] left-2 xl:left-[120px] top-2 xl:top-[85px] object-contain"
           initial={{ x: -100, opacity: 0 }}
@@ -150,37 +148,48 @@ const HeroSection = () => {
               },
             }}
           >
-              <div className="flex items-center justify-start gap-2 z-10 mb-6">
-<div className="flex -space-x-2">
-  <img
-    src="https://randomuser.me/api/portraits/men/32.jpg"
-    alt="student1"
-    className="w-8 h-8 rounded-full border"
-  />
-  <img
-    src="https://randomuser.me/api/portraits/women/44.jpg"
-    alt="student2"
-    className="w-8 h-8 rounded-full border"
-  />
-  <img
-    src="https://randomuser.me/api/portraits/men/65.jpg"
-    alt="student3"
-    className="w-8 h-8 rounded-full border"
-  />
-</div>
+            <div className="flex items-center justify-start gap-2 z-10 mb-6">
+              <div className="flex -space-x-2">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="student1"
+                  className="w-8 h-8 rounded-full border"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="student2"
+                  className="w-8 h-8 rounded-full border"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/men/65.jpg"
+                  alt="student3"
+                  className="w-8 h-8 rounded-full border"
+                />
+              </div>
 
-  <div>
-      <p className="text-sm font-medium">50+ students Outcomes</p>
-  </div>
-  </div>
+              <div>
+                <p className="text-sm font-medium">100+ students Outcomes</p>
+              </div>
+            </div>
             <motion.h1
               className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[60px]  tracking-wide px-2 sm:px-0"
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-[#7F0001]" style={{ fontFamily: "League Spartan, sans-serif" }}>Dr. Madhan</span> <br />
-              <span className="text-[#003579]" style={{ fontFamily: "League Spartan, sans-serif" }}>Institute of Future</span>
+              <span
+                className="text-[#7F0001]"
+                style={{ fontFamily: "League Spartan, sans-serif" }}
+              >
+                Dr. Madhan
+              </span>{" "}
+              <br />
+              <span
+                className="text-[#003579]"
+                style={{ fontFamily: "League Spartan, sans-serif" }}
+              >
+                Institute of Future
+              </span>
             </motion.h1>
 
             <motion.p
@@ -189,7 +198,7 @@ const HeroSection = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-             Innovators today, Entrepreneurs tomorrow !
+              Innovators today, Entrepreneurs tomorrow !
             </motion.p>
           </motion.div>
         </div>
@@ -213,11 +222,11 @@ const HeroSection = () => {
                 1000s Mentored
               </h3>
               <p className="font-normal text-xs sm:text-sm lg:text-[16px] leading-4 sm:leading-5 capitalize text-white mt-1">
-                Students & Professionals WorldWide
+                Students & Professionals Worldwide
               </p>
             </div>
             <div className="w-[50px] sm:w-[65px] lg:w-[85px] h-[50px] sm:h-[65px] lg:h-[85px] bg-white rounded-lg sm:rounded-xl lg:rounded-[28px] flex items-center justify-center">
-             <GraduationCap className="text-[#003579] w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
+              <GraduationCap className="text-[#003579] w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
             </div>
           </motion.div>
 
@@ -234,9 +243,9 @@ const HeroSection = () => {
             }}
           >
             {[
-              { number: "120+", label: "Patents" },
-              { number: "30+", label: "Papers" },
-              { number: "6", label: "Companies Founded" },
+              { number: "50+", label: "Publications" },
+              { number: "30+", label: "Papers Published" },
+              { number: "3", label: "Unique Growth Tracks" },
             ].map((stat, i) => (
               <motion.div
                 key={i}

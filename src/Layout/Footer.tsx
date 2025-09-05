@@ -1,8 +1,12 @@
 import { Instagram, Linkedin, Youtube } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { APPROUTES } from "../Routes/appRoutes"; // ✅ import your routes
 
 const Footer = () => {
+
+
+
+  const navigate = useNavigate();
   return (
     <footer className="bg-gray-50 border-t">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 
@@ -10,11 +14,12 @@ const Footer = () => {
         
         {/* Left - Logo & Info */}
         <div className="flex flex-col items-center justify-center sm:items-start gap-4 max-w-xs mx-auto sm:mx-0 col-span-2 sm:col-span-1">
-          <img
-            src="/Logo-bgRemovced.png"
-            alt="Logo"
-            className="h-12 sm:h-16 w-auto object-contain"
-          />
+       <img
+      src="/Logo-bgRemovced.png"
+      alt="Logo"
+      className="h-12 sm:h-16 w-auto object-contain cursor-pointer"
+      onClick={() => navigate("/")}
+    />
          
           {/* <p className="text-sm text-gray-700">reach@drmadhan.in</p>
           <p className="text-sm text-gray-700">www.drmadhan.in</p> */}

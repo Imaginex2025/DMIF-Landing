@@ -37,7 +37,8 @@ const handleNavClick = (path: string) => {
 
 
   return (
-    <nav className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 shadow-sm bg-white relative">
+    <nav className="flex justify-between items-center sticky top-0 z-50 px-4 sm:px-6 py-3 sm:py-4 shadow-sm bg-white">
+
       {/* Logo */}
       <div className="flex items-center">
         <img src="/logoHori.png" alt="Logo" className="h-10 sm:h-12 md:h-16" />
