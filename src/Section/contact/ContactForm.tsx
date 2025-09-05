@@ -5,6 +5,7 @@ import Input from "../../Components/Common/Input";
 import DropdownSelect from "../../Components/Common/Dropdown";
 import { motion, AnimatePresence } from "framer-motion";
 import { countryList } from "../../utils/countrycodes";
+import DebouncedSearchDropdown from "../../Components/Common/Debounce";
 
 const ContactForm = () => {
   const [firstname, setFirstName] = useState("");
@@ -20,21 +21,49 @@ const ContactForm = () => {
 
   const WEB3FORMS_ACCESS_KEY = "2901d84b-5a50-43c2-bf60-8c8276c62725";
 
+  // Input validation
+  const validateForm = () => {
+    if (!firstname.trim()) return "First name is required";
+    if (!mobNo.trim()) return "Mobile number is required";
+    if (!/^\d{10,15}$/.test(mobNo.replace(/\s|-/g, "")))
+      return "Please enter a valid mobile number";
+    if (!email.trim()) return "Email is required";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+      return "Please enter a valid email address";
+    if (!track) return "Please select a track";
+    if (
+      linkedin &&
+      !/^https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9-]+\/?$/.test(linkedin)
+    ) {
+      return "Please enter a valid LinkedIn profile URL";
+    }
+    return null;
+  };
+
   const handleSubmit = async (e?: React.FormEvent) => {
     e?.preventDefault();
+
+    // Validate form
+    const validationError = validateForm();
+    if (validationError) {
+      alert(validationError); // You can replace this with a toast notification
+      return;
+    }
+
     setLoading(true);
 
     const formData = new FormData();
     formData.append("access_key", WEB3FORMS_ACCESS_KEY);
     formData.append("subject", "New Contact Form Submission");
     formData.append("from_name", "DMIF Website");
-    formData.append("firstname", firstname);
-    formData.append("mobNo", `${countryCode} ${mobNo}`);
-    formData.append("email", email);
+    formData.append("firstname", firstname.trim());
+    formData.append("mobNo", `${countryCode} ${mobNo.trim()}`);
+    formData.append("email", email.trim().toLowerCase());
     formData.append("track", track);
-    formData.append("message", message);
-    if (linkedin) formData.append("linkedin", linkedin);
-    if (profileFile) formData.append("profileDetails", profileFile);
+    formData.append("message", message.trim());
+    if (linkedin.trim()) formData.append("linkedin", linkedin.trim());
+    if (profileFile.trim())
+      formData.append("profileDetails", profileFile.trim());
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -45,6 +74,7 @@ const ContactForm = () => {
       const result = await res.json();
       if (result.success) {
         setStatus("success");
+        // Reset form
         setFirstName("");
         setMobNo("");
         setCountryCode("+91");
@@ -54,15 +84,31 @@ const ContactForm = () => {
         setLinkedin("");
         setProfileFile("");
       } else {
+        console.error("Form submission failed:", result);
         setStatus("error");
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error submitting form:", error);
       setStatus("error");
     } finally {
       setLoading(false);
     }
   };
+
+  // Auto-dismiss status after 5 seconds
+  const handleStatusClose = () => {
+    setStatus(null);
+  };
+
+  // Auto-close success message after 5 seconds
+  useState(() => {
+    if (status === "success") {
+      const timer = setTimeout(() => {
+        setStatus(null);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  });
 
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center py-8 sm:py-10 px-4 sm:px-6 lg:px-8">
@@ -98,8 +144,10 @@ const ContactForm = () => {
               Email Address :
             </p>
             <div
-              className="flex flex-col cursor-pointer text-gray-700"
-              onClick={() => (window.location.href = "mailto:reach@drmadhan.in")}
+              className="flex flex-col cursor-pointer text-gray-700 hover:text-[#003579] transition-colors"
+              onClick={() =>
+                (window.location.href = "mailto:reach@drmadhan.in")
+              }
             >
               <p>reach@drmadhan.in</p>
             </div>
@@ -121,7 +169,10 @@ const ContactForm = () => {
             Feel free to contact us, we love to make new partners & friends
           </p>
 
-          <form className="flex flex-col gap-3 sm:gap-4" onSubmit={handleSubmit}>
+          <form
+            className="flex flex-col gap-3 sm:gap-4"
+            onSubmit={handleSubmit}
+          >
             <Input
               label="First Name"
               placeholder="First name..."
@@ -136,23 +187,45 @@ const ContactForm = () => {
                 Mobile No <span className="text-red-500">*</span>
               </label>
               <div className="flex gap-2">
-                <div className="w-32">
-                  <DropdownSelect
-              label=""
-              value={countryCode}
-              onChange={setCountryCode}
-              options={countryList.map((c) => ({
-                label: `${c.value} (${c.dialCode})`,
-                value: c.dialCode,
-              }))}
-            />
+                <div className="w-15 flex-shrink-0">
+                  <DebouncedSearchDropdown
+                    required
+                    selected={
+                      countryCode
+                        ? { id: countryCode, label: countryCode }
+                        : undefined
+                    }
+                    onChange={(option) => setCountryCode(option.id.toString())}
+                    fetchOptions={async (query?: string) => {
+                      // filter from countryList
+                      return countryList
+                        .filter((c) => {
+                          if (!query) return true;
+                          const q = query.toLowerCase();
+                          return (
+                            c.label.toLowerCase().includes(q) ||
+                            c.value.toLowerCase().includes(q) ||
+                            c.dialCode.toLowerCase().includes(q)
+                          );
+                        })
+                        .map((c) => ({
+                          id: c.dialCode, // <-- use dialCode as unique ID
+                          label: `  ${c.dialCode}`,
+                        }));
+                    }}
+                    placeholder="Select country"
+                  />
                 </div>
 
                 <Input
                   placeholder="Enter number"
                   value={mobNo}
-                  className="w-full"
-                  onChange={(e) => setMobNo(e.target.value)}
+                  className="flex-1"
+                  onChange={(e) => {
+                    // Only allow numbers and basic formatting
+                    const value = e.target.value.replace(/[^\d\s-]/g, "");
+                    setMobNo(value);
+                  }}
                   required
                 />
               </div>
@@ -173,6 +246,7 @@ const ContactForm = () => {
               required
               value={track}
               onChange={setTrack}
+              // placeholder="Select a track..."
               options={[
                 { label: "Patent-Track", value: "Patent-Track" },
                 { label: "Research-Track", value: "Research-Track" },
@@ -196,20 +270,30 @@ const ContactForm = () => {
                 placeholder="Write about your profile, experience, or background..."
                 value={profileFile}
                 onChange={(e) => setProfileFile(e.target.value)}
-                className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
                 rows={4}
+                maxLength={1000}
               />
+              <p className="text-xs text-gray-400 text-right">
+                {profileFile.length}/1000 characters
+              </p>
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-gray-800 text-sm font-medium">Message</label>
+              <label className="text-gray-800 text-sm font-medium">
+                Message
+              </label>
               <textarea
                 placeholder="Message Subject"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
                 rows={4}
+                maxLength={500}
               />
+              <p className="text-xs text-gray-400 text-right">
+                {message.length}/500 characters
+              </p>
             </div>
 
             <motion.div whileTap={{ scale: 0.95 }}>
@@ -230,7 +314,7 @@ const ContactForm = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center rounded-lg shadow-md"
+                className="absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center rounded-lg shadow-md z-10"
               >
                 {status === "success" ? (
                   <>
@@ -254,8 +338,8 @@ const ContactForm = () => {
                   </>
                 )}
                 <button
-                  onClick={() => setStatus(null)}
-                  className="mt-4 px-4 py-2 text-sm bg-blue-900 text-white rounded-md hover:bg-blue-800"
+                  onClick={handleStatusClose}
+                  className="mt-4 px-4 py-2 text-sm bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors"
                 >
                   Close
                 </button>
