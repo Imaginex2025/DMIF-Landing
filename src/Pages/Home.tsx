@@ -18,7 +18,7 @@ const Home = () => {
       const scrollToSection = () => {
         const section = document.getElementById(location.state.scrollTo);
         if (section) {
-          const navbarHeight = 80; // adjust according to your sticky navbar
+          const navbarHeight = 60; // adjust according to your sticky navbar
           const y = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
           window.scrollTo({ top: y, behavior: "smooth" });
         }
