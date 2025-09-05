@@ -19,14 +19,23 @@ const Navbar = () => {
   ];
 
 const handleNavClick = (path: string) => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -80; // height of sticky navbar
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   if (path === "Testimonials" || path === "about") {
-    const sectionId = path.toLowerCase(); // "testimonials" or "about"
+    const sectionId = path.toLowerCase();
 
     if (window.location.pathname === "/") {
-      // already on home → scroll directly
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+      // already on home → scroll immediately
+      scrollToSection(sectionId);
     } else {
-      // navigate to home first, then scroll after load
+      // navigate to home first, then scroll after a short delay
       navigate("/", { state: { scrollTo: sectionId } });
     }
   } else {
@@ -34,6 +43,7 @@ const handleNavClick = (path: string) => {
   }
   setIsOpen(false);
 };
+
 
 
   return (

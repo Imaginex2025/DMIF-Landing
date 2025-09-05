@@ -13,17 +13,28 @@ const Home = () => {
 
   const location = useLocation();
 
-  useEffect(() => {
+   useEffect(() => {
     if (location.state?.scrollTo) {
-      const section = document.getElementById(location.state.scrollTo);
-      if (section) {
-        // small delay to ensure DOM is ready
-        setTimeout(() => {
-          section.scrollIntoView({ behavior: "smooth" });
-        }, 200);
+      const scrollToSection = () => {
+        const section = document.getElementById(location.state.scrollTo);
+        if (section) {
+          const navbarHeight = 80; // adjust according to your sticky navbar
+          const y = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      };
+
+      // If page fully loaded, scroll immediately
+      if (document.readyState === "complete") {
+        scrollToSection();
+      } else {
+        // wait for load event (images/fonts/rendered content)
+        window.addEventListener("load", scrollToSection);
+        // clean up listener
+        return () => window.removeEventListener("load", scrollToSection);
       }
     }
-  }, [location]);
+  }, [location.state]);
   return (
     <div className="w-full min-h-screen bg-white">
       {/* Hero Section */}

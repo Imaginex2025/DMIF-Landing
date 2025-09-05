@@ -181,7 +181,7 @@ const HeroSection = () => {
                 className="text-[#7F0001]"
                 style={{ fontFamily: "League Spartan, sans-serif" }}
               >
-                Dr. Madhan
+                Dr.Madhan
               </span>{" "}
               <br />
               <span
