@@ -9,15 +9,15 @@ const Footer = () => {
         grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
         
         {/* Left - Logo & Info */}
-        <div className="flex flex-col items-center sm:items-start gap-4 max-w-xs mx-auto sm:mx-0 col-span-2 sm:col-span-1">
+        <div className="flex flex-col items-center justify-center sm:items-start gap-4 max-w-xs mx-auto sm:mx-0 col-span-2 sm:col-span-1">
           <img
             src="/Logo-bgRemovced.png"
             alt="Logo"
             className="h-12 sm:h-16 w-auto object-contain"
           />
          
-          <p className="text-sm text-gray-700">reach@drmadhan.in</p>
-          <p className="text-sm text-gray-700">www.drmadhan.in</p>
+          {/* <p className="text-sm text-gray-700">reach@drmadhan.in</p>
+          <p className="text-sm text-gray-700">www.drmadhan.in</p> */}
         </div>
 
         {/* Quick Links */}

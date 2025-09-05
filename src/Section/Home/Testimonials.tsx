@@ -113,6 +113,7 @@ const TestimonialsCarousel = () => {
 
   return (
     <div
+  
       className={`relative py-12 px-4 sm:px-6 lg:px-10 ${
         showFull ? "min-h-[750px]" : "min-h-[600px]"
       } overflow-hidden transition-all duration-300`}
@@ -125,6 +126,7 @@ const TestimonialsCarousel = () => {
         transition={{ duration: 0.6 }}
       >
         <h1
+          
           className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent uppercase tracking-widest select-none text-center w-full"
           style={{ WebkitTextStroke: "0.5px gray" }}
         >

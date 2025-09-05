@@ -30,13 +30,13 @@ The Dr. Madhan Institute of Future (DMIF) is a global initiative founded by Dr. 
       DMIF is dedicated to preparing youth worldwide for the AI-driven creative economy, where success depends not only on technical expertise but also on original thinking, creativity, and intellectual property (IP) creation.
           </p>
 
-          <div className="flex justify-center lg:justify-start px-2 sm:px-0">
+          {/* <div className="flex justify-center lg:justify-start px-2 sm:px-0">
             <IconButton
               label="Learn More"
               onClick={() => navigate(APPROUTES.ABOUT)}
               className="max-w-sm w-full sm:w-auto"
             />
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Divider */}

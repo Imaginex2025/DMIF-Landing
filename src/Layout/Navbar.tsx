@@ -1,21 +1,34 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { Menu, X, Mail } from "lucide-react";
 import IconButton from "../Components/Common/Button";
 import { APPROUTES } from "../Routes/appRoutes";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
     { label: "Home", path: APPROUTES.HOME },
-    { label: "About", path: APPROUTES.ABOUT },
+    { label: "Testimonials", path: "Testimonials" }, // special case
     { label: "Programs", path: APPROUTES.PROGRAMS },
     { label: "Why It Matters", path: APPROUTES.WHY_IT_MATTERS },
     { label: "Contact Us", path: APPROUTES.CONTACT_US },
   ];
 
-  const navigate = useNavigate();
+const handleNavClick = (path: string) => {
+  if (path === "Testimonials") {
+    if (window.location.pathname === "/") {
+      document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/", { state: { scrollTo: "testimonials" } }); // 👈 pass state
+    }
+  } else {
+    navigate(path);
+  }
+  setIsOpen(false);
+};
+
 
   return (
     <nav className="flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 shadow-sm bg-white relative">
@@ -27,22 +40,15 @@ const Navbar = () => {
       {/* Desktop Nav Links */}
       <div className="hidden md:flex space-x-6 lg:space-x-8">
         {navItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) =>
-              `relative text-gray-700 hover:text-blue-900 transition text-sm lg:text-base
-              after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-blue-900 after:transition-all after:duration-300
-              hover:after:w-full
-              ${
-                isActive
-                  ? "text-blue-900 font-semibold after:w-full"
-                  : "after:w-0"
-              }`
-            }
+          <button
+            key={item.label}
+            onClick={() => handleNavClick(item.path)}
+            className="relative text-gray-700 hover:text-blue-900 transition text-sm lg:text-base
+              after:content-[''] after:absolute cursor-pointer after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-blue-900 after:transition-all after:duration-300
+              hover:after:w-full"
           >
             {item.label}
-          </NavLink>
+          </button>
         ))}
       </div>
 
@@ -52,7 +58,9 @@ const Navbar = () => {
           label="Apply Now"
           icon={<Mail size={16} />}
           iconPosition="right"
-          onClick={() => { navigate(APPROUTES.CONTACT_US) }}
+          onClick={() => {
+            navigate(APPROUTES.CONTACT_US);
+          }}
           className="text-sm px-4 py-2"
         />
       </div>
@@ -70,32 +78,24 @@ const Navbar = () => {
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-lg flex flex-col items-center gap-4 py-6 md:hidden z-50 border-t">
           {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={() => setIsOpen(false)} // close menu after click
-              className={({ isActive }) =>
-                `text-base relative text-gray-700 hover:text-blue-900 transition
+            <button
+              key={item.label}
+              onClick={() => handleNavClick(item.path)}
+              className="text-base relative text-gray-700 hover:text-blue-900 transition
                 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-blue-900 after:transition-all after:duration-300
-                hover:after:w-full
-                ${
-                  isActive
-                    ? "text-blue-900 font-semibold after:w-full"
-                    : "after:w-0"
-                }`
-              }
+                hover:after:w-full"
             >
               {item.label}
-            </NavLink>
+            </button>
           ))}
-          
+
           {/* Mobile Apply Button */}
           <div className="mt-4">
             <IconButton
               label="Apply Now"
               icon={<Mail size={16} />}
               iconPosition="right"
-              onClick={() => { 
+              onClick={() => {
                 setIsOpen(false);
                 navigate(APPROUTES.CONTACT_US);
               }}
