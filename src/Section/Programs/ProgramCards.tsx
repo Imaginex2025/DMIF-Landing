@@ -1,22 +1,19 @@
-import { useRef, useEffect, useState } from "react";
+
 import ProgramCard from "../../Components/Programs/ProgramCard";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { APPROUTES } from "../../Routes/appRoutes";
 import { useNavigate } from "react-router-dom";
 
 const ProgramCards = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const navigate = useNavigate();
+  
 const cards = [
   {
     logo: "/Logo.png",
     company: "Innovation Academy",
     title: "Patent – The Innovation Engine",
     description:
-      "Learn how to transform raw ideas into patents using real-world frameworks. Gain practical experience in drafting Invention Disclosure Forms (IDF) and Technical Invention Documents (TID), while building a strong profile in innovation and intellectual property.",
+      "Learn how to turn ideas into patents using real-world methods. Get hands-on with drafting Invention Disclosure Forms (IDF) and Technical Invention Documents (TID), while building a strong profile in innovation.",
     discountPrice: 899,
     oldPrice: 1200,
   },
@@ -25,7 +22,7 @@ const cards = [
     company: "Innovation Academy",
     title: "Research Paper – The Explorer",
     description:
-      "Master the process of academic research and publishing. From structuring manuscripts to submitting at global conferences, you will develop a publication-ready paper that enhances your academic profile and strengthens opportunities for higher education.",
+      "Master the art of academic research and publishing. From structuring manuscripts to submitting at global conferences, you will create a publication-ready paper that strengthens your academic and career profile.",
     discountPrice: 599,
     oldPrice: 900,
   },
@@ -34,106 +31,12 @@ const cards = [
     company: "Innovation Academy",
     title: "Entrepreneurship – From Ideas to Ventures",
     description:
-      "Convert your patents and research into scalable startups. Learn business model design, investor pitching, and fundraising strategies, while gaining exposure to incubators and accelerators that can help you turn ideas into market-ready ventures and make your idea better.",
-    discountPrice: 599,
-    oldPrice: 900,
-  },
-  {
-    logo: "/Logo.png",
-    company: "Innovation Academy",
-    title: "Patent – The Innovation Engine",
-    description:
-      "Learn how to transform raw ideas into patents using real-world frameworks. Gain practical experience in drafting Invention Disclosure Forms (IDF) and Technical Invention Documents (TID), while building a strong profile in innovation and intellectual property.",
-    discountPrice: 899,
-    oldPrice: 1200,
-  },
-  {
-    logo: "/Logo.png",
-    company: "Innovation Academy",
-    title: "Research Paper – The Explorer",
-    description:
-      "Master the process of academic research and publishing. From structuring manuscripts to submitting at global conferences, you will develop a publication-ready paper that enhances your academic profile and strengthens opportunities for higher education.",
-    discountPrice: 599,
-    oldPrice: 900,
-  },
-  {
-    logo: "/Logo.png",
-    company: "Innovation Academy",
-    title: "Entrepreneurship – From Ideas to Ventures",
-    description:
-      "Convert your patents and research into scalable startups. Learn business model design, investor pitching, and fundraising strategies, while gaining exposure to incubators and accelerators that can help you turn ideas into market-ready ventures and make your idea better.",
-    discountPrice: 599,
-    oldPrice: 900,
-  },
-  {
-    logo: "/Logo.png",
-    company: "Innovation Academy",
-    title: "Patent – The Innovation Engine",
-    description:
-      "Learn how to transform raw ideas into patents using real-world frameworks. Gain practical experience in drafting Invention Disclosure Forms (IDF) and Technical Invention Documents (TID), while building a strong profile in innovation and intellectual property.",
-    discountPrice: 899,
-    oldPrice: 1200,
-  },
-  {
-    logo: "/Logo.png",
-    company: "Innovation Academy",
-    title: "Research Paper – The Explorer",
-    description:
-      "Master the process of academic research and publishing. From structuring manuscripts to submitting at global conferences, you will develop a publication-ready paper that enhances your academic profile and strengthens opportunities for higher education.",
-    discountPrice: 599,
-    oldPrice: 900,
-  },
-  {
-    logo: "/Logo.png",
-    company: "Innovation Academy",
-    title: "Entrepreneurship – From Ideas to Ventures",
-    description:
-      "Convert your patents and research into scalable startups. Learn business model design, investor pitching, and fundraising strategies, while gaining exposure to incubators and accelerators that can help you turn ideas into market-ready ventures and make your idea better.",
+      "Transform your patents and research into scalable startups. Learn business model design, pitching, and fundraising strategies, while connecting with incubators and accelerators to launch market-ready ventures.",
     discountPrice: 599,
     oldPrice: 900,
   },
 ];
 
-
-  // ✅ Scroll to center specific card
-  const scrollToCard = (index: number) => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const card = container.children[index] as HTMLElement;
-      if (!card) return;
-
-      const cardLeft = card.offsetLeft;
-      const cardWidth = card.offsetWidth;
-
-      container.scrollTo({
-        left: cardLeft - container.clientWidth / 2 + cardWidth / 2,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // Manual navigation
-  const scroll = (direction: "left" | "right") => {
-    let newIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
-    newIndex = Math.max(0, Math.min(newIndex, cards.length - 1));
-    setCurrentIndex(newIndex);
-    scrollToCard(newIndex);
-  };
-
-  // Auto-scroll every 3 seconds (pause on hover)
-  useEffect(() => {
-    if (isPaused) return; // pause when hovering
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const newIndex = (prev + 1) % cards.length;
-        scrollToCard(newIndex);
-        return newIndex;
-      });
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [isPaused]);
 
   return (
     <div className="relative w-full py-10">
@@ -158,64 +61,54 @@ const cards = [
         </motion.p>
       </div>
 
-      {/* Scrollable Container */}
-      <div
-        className="relative mt-6"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        {/* Scroll Container */}
-        <div
-          ref={scrollRef}
-          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide px-6 md:px-20 py-6 md:py-10 space-x-6 md:space-x-12"
-          style={{ scrollBehavior: "smooth", WebkitOverflowScrolling: "touch" }}
-        >
-{cards.map((card, i) => (
-  <motion.div
-    key={i}
-    className="snap-center shrink-0 w-[80%] xs:w-[70%] sm:w-[60%] md:w-[40%]"
-    initial={{ opacity: 0, scale: 0.9, y: 30 }}
-    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-    whileHover={{ scale: 1.05 }}
-    transition={{ duration: 0.5, delay: i * 0.1 }}
-    onMouseEnter={() => setIsPaused(true)}   // ✅ Pause on hover
-    onMouseLeave={() => setIsPaused(false)}  // ✅ Resume on leave
-  >
-    <ProgramCard
-      logo={card.logo}
-      company={card.company}
-      title={card.title}
-      description={card.description}
-      discountPrice={card.discountPrice}
-      oldPrice={card.oldPrice}
-      buttonText="Apply Now"
-      onApply={() => { navigate(APPROUTES.CONTACT_US) }}
-    />
-  </motion.div>
-))}
-
+      {/* Static Grid Layout */}
+      <div className="container mx-auto px-6 md:px-20 mt-8">
+        {/* Top Row - Two Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
+          {cards.slice(0, 2).map((card, i) => (
+            <motion.div
+              key={i}
+              className="w-full  mx-auto"
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
+              <ProgramCard
+                logo={card.logo}
+                company={card.company}
+                title={card.title}
+                description={card.description}
+                discountPrice={card.discountPrice}
+                oldPrice={card.oldPrice}
+                buttonText="Apply Now"
+                onApply={() => { navigate(APPROUTES.CONTACT_US) }}
+              />
+            </motion.div>
+          ))}
         </div>
 
-        {/* Navigation Buttons */}
-        <motion.button
-          onClick={() => scroll("left")}
-          className="absolute left-2 xs:left-4 top-1/2 cursor-pointer -translate-y-1/2 bg-white shadow-lg p-2 rounded-full z-20 hover:shadow-xl transition-shadow"
-          aria-label="Scroll left"
-          whileTap={{ scale: 0.9 }}
-          whileHover={{ scale: 1.1 }}
-        >
-          <ChevronLeft className="w-5 h-5 text-gray-700" />
-        </motion.button>
-
-        <motion.button
-          onClick={() => scroll("right")}
-          className="absolute right-2 xs:right-4 top-1/2 cursor-pointer -translate-y-1/2 bg-white shadow-lg p-2 rounded-full z-20 hover:shadow-xl transition-shadow"
-          aria-label="Scroll right"
-          whileTap={{ scale: 0.9 }}
-          whileHover={{ scale: 1.1 }}
-        >
-          <ChevronRight className="w-5 h-5 text-gray-700" />
-        </motion.button>
+        {/* Bottom Row - One Centered Card */}
+        <div className="flex justify-center">
+          <motion.div
+            className="w-full max-w-2xl "
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <ProgramCard
+              logo={cards[2].logo}
+              company={cards[2].company}
+              title={cards[2].title}
+              description={cards[2].description}
+              discountPrice={cards[2].discountPrice}
+              oldPrice={cards[2].oldPrice}
+              buttonText="Apply Now"
+              onApply={() => { navigate(APPROUTES.CONTACT_US) }}
+            />
+          </motion.div>
+        </div>
       </div>
     </div>
   );
