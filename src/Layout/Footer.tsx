@@ -31,7 +31,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li>
               <Link to={APPROUTES.FAQ} className="text-gray-600 hover:text-blue-900 transition">
-                Faq
+                FAQ
               </Link>
             </li>
             <li>
