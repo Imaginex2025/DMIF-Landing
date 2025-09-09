@@ -5,7 +5,7 @@ const HeroSection = () => {
   const stats = [
     { value: "1000s", label: "Mentored" },
     { value: "50+", label: "Publications" },
-    { value: "30+", label: "Papers" },
+    { value: "120+", label: "Patents" },
     { value: "3", label: "Unique Track" },
   ];
   return (
@@ -50,7 +50,7 @@ const HeroSection = () => {
         </div>
 
         {/* 🔹 Students Outcome */}
-        <div className="flex items-center justify-start gap-2 z-10 mb-6">
+        {/* <div className="flex items-center justify-start gap-2 z-10 mb-6">
           <div className="flex -space-x-2">
             <img
               src="https://randomuser.me/api/portraits/men/32.jpg"
@@ -72,7 +72,7 @@ const HeroSection = () => {
           <div>
             <p className="text-sm font-medium">100+ students Outcomes</p>
           </div>
-        </div>
+        </div> */}
 
         {/* 🔹 Main Title & Tagline */}
         <div className="flex flex-col px-3 text-left">
@@ -148,7 +148,7 @@ const HeroSection = () => {
               },
             }}
           >
-            <div className="flex items-center justify-start gap-2 z-10 mb-6">
+            {/* <div className="flex items-center justify-start gap-2 z-10 mb-6">
               <div className="flex -space-x-2">
                 <img
                   src="https://randomuser.me/api/portraits/men/32.jpg"
@@ -170,7 +170,7 @@ const HeroSection = () => {
               <div>
                 <p className="text-sm font-medium">100+ students Outcomes</p>
               </div>
-            </div>
+            </div> */}
             <motion.h1
               className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[60px]  tracking-wide px-2 sm:px-0"
               initial={{ y: 40, opacity: 0 }}
@@ -244,7 +244,7 @@ const HeroSection = () => {
           >
             {[
               { number: "50+", label: "Publications" },
-              { number: "30+", label: "Papers Published" },
+              { number: "120+", label: "Patents" },
               { number: "3", label: "Unique Growth Tracks" },
             ].map((stat, i) => (
               <motion.div

@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Mail, CheckCircle2, XCircle } from "lucide-react";
-import IconButton from "../../Components/Common/Button";
-import Input from "../../Components/Common/Input";
+import { FileText, CheckCircle2, XCircle } from "lucide-react";
+import IconButton from "../../src/Components/Common/Button";
+import Input from "../../src/Components/Common/Input";
+import DropdownSelect from "../../src/Components/Common/Dropdown";
 import { motion, AnimatePresence } from "framer-motion";
-import { countryList } from "../../utils/countrycodes";
-import DebouncedSearchDropdown from "../../Components/Common/Debounce";
+import { countryList } from "../../src/utils/countrycodes";
+import DebouncedSearchDropdown from "../../src/Components/Common/Debounce";
 
-const ContactForm = () => {
-  const [firstname, setFirstName] = useState("");
+const ApplyNowForm = () => {
+  const [fullName, setFullName] = useState("");
   const [mobNo, setMobNo] = useState("");
   const [countryCode, setCountryCode] = useState("+91");
   const [email, setEmail] = useState("");
   const [track, setTrack] = useState("");
-  const [message, setMessage] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [profileFile, setProfileFile] = useState<string>("");
   const [loading, setLoading] = useState(false);
@@ -20,9 +20,8 @@ const ContactForm = () => {
 
   const WEB3FORMS_ACCESS_KEY = "2901d84b-5a50-43c2-bf60-8c8276c62725";
 
-  // Input validation
   const validateForm = () => {
-    if (!firstname.trim()) return "First name is required";
+    if (!fullName.trim()) return "Full name is required";
     if (!mobNo.trim()) return "Mobile number is required";
     if (!/^\d{10,15}$/.test(mobNo.replace(/\s|-/g, "")))
       return "Please enter a valid mobile number";
@@ -42,10 +41,9 @@ const ContactForm = () => {
   const handleSubmit = async (e?: React.FormEvent) => {
     e?.preventDefault();
 
-    // Validate form
     const validationError = validateForm();
     if (validationError) {
-      alert(validationError); // You can replace this with a toast notification
+      alert(validationError);
       return;
     }
 
@@ -53,13 +51,12 @@ const ContactForm = () => {
 
     const formData = new FormData();
     formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-    formData.append("subject", "New Contact Form Submission");
+    formData.append("subject", "New Application Form Submission");
     formData.append("from_name", "DMIF Website");
-    formData.append("firstname", firstname.trim());
+    formData.append("fullName", fullName.trim());
     formData.append("mobNo", `${countryCode} ${mobNo.trim()}`);
     formData.append("email", email.trim().toLowerCase());
     formData.append("track", track);
-    formData.append("message", message.trim());
     if (linkedin.trim()) formData.append("linkedin", linkedin.trim());
     if (profileFile.trim())
       formData.append("profileDetails", profileFile.trim());
@@ -73,13 +70,11 @@ const ContactForm = () => {
       const result = await res.json();
       if (result.success) {
         setStatus("success");
-        // Reset form
-        setFirstName("");
+        setFullName("");
         setMobNo("");
         setCountryCode("+91");
         setEmail("");
         setTrack("");
-        setMessage("");
         setLinkedin("");
         setProfileFile("");
       } else {
@@ -94,20 +89,9 @@ const ContactForm = () => {
     }
   };
 
-  // Auto-dismiss status after 5 seconds
   const handleStatusClose = () => {
     setStatus(null);
   };
-
-  // Auto-close success message after 5 seconds
-  useState(() => {
-    if (status === "success") {
-      const timer = setTimeout(() => {
-        setStatus(null);
-      }, 5000);
-      return () => clearTimeout(timer);
-    }
-  });
 
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center py-8 sm:py-10 px-4 sm:px-6 lg:px-8">
@@ -119,7 +103,7 @@ const ContactForm = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        Contact Us
+        Apply Now
       </motion.h2>
 
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
@@ -131,26 +115,11 @@ const ContactForm = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-     <p className="text-gray-600 text-base leading-relaxed">
-  Have questions or need assistance? Fill out this contact form and our team
-  will get back to you as soon as possible with the information or support
-  you’re looking for.
-</p>
-
-
-          <div className="pt-4 border-t flex items-center gap-2">
-            <p className="text-sm font-semibold text-[#003579] uppercase">
-              Email Address :
-            </p>
-            <div
-              className="flex flex-col cursor-pointer text-gray-700 hover:text-[#003579] transition-colors"
-              onClick={() =>
-                (window.location.href = "mailto:reach@drmadhan.in")
-              }
-            >
-              <p>reach@drmadhan.in</p>
-            </div>
-          </div>
+          <p className="text-gray-600 text-base leading-relaxed">
+            Begin your journey with us by applying today. Once you submit this
+            form, our admissions team will review your details and get back to
+            you with the next steps.
+          </p>
         </motion.div>
 
         {/* Right Section (Form) */}
@@ -162,25 +131,22 @@ const ContactForm = () => {
           viewport={{ once: true }}
         >
           <h3 className="text-base sm:text-lg font-semibold mb-2">
-            Get In Touch
+            Application Form
           </h3>
           <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">
-            Feel free to contact us, we love to make new partners & friends
+            Fill in your details to apply
           </p>
 
-          <form
-            className="flex flex-col gap-3 sm:gap-4"
-            onSubmit={handleSubmit}
-          >
+          <form className="flex flex-col gap-3 sm:gap-4" onSubmit={handleSubmit}>
             <Input
-              label="First Name"
-              placeholder="First name..."
-              value={firstname}
-              onChange={(e) => setFirstName(e.target.value)}
+              label="Full Name"
+              placeholder="Enter your full name..."
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
               required
             />
 
-            {/* Mobile Number with Country Code */}
+            {/* Mobile Number */}
             <div className="flex flex-col gap-1 w-full">
               <label className="text-gray-800 text-sm font-medium">
                 Mobile No <span className="text-red-500">*</span>
@@ -201,35 +167,37 @@ const ContactForm = () => {
                     onChange={(option) => {
                       let value = option.id.toString();
                       if (!value.startsWith("+")) {
-                        value = "+" + value; // always enforce "+"
+                        value = "+" + value;
                       }
                       setCountryCode(value);
                     }}
                     fetchOptions={async (query?: string) => {
-  const filtered = countryList
-    .filter((c) => {
-      if (!query) return true;
-      const q = query.toLowerCase();
-      return (
-        c.label.toLowerCase().includes(q) ||
-        c.value.toLowerCase().includes(q) ||
-        c.dialCode.toLowerCase().includes(q)
-      );
-    })
-    .map((c) => {
-  let dial = c.dialCode.startsWith("+") ? c.dialCode : `+${c.dialCode}`;
-  return { id: dial + "-" + c.dialCode, label: `${dial} (${c.label})` };
-});
+                      const filtered = countryList
+                        .filter((c) => {
+                          if (!query) return true;
+                          const q = query.toLowerCase();
+                          return (
+                            c.label.toLowerCase().includes(q) ||
+                            c.value.toLowerCase().includes(q) ||
+                            c.dialCode.toLowerCase().includes(q)
+                          );
+                        })
+                        .map((c) => {
+                          let dial = c.dialCode.startsWith("+")
+                            ? c.dialCode
+                            : `+${c.dialCode}`;
+                          return {
+                            id: dial,
+                            label: `${dial} (${c.label})`,
+                          };
+                        });
 
+                      const unique = Array.from(
+                        new Map(filtered.map((item) => [item.id, item])).values()
+                      );
 
-  // remove duplicates by dial code
-  const unique = Array.from(
-    new Map(filtered.map((item) => [item.id, item])).values()
-  );
-
-  return unique;
-}}
-
+                      return unique;
+                    }}
                     placeholder="Code"
                   />
                 </div>
@@ -238,11 +206,9 @@ const ContactForm = () => {
                   placeholder="Enter number"
                   value={mobNo}
                   className="flex-1"
-                  onChange={(e) => {
-                    // Only allow numbers and basic formatting
-                    const value = e.target.value.replace(/[^\d\s-]/g, "");
-                    setMobNo(value);
-                  }}
+                  onChange={(e) =>
+                    setMobNo(e.target.value.replace(/[^\d\s-]/g, ""))
+                  }
                   required
                 />
               </div>
@@ -257,35 +223,57 @@ const ContactForm = () => {
               required
             />
 
+            <DropdownSelect
+              label="Choose a Track"
+              name="track"
+              required
+              value={track}
+              onChange={setTrack}
+              options={[
+                { label: "Entrepreneurship Track", value: "Entrepreneurship-Track" },
+                { label: "Patent Track", value: "Patent-Track" },
+                { label: "Research Track", value: "Research-Track" },
+                { label: "All", value: "All" },
+              ]}
+            />
+
+            <Input
+              label="LinkedIn Profile"
+              placeholder="https://linkedin.com/in/username"
+              type="url"
+              value={linkedin}
+              onChange={(e) => setLinkedin(e.target.value)}
+            />
 
             <div className="flex flex-col gap-2">
               <label className="text-gray-800 text-sm font-medium">
-                Message
+                Profile Summary
               </label>
               <textarea
-                placeholder="Message Subject"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className="border border-gray-300 rounded-md px-3 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
+                placeholder="Write about your background, skills, or experience..."
+                value={profileFile}
+                onChange={(e) => setProfileFile(e.target.value)}
+                className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none"
                 rows={4}
-                maxLength={500}
+                maxLength={1000}
               />
               <p className="text-xs text-gray-400 text-right">
-                {message.length}/500 characters
+                {profileFile.length}/1000 characters
               </p>
             </div>
 
+        
             <motion.div whileTap={{ scale: 0.95 }}>
               <IconButton
                 type="submit"
-                label={loading ? "Sending..." : "Send Message"}
-                icon={<Mail size={18} />}
+                label={loading ? "Submitting..." : "Apply Now"}
+                icon={<FileText size={18} />}
                 iconPosition="right"
               />
             </motion.div>
           </form>
 
-          {/* ✅ Success / Error Popup */}
+          {/* ✅ Status Popup */}
           <AnimatePresence>
             {status && (
               <motion.div
@@ -299,10 +287,10 @@ const ContactForm = () => {
                   <>
                     <CheckCircle2 className="text-green-600 w-12 h-12 mb-2" />
                     <p className="text-lg font-semibold text-green-700">
-                      Thank you for contacting us!
+                      Application Submitted!
                     </p>
                     <p className="text-gray-600 text-sm mt-1 text-center px-4">
-                      Our team will get back to you soon.
+                      Our admissions team will contact you soon.
                     </p>
                   </>
                 ) : (
@@ -331,4 +319,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default ApplyNowForm;

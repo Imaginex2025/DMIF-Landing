@@ -47,7 +47,7 @@ const CTASection = () => {
           <IconButton
             className="max-w-sm w-full sm:w-auto"
             onClick={() => {
-              navigate(APPROUTES.CONTACT_US);
+              navigate(APPROUTES.APPLY_NOW);
             }}
             label="Register Now"
           />

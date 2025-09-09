@@ -5,6 +5,31 @@ import { APPROUTES } from "../Routes/appRoutes"; // ✅ import your routes
 const Footer = () => {
 
 
+const handleNavClick = (path: string) => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -80; // height of sticky navbar
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  if (path === "Testimonials" || path === "about") {
+    const sectionId = path.toLowerCase();
+
+    if (window.location.pathname === "/") {
+      // already on home → scroll immediately
+      scrollToSection(sectionId);
+    } else {
+      // navigate to home first, then scroll after a short delay
+      navigate("/", { state: { scrollTo: sectionId } });
+    }
+  } else {
+    navigate(path);
+  }
+};
+
 
   const navigate = useNavigate();
   return (
@@ -40,7 +65,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to={APPROUTES.PROGRAMS} className="text-gray-600 hover:text-blue-900 transition">
+              <Link to={APPROUTES.APPLY_NOW} className="text-gray-600 hover:text-blue-900 transition">
                 Apply Now
               </Link>
             </li>
@@ -57,10 +82,8 @@ const Footer = () => {
                 Home
               </Link>
             </li>
-            <li>
-              <Link to={APPROUTES.ABOUT} className="text-gray-600 hover:text-blue-900 transition">
-                About
-              </Link>
+            <li className="text-gray-600 cursor-pointer hover:text-blue-900 transition" onClick={() => handleNavClick("about")}>
+              About
             </li>
             <li>
               <Link to={APPROUTES.PROGRAMS} className="text-gray-600 hover:text-blue-900 transition">
@@ -123,3 +146,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+

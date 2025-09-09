@@ -7,4 +7,5 @@ export const APPROUTES = {
   PROGRAMS: "/programs",
   FEATURE_DETAILS: "/feature/:id",
   FAQ: "/faq",
+  APPLY_NOW: "/apply-now",
 };

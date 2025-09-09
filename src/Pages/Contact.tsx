@@ -1,9 +1,9 @@
-import ConnectWithUs from "../Section/contact/ConnectWithUs";
+// import ConnectWithUs from "../Section/contact/ConnectWithUs";
 import ContactForm from "../Section/contact/ContactForm";
 export const Contact = () => {
   return (
     <div>
-              <ConnectWithUs />
+              {/* <ConnectWithUs /> */}
       <ContactForm />
     </div>
   )

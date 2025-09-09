@@ -74,9 +74,9 @@ const DrMadhanSection = () => {
         >
           <div className="w-full bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
             <motion.img
-              src="/HOME/Dr.MadhanPhoto.svg"
+              src="/HOME/madhan.jpg"
               alt="Dr. Madhan Kumar Srinivasan"
-              className="w-full h-auto object-contain"
+              className="w-full h-70 md:h-110"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, type: "spring", delay: 0.4 }}

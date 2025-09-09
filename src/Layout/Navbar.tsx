@@ -76,7 +76,7 @@ const handleNavClick = (path: string) => {
           icon={<Mail size={16} />}
           iconPosition="right"
           onClick={() => {
-            navigate(APPROUTES.CONTACT_US);
+            navigate(APPROUTES.APPLY_NOW);
           }}
           className="text-sm px-4 py-2"
         />
@@ -114,7 +114,7 @@ const handleNavClick = (path: string) => {
               iconPosition="right"
               onClick={() => {
                 setIsOpen(false);
-                navigate(APPROUTES.CONTACT_US);
+                navigate(APPROUTES.APPLY_NOW);
               }}
               className="text-sm px-6 py-2"
             />
