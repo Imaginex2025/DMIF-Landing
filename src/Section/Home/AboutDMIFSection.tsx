@@ -19,12 +19,15 @@ const AboutDMIFSection = () => {
             About DMIF
           </h2>
           <p className="font-medium text-sm sm:text-base leading-6 sm:leading-7 lg:leading-[32px] text-[#404040] text-justify px-2 sm:px-0">
-The Dr. Madhan Institute of Future (DMIF) is a global platform for innovation, research, and future-driven learning. It is designed to inspire original thinking, nurture creativity, and equip learners with the skills to solve real-world problems. Unlike conventional programs that emphasize rote learning, DMIF focuses on building critical thinking, invention methodologies, and research excellence.
+Dr. Madhan Institute of Future (DMIF) is a premier cognitive empowerment institute dedicated to helping students and individuals grow from the inside through the application of Neuroscience and Cognitive Science methodologies.
+     <br /><br />
+At DMIF, education goes beyond instruction — we provide guided mentorship that sparks curiosity, cultivates purpose, and nurtures self-driven learning, empowering individuals to evolve into innovators, entrepreneurs, and the leaders of tomorrow.
+
 
 
 
             <br /><br />
-      DMIF is dedicated to preparing youth worldwide for the AI-driven creative economy, where success depends not only on technical expertise but also on original thinking, creativity, and intellectual property (IP) creation.
+     Our guiding motto, “Innovators Today; Entrepreneurs Tomorrow!”, reflects our mission to transform today’s learners into tomorrow’s changemakers.
           </p>
 
           {/* <div className="flex justify-center lg:justify-start px-2 sm:px-0">
