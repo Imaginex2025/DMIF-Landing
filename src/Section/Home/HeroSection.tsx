@@ -13,7 +13,7 @@ const HeroSection = () => {
       {/* ✅ Mobile Hero (below md) */}
       <section className="relative block md:hidden w-full min-h-screen flex flex-col items-center justify-center px-4 py-10 bg-gray-50 overflow-hidden">
         {/* 🔹 Scrolling Background Logos */}
-        <div className="absolute inset-0 flex flex-col justify-center opacity-10 overflow-hidden space-y-12">
+        <div className="absolute inset-0 flex flex-col justify-center items-end opacity-10 overflow-hidden space-y-12">
           {/* 🔹 Row 1 */}
           <motion.div
             className="flex"
@@ -75,7 +75,7 @@ const HeroSection = () => {
         </div> */}
 
         {/* 🔹 Main Title & Tagline */}
-        <div className="flex flex-col px-3 text-left">
+        <div className="flex flex-col  px-3 text-left">
           <h1 className="text-[36px] font-bold leading-tight">
             <span className="text-[#A30000]">Dr.Madhan</span> <br />
             <span className="text-[#003579]">Institute of Future</span>
@@ -138,7 +138,7 @@ const HeroSection = () => {
         <div className="flex flex-col items-center gap-4 sm:gap-5 lg:gap-[30px] w-full max-w-[573px] mx-auto pt-6 sm:pt-8 lg:absolute lg:left-1/2 lg:top-[40px] lg:-translate-x-1/2 lg:w-[573px] lg:h-[264px] px-4 sm:px-0">
           {/* Title Section */}
           <motion.div
-            className="flex flex-col justify-center items-center gap-2 sm:gap-3 lg:gap-[12px] w-full text-center"
+            className="flex flex-col justify-end mt-12 items-center gap-2 sm:gap-3 lg:gap-[12px] w-full text-center"
             initial="hidden"
             animate="visible"
             variants={{
