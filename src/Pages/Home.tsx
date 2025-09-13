@@ -7,6 +7,7 @@ import TestimonialsCarousel from "../Section/Home/Testimonials";
 import CTASection from "../Section/Home/CTASection";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import ActivityShowcase from "../Section/Home/Activities";
 // import VisionMissionSection from "../Section/Home/Vision";
 
 const Home = () => {
@@ -48,10 +49,11 @@ const Home = () => {
        <AboutDMIFSection />
    </div>
 
-      {/* <VisionMissionSection /> */}
-
       {/* Key Program Features Section */}
       <KeyFeature />
+
+      {/* <VisionMissionSection /> */}
+      <ActivityShowcase/>
 
       {/* Testimonials Section */}
       <div id="testimonials">
