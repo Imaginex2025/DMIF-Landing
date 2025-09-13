@@ -4,8 +4,8 @@ import { GraduationCap } from "lucide-react";
 const HeroSection = () => {
   const stats = [
     { value: "1000s", label: "Mentored" },
-    { value: "50+", label: "Publications" },
-    { value: "120+", label: "Patents" },
+    { value: "120+", label: "Patents" },      // ✅ Patents moved to second position
+    { value: "50+", label: "Publications" }, // ✅ Publications moved to third position
     { value: "3", label: "Unique Track" },
   ];
   return (
@@ -230,7 +230,7 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Right Stats Cards */}
+          {/* Right Stats Cards - Updated Order: Patents First, Then Publications */}
           <motion.div
             className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 lg:gap-6 w-full lg:flex-1"
             initial="hidden"
@@ -243,8 +243,8 @@ const HeroSection = () => {
             }}
           >
             {[
-              { number: "50+", label: "Publications" },
-              { number: "120+", label: "Patents" },
+              { number: "120+", label: "Patents" },        // ✅ Patents moved to first position
+              { number: "50+", label: "Publications" },   // ✅ Publications moved to second position
               { number: "3", label: "Unique Growth Tracks" },
             ].map((stat, i) => (
               <motion.div
