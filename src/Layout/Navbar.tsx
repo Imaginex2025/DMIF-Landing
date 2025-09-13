@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", path: APPROUTES.HOME },
-    {label: "About", path: "about" },
+    // {label: "About", path: "about" },
  
     { label: "Programs", path: APPROUTES.PROGRAMS },
     { label: "Why It Matters", path: APPROUTES.WHY_IT_MATTERS },

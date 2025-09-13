@@ -76,7 +76,7 @@ const DrMadhanSection = () => {
             <motion.img
               src="/HOME/madhan.jpg"
               alt="Dr. Madhan Kumar Srinivasan"
-              className="w-full h-70 md:h-110"
+              className="w-full h-70 md:h-90"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, type: "spring", delay: 0.4 }}
@@ -85,7 +85,7 @@ const DrMadhanSection = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="absolute -bottom-24 sm:-bottom-20  lg:-bottom-15 flex flex-col items-center gap-4">
+          <div className="absolute -bottom-24 sm:-bottom-20  lg:-bottom-25 flex flex-col items-center gap-4">
             <SocialMediaCard />
 
             {/* Book a Meet Button */}

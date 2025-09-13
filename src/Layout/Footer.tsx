@@ -82,8 +82,8 @@ const handleNavClick = (path: string) => {
                 Home
               </Link>
             </li>
-            <li className="text-gray-600 cursor-pointer hover:text-blue-900 transition" onClick={() => handleNavClick("about")}>
-              About
+            <li className="text-gray-600 cursor-pointer hover:text-blue-900 transition" onClick={() => handleNavClick("Testimonials")}>
+              Testimonials
             </li>
             <li>
               <Link to={APPROUTES.PROGRAMS} className="text-gray-600 hover:text-blue-900 transition">
