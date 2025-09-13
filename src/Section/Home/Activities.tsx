@@ -8,16 +8,18 @@ const ActivityShowcase = () => {
 
   // Activity images for the main carousel
   const activityImages = [
-    "/HOME/act3.jpg",
+
     "/HOME/act2.jpg",
     "/HOME/act1.jpg",
+        "/HOME/act3.jpg",
+    "/HOME/act4.jpg",
   ];
 
   // Events list (currently just one event)
   const events = [
  {
   id: 1,
-  title: "Tamil Entrepreneur Meet at Europe",
+  title: "ATEA Atlanta Chapter's GrowATL 2025 summit",
   description: "Connect with Tamil entrepreneurs across Europe",
   location: "Europe",
   images: activityImages
