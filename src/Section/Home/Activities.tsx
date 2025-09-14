@@ -1,33 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight, Play, Pause, Maximize2, X, Menu } from 'lucide-react';
 
 const ActivityShowcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [selectedEventIndex, setSelectedEventIndex] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
-  // Activity images for the main carousel
   const activityImages = [
-
-    "/HOME/act2.jpg",
-    "/HOME/act1.jpg",
-        "/HOME/act3.jpg",
-    "/HOME/act4.jpg",
+    "/HOME/act2.jpeg",
+    "/HOME/act1.jpeg",
+   
+    "/HOME/act4.jpeg",
+    "/HOME/act5.jpeg",
   ];
 
-  // Events list (currently just one event)
   const events = [
- {
-  id: 1,
-  title: "ATEA Atlanta Chapter's GrowATL 2025 summit",
-  description: "Connect with Tamil entrepreneurs across Europe",
-  location: "Europe",
-  images: activityImages
-}
-
+    {
+      id: 1,
+      title: "ATEA Atlanta Chapter's GrowATL 2025 summit",
+      description: "Connect with Tamil entrepreneurs across Europe",
+      location: "Atlanta, US",
+      images: activityImages,
+    },
   ];
 
-  // Auto-slide effect for main carousel
+  // Auto-slide effect
   useEffect(() => {
     if (isAutoPlay) {
       const interval = setInterval(() => {
@@ -37,35 +38,58 @@ const ActivityShowcase = () => {
     }
   }, [isAutoPlay, activityImages.length]);
 
-  const goToSlide = (index:any) => {
-    setCurrentIndex(index);
-  };
+  const goToSlide = (index: number) => setCurrentIndex(index);
+  const goToPrevious = () => setCurrentIndex((prevIndex) => prevIndex === 0 ? activityImages.length - 1 : prevIndex - 1);
+  const goToNext = () => setCurrentIndex((prevIndex) => (prevIndex + 1) % activityImages.length);
+  const toggleAutoPlay = () => setIsAutoPlay(!isAutoPlay);
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? activityImages.length - 1 : prevIndex - 1
-    );
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % activityImages.length);
-  };
-
-  const toggleAutoPlay = () => {
-    setIsAutoPlay(!isAutoPlay);
-  };
-
-  const handleEventSelect = (eventIndex:any) => {
+  const handleEventSelect = (eventIndex: number) => {
     setSelectedEventIndex(eventIndex);
-    setCurrentIndex(0); // Reset to first image of selected event
+    setCurrentIndex(0);
+    setIsSidebarOpen(false); // Close sidebar on mobile after selection
+  };
+
+  // Touch handlers for swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      goToNext();
+    }
+    if (isRightSwipe) {
+      goToPrevious();
+    }
   };
 
   return (
-    <div className="w-full min-h-screen bg-gray-50 flex">
+    <div className="w-full min-h-screen bg-gray-50 flex flex-col lg:flex-row">
+      {/* Mobile Header with Menu Button */}
+      <div className="lg:hidden bg-white shadow-sm border-b border-gray-200 p-4 flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-gray-800">Activities</h1>
+        <button
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="p-2 rounded-lg bg-blue-100 text-blue-600 hover:bg-blue-200 transition-colors"
+        >
+          <Menu size={20} />
+        </button>
+      </div>
+
       {/* Main Activity Section */}
-      <div className="flex-1 py-12 px-4 sm:px-6 lg:px-10">
-        {/* Section Heading */}
-        <div className="relative flex items-center justify-between mb-10">
+      <div className="flex-1 py-4 lg:py-12 px-4 sm:px-6 lg:px-10">
+        {/* Desktop Section Heading */}
+        <div className="hidden lg:block relative flex items-center justify-between mb-10">
           <h1 
             className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl font-extrabold text-transparent uppercase tracking-widest select-none text-center w-full"
             style={{ WebkitTextStroke: "0.5px gray" }}
@@ -79,9 +103,12 @@ const ActivityShowcase = () => {
           <div className="relative w-full">
             
             {/* Image Carousel */}
-            <div className="relative h-[400px] sm:h-[500px] lg:h-[400px] rounded-lg overflow-hidden shadow-lg bg-white">
-              
-              {/* Images Container */}
+            <div 
+              className="relative h-64 sm:h-80 md:h-96 lg:h-[400px] rounded-lg overflow-hidden shadow-lg bg-white"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <div 
                 className="flex transition-transform duration-700 ease-in-out h-full"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -91,122 +118,170 @@ const ActivityShowcase = () => {
                     <img
                       src={image}
                       alt={`Activity ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
+                      draggable={false}
                     />
                   </div>
                 ))}
               </div>
 
-              {/* Navigation Arrows */}
-              <button
-                onClick={goToPrevious}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-blue-800 text-white shadow-md hover:bg-blue-700 transition-colors duration-200"
+              {/* Navigation Arrows - Hidden on mobile for touch gestures */}
+              <button 
+                onClick={goToPrevious} 
+                className="hidden sm:flex absolute left-2 lg:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 lg:w-10 lg:h-10 items-center justify-center rounded-full bg-blue-800 text-white shadow-md hover:bg-blue-700 transition-colors duration-200"
               >
-                <ChevronLeft size={20} />
+                <ChevronLeft size={16} className="lg:w-5 lg:h-5" />
               </button>
-              
-              <button
-                onClick={goToNext}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-blue-800 text-white shadow-md hover:bg-blue-700 transition-colors duration-200"
+              <button 
+                onClick={goToNext} 
+                className="hidden sm:flex absolute right-2 lg:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 lg:w-10 lg:h-10 items-center justify-center rounded-full bg-blue-800 text-white shadow-md hover:bg-blue-700 transition-colors duration-200"
               >
-                <ChevronRight size={20} />
+                <ChevronRight size={16} className="lg:w-5 lg:h-5" />
               </button>
 
               {/* Auto-play Control */}
-              <button
-                onClick={toggleAutoPlay}
-                className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm hover:bg-white shadow-md transition-all duration-200"
+              <button 
+                onClick={toggleAutoPlay} 
+                className="absolute top-2 lg:top-4 right-12 lg:right-16 w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm hover:bg-white shadow-md transition-all duration-200"
               >
-                {isAutoPlay ? (
-                  <Pause className="w-5 h-5 text-gray-700" />
-                ) : (
-                  <Play className="w-5 h-5 text-gray-700" />
-                )}
+                {isAutoPlay ? <Pause className="w-4 h-4 lg:w-5 lg:h-5 text-gray-700" /> : <Play className="w-4 h-4 lg:w-5 lg:h-5 text-gray-700" />}
+              </button>
+
+              {/* Fullscreen Control */}
+              <button 
+                onClick={() => setIsFullscreen(true)} 
+                className="absolute top-2 lg:top-4 right-2 lg:right-4 w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm hover:bg-white shadow-md transition-all duration-200"
+              >
+                <Maximize2 className="w-4 h-4 lg:w-5 lg:h-5 text-gray-700" />
               </button>
             </div>
 
             {/* Dots Indicator */}
-            <div className="flex justify-center mt-8 space-x-2">
+            <div className="flex justify-center mt-4 lg:mt-8 space-x-1.5 lg:space-x-2">
               {activityImages.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex
-                      ? 'bg-blue-800 w-8'
-                      : 'bg-gray-300 hover:bg-gray-400'
+                  className={`w-2 h-2 lg:w-3 lg:h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex ? 'bg-blue-800 w-6 lg:w-8' : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                 />
               ))}
             </div>
 
             {/* Image Counter */}
-            <div className="text-center mt-3">
-              <span className="text-gray-600 text-base font-medium">
+            <div className="text-center mt-2 lg:mt-3">
+              <span className="text-gray-600 text-sm lg:text-base font-medium">
                 {String(currentIndex + 1).padStart(2, '0')} / {String(activityImages.length).padStart(2, '0')}
               </span>
+            </div>
+
+            {/* Mobile Swipe Indicator */}
+            <div className="sm:hidden text-center mt-4 text-xs text-gray-500">
+              Swipe left or right to navigate
             </div>
           </div>
         </div>
       </div>
 
-<div className="w-80 bg-blue-50 border-l-4 border-blue-500 p-6 flex flex-col">
-  {/* Sticky Header */}
-  <div className="sticky top-0 bg-blue-50 pb-4 mb-4 border-b border-blue-200 z-10">
-    <h2 className="text-xl font-normal text-blue-800">Select Event</h2>
-  </div>
-
-  {/* Events List with Enhanced Scroll */}
-  <div className="flex-1 overflow-y-auto space-y-4 pr-2 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-blue-100">
-    {events.map((event, index) => {
-      // Remove location from title if present
-      const cleanedTitle = event.title.replace(` at ${event.location}`, "");
-
-      return (
-        <div
-          key={event.id}
-          onClick={() => handleEventSelect(index)}
-          className={`p-4 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-blue-400 ${
-            selectedEventIndex === index
-              ? 'bg-blue-200 border-2 border-blue-500 shadow-md'
-              : 'bg-white border-2 border-blue-200'
-          }`}
-        >
-          <h3 className={`font-semibold text-lg mb-2 ${
-            selectedEventIndex === index ? 'text-blue-800' : 'text-gray-800'
-          }`}>
-            {cleanedTitle}
-          </h3>
-          <p className="text-gray-600 text-sm mb-2">
-            {event.description}
-          </p>
-
-          {/* Optional: Expanded Info for Selected Event */}
-          {selectedEventIndex === index && (
-            <div className="mt-3 text-blue-700 text-xs space-y-1">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                <span>Currently Selected</span>
-              </div>
-            <div className='flex justify-between items-center'>
-                  <div className="flex items-center gap-2">
-                <span className="font-medium">Images:</span>
-                <span>{event.images.length}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 12H9v-2h2v2zm0-4H9V6h2v4z"/></svg>
-                <span><span className="font-medium">Location:</span> {event.location}</span>
-              </div>
-            </div>
-            </div>
-          )}
+      {/* Events Sidebar - Mobile Overlay / Desktop Sidebar */}
+      <div className={`
+        ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} 
+        lg:translate-x-0 transition-transform duration-300 ease-in-out
+        fixed lg:relative top-0 right-0 z-40 lg:z-auto
+        w-full sm:w-80 lg:w-80 h-full lg:h-auto
+        bg-blue-50 border-l-4 border-blue-500 
+        flex flex-col
+      `}>
+        {/* Mobile Close Button */}
+        <div className="lg:hidden flex items-center justify-between p-4 bg-blue-100 border-b border-blue-200">
+          <h2 className="text-lg font-semibold text-blue-800">Select Event</h2>
+          <button
+            onClick={() => setIsSidebarOpen(false)}
+            className="p-2 rounded-lg bg-blue-200 text-blue-600 hover:bg-blue-300 transition-colors"
+          >
+            <X size={20} />
+          </button>
         </div>
-      );
-    })}
-  </div>
-</div>
 
+        {/* Desktop Header */}
+        <div className="hidden lg:block sticky top-0 bg-blue-50 p-6 pb-4 mb-4 border-b border-blue-200 z-10">
+          <h2 className="text-xl font-normal text-blue-800">Select Event</h2>
+        </div>
 
+        <div className="flex-1 overflow-y-auto space-y-4 p-4 lg:px-6 lg:pr-2 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-blue-100">
+          {events.map((event, index) => {
+            const cleanedTitle = event.title.replace(` at ${event.location}`, "");
+            return (
+              <div
+                key={event.id}
+                onClick={() => handleEventSelect(index)}
+                className={`p-4 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-blue-400 ${
+                  selectedEventIndex === index
+                    ? 'bg-blue-200 border-2 border-blue-500 shadow-md'
+                    : 'bg-white border-2 border-blue-200'
+                }`}
+              >
+                <h3 className={`font-semibold text-base lg:text-lg mb-2 ${
+                  selectedEventIndex === index ? 'text-blue-800' : 'text-gray-800'
+                }`}>
+                  {cleanedTitle}
+                </h3>
+                <p className="text-gray-600 text-sm mb-2">
+                  {event.description}
+                </p>
+                {selectedEventIndex === index && (
+                  <div className="mt-3 text-blue-700 text-xs space-y-1">
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                      <span>Currently Selected</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium">Images:</span>
+                        <span>{event.images.length}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <svg className="w-4 h-4 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 12H9v-2h2v2zm0-4H9V6h2v4z"/>
+                        </svg>
+                        <span className="text-xs">
+                          <span className="font-medium">Location:</span> {event.location}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Mobile Overlay Background */}
+      {isSidebarOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
+      {/* Fullscreen Modal */}
+      {isFullscreen && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+          <button
+            onClick={() => setIsFullscreen(false)}
+            className="absolute top-4 lg:top-6 right-4 lg:right-6 text-white bg-white/20 p-2 rounded-full hover:bg-white/30 transition z-10"
+          >
+            <X size={20} className="lg:w-6 lg:h-6" />
+          </button>
+          <img
+            src={activityImages[currentIndex]}
+            alt="Fullscreen Activity"
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+      )}
     </div>
   );
 };
