@@ -76,7 +76,7 @@ const TestimonialsCarousel = () => {
       name: "Arun Krishnamurthy",
       position: "Analytics Leader, GSK",
       text: `I had the privilege of working with Dr.Madhan during our time at Accenture, where our discussions on technology and the future of AI were always thought-provoking and deeply insightful. Beyond conversations, I had the pleasure of collaborating with him in co-authoring a successful patent—a journey that was both enriching and rewarding. Dr.Madhan is not only a brilliant colleague and mentor but also a wonderful friend. His ability to simplify complex ideas, guide with clarity, and inspire those around him makes him uniquely suited for this new initiative. I am certain that students and peers alike will find in him not just an advisor, but a true Guru who can shape their journey in research and innovation.`,
-      image: "/Testimonials/Arun.jpg",
+      image: "/Testimonials/Arun.jpeg",
     },
   ];
 
