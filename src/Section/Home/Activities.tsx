@@ -74,9 +74,9 @@ const ActivityShowcase = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gray-50 flex flex-col lg:flex-row">
+    <div className="w-full m bg-gray-50 flex flex-col lg:flex-row">
       {/* Mobile Header with Menu Button */}
-      <div className="lg:hidden bg-white shadow-sm border-b border-gray-200 p-4 flex items-center justify-between">
+      <div className="lg:hidden  p-4 flex items-center justify-between">
         <h1 className="text-2xl font-bold text-gray-800">Activities</h1>
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -190,11 +190,11 @@ const ActivityShowcase = () => {
         lg:translate-x-0 transition-transform duration-300 ease-in-out
         fixed lg:relative top-0 right-0 z-40 lg:z-auto
         w-full sm:w-80 lg:w-80 h-full lg:h-auto
-        bg-blue-50 border-l-4 border-blue-500 
+        bg-white border-blue-500 
         flex flex-col
       `}>
         {/* Mobile Close Button */}
-        <div className="lg:hidden flex items-center justify-between p-4 bg-blue-100 border-b border-blue-200">
+        <div className="lg:hidden flex items-center mt-15 justify-between p-4  border-b border-blue-200">
           <h2 className="text-lg font-semibold text-blue-800">Select Event</h2>
           <button
             onClick={() => setIsSidebarOpen(false)}
@@ -218,7 +218,7 @@ const ActivityShowcase = () => {
                 onClick={() => handleEventSelect(index)}
                 className={`p-4 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-blue-400 ${
                   selectedEventIndex === index
-                    ? 'bg-blue-200 border-2 border-blue-500 shadow-md'
+                    ? ' border-1 border-blue-500 shadow-sm'
                     : 'bg-white border-2 border-blue-200'
                 }`}
               >
