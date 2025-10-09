@@ -5,7 +5,7 @@ const OverviewSection = () => {
   const [showMore, setShowMore] = useState(false);
 
   const paragraphs = [
-    `The Dr. Madhan Institute of Future (DMIF) is a global initiative founded by Dr. Madhan Kumar Srinivasan, an innovator with 120+ patents (95+ granted), 30+ research papers, 10+ book chapters, and worldwide recognition as a 3-time TEDx speaker, serial entrepreneur of 6 companies, innovation advisor to the Government of India, and Professor of Practice at leading universities such as VIT and SRM.`,
+    `The Dr. Dr.Madhan Institute of Future (DMIF) is a global initiative founded by Dr. Dr.Madhan Kumar Srinivasan, an innovator with 120+ patents (95+ granted), 30+ research papers, 10+ book chapters, and worldwide recognition as a 3-time TEDx speaker, serial entrepreneur of 6 companies, innovation advisor to the Government of India, and Professor of Practice at leading universities such as VIT and SRM.`,
 
     `DMIF is dedicated to preparing youth across the globe for the AI-driven creative economy, where success depends not only on technical knowledge but also on original thinking, creativity, and intellectual property (IP) creation. In an era where tools like ChatGPT and Generative AI can replicate and optimize but cannot truly originate, DMIF empowers learners to become inventors, researchers, entrepreneurs, and global innovators by guiding them through patent filing, scholarly publishing, and innovation-driven projects.`,
 

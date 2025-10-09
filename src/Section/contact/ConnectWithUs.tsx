@@ -42,7 +42,7 @@ const ConnectWithUs = () => {
             label="Contact Us"
             icon={<Mail size={18} />}
             iconPosition="left"
-            onClick={() => (window.location.href = "mailto:reach@drmadhan.in")}
+            onClick={() => (window.location.href = "mailto:reach@drDr.Madhan.in")}
           />
         </motion.div>
       </motion.div>

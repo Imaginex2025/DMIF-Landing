@@ -19,7 +19,7 @@ const AboutDMIFSection = () => {
             About DMIF
           </h2>
           <p className="font-medium text-sm sm:text-base leading-6 sm:leading-7 lg:leading-[32px] text-[#404040] text-justify px-2 sm:px-0">
-Dr. Madhan Institute of Future (DMIF) is a premier cognitive empowerment institute dedicated to helping students and individuals grow from the inside through the application of Neuroscience and Cognitive Science methodologies.
+Dr. Dr.Madhan Institute of Future (DMIF) is a premier cognitive empowerment institute dedicated to helping students and individuals grow from the inside through the application of Neuroscience and Cognitive Science methodologies.
      <br /><br />
 At DMIF, education goes beyond instruction — we provide guided mentorship that sparks curiosity, cultivates purpose, and nurtures self-driven learning, empowering individuals to evolve into innovators, entrepreneurs, and the leaders of tomorrow.
 
@@ -129,7 +129,7 @@ At DMIF, education goes beyond instruction — we provide guided mentorship that
                   </h3>
                 </div>
                 <p className="font-medium text-sm leading-6 text-[#404040] flex-1 text-center md:text-left">
-                  Founded by Dr. Madhan Kumar Srinivasan, a leader with 120+ patents and 30+ 
+                  Founded by Dr. Dr.Madhan Kumar Srinivasan, a leader with 120+ patents and 30+ 
                   global publications in research and innovation.
                 </p>
               </div>

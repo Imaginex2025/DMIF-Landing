@@ -46,8 +46,8 @@ const handleNavClick = (path: string) => {
       onClick={() => navigate("/")}
     />
          
-          {/* <p className="text-sm text-gray-700">reach@drmadhan.in</p>
-          <p className="text-sm text-gray-700">www.drmadhan.in</p> */}
+          {/* <p className="text-sm text-gray-700">reach@drDr.Madhan.in</p>
+          <p className="text-sm text-gray-700">www.drDr.Madhan.in</p> */}
         </div>
 
         {/* Quick Links */}
@@ -106,7 +106,7 @@ const handleNavClick = (path: string) => {
   </h4>
   <div className="flex gap-3 justify-center sm:justify-start flex-wrap">
     <a
-      href="https://www.linkedin.com/in/drmadhaniimcal/"
+      href="https://www.linkedin.com/in/drDr.Madhaniimcal/"
       target="_blank"
       rel="noopener noreferrer"
       className="p-2 rounded-md bg-blue-100 text-blue-600 hover:bg-blue-200"
@@ -114,7 +114,7 @@ const handleNavClick = (path: string) => {
       <Linkedin size={18} />
     </a>
     <a
-      href="https://www.instagram.com/madhankrs?igsh=MWNleTI1Mmh1bmF5dQ=="
+      href="https://www.instagram.com/Dr.Madhankrs?igsh=MWNleTI1Mmh1bmF5dQ=="
       target="_blank"
       rel="noopener noreferrer"
       className="p-2 rounded-md bg-pink-100 text-pink-600 hover:bg-pink-200"
@@ -122,7 +122,7 @@ const handleNavClick = (path: string) => {
       <Instagram size={18} />
     </a>
     <a
-      href="https://youtube.com/@madhankumarsrinivasan?si=ZlsMu3wkHyBedF3K"
+      href="https://youtube.com/@Dr.Madhankumarsrinivasan?si=ZlsMu3wkHyBedF3K"
       target="_blank"
       rel="noopener noreferrer"
       className="p-2 rounded-md bg-red-100 text-red-700 hover:bg-red-200"
@@ -137,7 +137,7 @@ const handleNavClick = (path: string) => {
       {/* Bottom Bar */}
       <div className="border-t py-4 text-xs sm:text-sm text-gray-600 flex justify-center px-4 sm:px-8 max-w-7xl mx-auto">
         <p className="text-center">
-          Copyright © {new Date().getFullYear()} Dr. Madhan Institute of Future.
+          Copyright © {new Date().getFullYear()} Dr. Dr.Madhan Institute of Future.
           All rights reserved.
         </p>
       </div>

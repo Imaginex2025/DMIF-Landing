@@ -1,6 +1,6 @@
 // Import section components
 import HeroSection from "../Section/Home/HeroSection";
-import DrMadhanSection from "../Section/Home/DrMadhanSection";
+import MadhanSection from "../Section/Home/DrMadhanSection";
 import AboutDMIFSection from "../Section/Home/AboutDMIFSection";
 import KeyFeature from "../Section/Home/KeyFeature";
 import TestimonialsCarousel from "../Section/Home/Testimonials";
@@ -41,8 +41,8 @@ const Home = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Dr. Madhan Section */}
-      <DrMadhanSection />
+      {/* Dr. Dr.Madhan Section */}
+      <MadhanSection />
 
       {/* About DMIF Section */}
    <div id="about">

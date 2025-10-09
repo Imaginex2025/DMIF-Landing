@@ -29,9 +29,9 @@ const UniqueSection = () => {
           </h2>
           
           <p className="para leading-6 text-justify">
-            The Dr. Madhan Institute of Future (DMIF) is unique because it goes
+            The Dr. Dr.Madhan Institute of Future (DMIF) is unique because it goes
             beyond classroom learning by focusing on patents, research, and
-            innovation-driven outcomes. With direct mentorship from Dr. Madhan,
+            innovation-driven outcomes. With direct mentorship from Dr. Dr.Madhan,
             students gain hands-on guidance in filing patents, publishing
             research, and building global exposure. Unlike traditional programs,
             DMIF ensures students graduate with tangible achievements that open
