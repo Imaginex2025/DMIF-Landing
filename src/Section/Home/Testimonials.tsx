@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import IconButton from "../../Components/Common/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { p } from "framer-motion/client";
 
 const TestimonialsCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -16,6 +17,7 @@ const TestimonialsCarousel = () => {
     {
       id: 1,
       name: "Vijaya Tapaswi Achanta",
+      patent:"DMIF Multi-Patent Holder ",
       position:
         "DevOps Consultant, Accenture (While working with me) | Vice President, Wells Fargo (Current)",
       text: `Dr.Madhan has been a true inspiration to build the research acumen and to ignite the passion to innovate. I got an opportunity to work under his leadership in Accenture where I started my journey as an inventor.\n\nAs a devops cloud engineer, I never had exposure in the field of research and inventions. Dr. Dr.Madhan has identified my passion in innovation and gave me an opportunity to ideate on unique cloud architectural frameworks hosting complex data analytic solutions. It's been a great learning under his leadership to be able to pursue the ideation in the right path.\n\nSuccessfully accomplished 6 patents as an inventor with grants received from multiple global regions under his leadership. His vast knowledge & expertise has helped sail through many challenges encountered during the patenting process.\n\nIt is a commendable cause by Dr. Dr.Madhan to launch Dr. Dr.Madhan institute for future (DMIF) which will immensely help many aspiring students for the larger goal of nurturing the future inventors & entrepreneurs. Above all, his humble and approachable attitude will empower students to create the research papers & patents on their own under his guidance.\n\nWishing all the best to all the aspiring students & to Dr. Dr.Madhan for being a role model to many of us.`,
@@ -31,6 +33,7 @@ const TestimonialsCarousel = () => {
     {
       id: 3,
       name: "Varun Mittal",
+      patent:"DMIF Research Paper Holder",
       position:
         "Software Engineer, Walmart Labs, USA | BS CS, University of Illinois  Urbana-Champaign (UIUC), USA",
       text: `I am incredibly grateful to Dr. Dr.Madhan for his invaluable assistance and guidance throughout the process of completing my research paper. His mentorship was truly exceptional, providing not just direction but also fostering a deep understanding of the subject matter.\n\nDr. Dr.Madhan's commitment was evident in his comprehensive knowledge sessions, which were instrumental in clarifying complex concepts and refining our approach. What truly set his support apart was his dedicated assignment of time, even extending to weekends, to meticulously track progress, delve into additional research, and ensure every aspect of the paper was thoroughly addressed. This level of commitment significantly accelerated our work and elevated the quality of the final output.\n\nHis rich background and extensive experience with research papers, coupled with being the inventor of over 125 patents, provided an unparalleled depth of insight and practical advice. Beyond the paper itself, Dr. Dr.Madhan's foresight and expertise have led to ongoing discussions about completing a patent based on our research findings. This speaks volumes about his vision and his ability to identify and nurture impactful work.\n\nDr. Dr.Madhan's Institute of Future is a great initiative that will undoubtedly produce many future innovators, creators, and thinkers.`,
@@ -46,6 +49,7 @@ const TestimonialsCarousel = () => {
     {
       id: 6,
       name: "Gagan Deep Khosla",
+      patent:"DMIF Patent Holder",
       position: "Senior Manager, Accenture",
       text: `Working with Dr. Dr.Madhan Srinivasan on our patent application was a transformative experience. From the very beginning, he brought remarkable clarity and direction to the process — recommending the ideal format, enriching the application with his deep technical expertise, and guiding every step with precision and insight.\n\nWhat truly stood out was his ability to translate complex ideas into a robust, compelling patent draft that not only reflected the innovation accurately but also anticipated and addressed potential challenges. Thanks to his meticulous approach and nuanced understanding of patenting, the application sailed through the review process and was granted without any hurdles.\n\nDr. Dr.Madhan's contribution was instrumental, and I wholeheartedly recommend his services to anyone looking to secure their innovations with confidence and quality.`,
       image: "/Testimonials/Gagan Deep Khosla.jpg",
@@ -63,10 +67,12 @@ const TestimonialsCarousel = () => {
       position: "Senior Principal Consultant, Infosys | Ph.D. CSE, NIT Warangal, India",
       text: `My professional collaboration with Dr. Dr.Madhan Kumar Srinivasan, CEO of Wise Work in Bangalore, can be best narrated through our shared commitment to advancing knowledge in the field of Information Technology. My association with Dr.Madhan is clearly reflected in our co-authorship of several academic research papers.\nOur work, found in publications from international conferences and journals, demonstrates a strong synergy between our areas of expertise. Together, we have explored topics such as:\n• Enterprise Architecture: Co-authoring a "Roadmap for building effective complex enterprise architecture in digital transformation," they've shared an industry-based perspective on best practices.\n• Cloud Computing: Their research has delved into "improved performance-centric cloud storage estimation" and other critical aspects of cloud environments.\n• Data Systems: They have also collaborated on papers related to software systems performance improvements and the intricacies of data retrieval processes.\nThis body of work suggests a productive and complementary professional relationship, where both of us have contributed our knowledge to produce impactful research. \nBeyond our collaboration in research work, Dr.Madhan was part of my team at Infosys for nearly 5 years and his tenacity and commitment towards work is worth emulating. Coming from a modest family background, Dr.Madhan works very hard and his commitment and focus towards client’s expectations is unwavering.\nI am glad to be associated with Dr.Madhan and seeing him to be one of the very few individuals across the globe having more than 90+ approved patents in the field of Cloud and Machine Learning. This is really incredible and I am sure Dr.Madhan is capable of building world class products and services making India proud.\nMy best wishes for Dr Dr.Madhan and his family for their future endeavors.`,
       image: "/Testimonials/SreeKumar.jpg",
+      patent:"DMIF Multi-Research Paper Holde"
     },
     {
       id: 8,
       name: "Abdul Hammed Sheik",
+      patent:"DMIF Patent Holder",
       position:
         "Senior Manager, Accenture India | Patent Holder",
       text: `It was a truly enriching experience collaborating with Dr.Madhan during his tenure at Accenture.\nWhen it comes to mentorship in the area of patent filing, I could speak at length about his contributions—but I’ll attempt to capture the essence here. Coming from a core Cloud and Infrastructure background, my focus over the past eight years has shifted toward leading enterprise automation and AI/Analytics initiatives across various business portfolios. Like many others in the infrastructure space, my efforts had primarily centered around building scalable products and driving adoption—considered key success metrics in our field.\nIt wasn’t until I met Dr.Madhan that I truly understood the significance and potential of patenting innovative ideas. He introduced me to the world of intellectual property and helped me recognize the impact that patents can create—not just in the corporate landscape, but also in society at large.\nDr.Madhan’s mentorship was instrumental in shaping my approach toward identifying and articulating unique, value-driven ideas. His motivation, support, and deep knowledge made the entire patent filing journey seamless for me. With his guidance, I was able to file multiple patents—one of which was officially granted in April 2024, with others currently in progress.\nDr.Madhan’s mastery in the patenting process, combined with his strong domain expertise in IT and product development, truly makes him a “Patent Guru”—or as I often say, a walking Wikipedia on the subject.\nHaving closely witnessed his transition from a successful IT professional to a visionary entrepreneur in the AI/GenAI space, I am both inspired and confident in his journey ahead. I wish him continued success in all his endeavors and sincerely hope to collaborate again on more innovative patent opportunities—should his time allow.`,
@@ -79,10 +85,12 @@ const TestimonialsCarousel = () => {
         "Senior Manager, Oracle, USA | MS CS, The University of Texas at Dallas, USA | Former Scientist, Researchers Academy | Former Software Engineer, Infosys India",
       text: `Dr.Madhan’s mentorship was pivotal during a collaborative phase at Infosys, where we expanded my undergraduate research into multiple peer reviewed publications with prestigious venues including Springer and ACM. Beyond subject matter expertise, Dr.Madhan has a rare ability to translate ideas into rigorous, publishable work, guiding the full journey from framing research questions to shaping manuscripts and navigating submission processes. His structured feedback, clarity of thought, and consistent encouragement elevated the quality and impact of the research, resulting in tangible outcomes and scholarly recognition for me. I strongly recommend Dr.Madhan to students and early career professionals seeking to transform novelty into solid, well crafted research. His mentorship accelerates progress and builds confidence at every step`,
       image: "/Testimonials/Keerthi.jpg",
+      patent:"DMIF Multi-Research Paper Holder"
     },
     {
       id: 11,
       name: "Arun Krishnamurthy",
+      patent:"DMIF Patent Holder",
       position: "Analytics Leader, GSK",
       text: `I had the privilege of working with Dr.Madhan during our time at Accenture, where our discussions on technology and the future of AI were always thought-provoking and deeply insightful. Beyond conversations, I had the pleasure of collaborating with him in co-authoring a successful patent—a journey that was both enriching and rewarding. Dr.Madhan is not only a brilliant colleague and mentor but also a wonderful friend. His ability to simplify complex ideas, guide with clarity, and inspire those around him makes him uniquely suited for this new initiative. I am certain that students and peers alike will find in him not just an advisor, but a true Guru who can shape their journey in research and innovation.`,
       image: "/Testimonials/Arun.jpg",
@@ -90,6 +98,7 @@ const TestimonialsCarousel = () => {
     {
       id: 12,
       name: "Samba Siva",
+      patent:"DMIF Multi-Patent Holder",
       position: "Lead Cloud Professional, Rockefeller Capital Management, USA | Former Cloud AI Consultant, Accenture India",
       text: `When I joined Dr.Madhan’s Cloud AI team at Accenture, I came from a Data Science background with limited exposure to innovation or patents. Under his mentorship, everything changed. Dr. Madhan not only guided me through advanced Cloud tools and real-world projects but also introduced me to the world of intellectual property and innovation.
 
@@ -261,12 +270,19 @@ I remain deeply grateful to Dr. Madhan for his trust, mentorship, and vision, fo
                   </div>
 
                   <div className="text-center lg:text-end">
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
+                    <div>
+                      <div>
+                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
                       {currentTestimonial.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-gray-600">
                       {currentTestimonial.position}
                     </p>
+                      </div>
+                      <div>
+                        <p className="ext-xs sm:text-sm text-blue-600">{currentTestimonial?.patent}</p>
+                      </div>
+                    </div>
                   </div>
 
                   {/* ✅ Outcomes Button (only if available) */}
