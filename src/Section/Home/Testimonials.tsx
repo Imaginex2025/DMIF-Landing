@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import IconButton from "../../Components/Common/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { p } from "framer-motion/client";
 
 const TestimonialsCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,14 +17,17 @@ const TestimonialsCarousel = () => {
       id: 1,
       name: "Vijaya Tapaswi Achanta",
       patent:"DMIF Multi-Patent Holder ",
+
       position:
         "DevOps Consultant, Accenture (While working with me) | Vice President, Wells Fargo (Current)",
       text: `Dr.Madhan has been a true inspiration to build the research acumen and to ignite the passion to innovate. I got an opportunity to work under his leadership in Accenture where I started my journey as an inventor.\n\nAs a devops cloud engineer, I never had exposure in the field of research and inventions. Dr. Dr.Madhan has identified my passion in innovation and gave me an opportunity to ideate on unique cloud architectural frameworks hosting complex data analytic solutions. It's been a great learning under his leadership to be able to pursue the ideation in the right path.\n\nSuccessfully accomplished 6 patents as an inventor with grants received from multiple global regions under his leadership. His vast knowledge & expertise has helped sail through many challenges encountered during the patenting process.\n\nIt is a commendable cause by Dr. Dr.Madhan to launch Dr. Dr.Madhan institute for future (DMIF) which will immensely help many aspiring students for the larger goal of nurturing the future inventors & entrepreneurs. Above all, his humble and approachable attitude will empower students to create the research papers & patents on their own under his guidance.\n\nWishing all the best to all the aspiring students & to Dr. Dr.Madhan for being a role model to many of us.`,
       image: "/Testimonials/Vijaya Tapaswi Achanta.jpg",
+      
     },
     {
       id: 2,
       name: "Guruprasad P V",
+      patent:"DMIF Multi-Patent Holder",
       position: "Director - Data Science, Zensar | Formar Cloud Advisory Consultant, Accenture",
       text: `Some mentors teach. A rare few ignite a spark that fuels a lifetime of innovation — and Dr. Dr.Madhan is undoubtedly the latter. Working with Dr. Dr.Madhan has been one of the most intellectually fulfilling experiences of my career. Thanks to his unwavering belief in me, I had the privilege of being a co-innovator in over 20 patents. He didn’t just see potential — he nurtured it, challenged it, and led it to flourish. His ability to guide, inspire, and push boundaries makes him a true catalyst for innovation. His mentorship is a rare combination of vision, rigor, and empathy, and I'm certain DMIF will be a game-changer for aspiring scholars and researchers.`,
       image: "/Testimonials/Guruprasad P V.jpg",
@@ -41,6 +43,7 @@ const TestimonialsCarousel = () => {
     },
     {
       id: 4,
+            patent:"DMIF Multi-Patent Holder",
       name: "Kishore Kumar Gajula",
       position: "Lead Data Scientist, Software COE(AI/ML), Medtronic | Former Cloud Advisory Consultant, Accenture",
       text: `Over a decade at Accenture, I had the privilege of spending more than half that time working closely with Dr.Madhan—an experience that shaped both my career and character. He welcomed me during a difficult professional period, overlooking past biases and believing in my potential when few others did. That trust opened doors to transformative work, including my first steps into the world of intellectual property and patents. When I needed to move back home to support my family, he extended full remote flexibility—long before it became common. He also championed my academic aspirations, going out of his way to secure funding for me to present at an international conference, even though it lay outside our immediate scope of work. What always stood out was not just his deep technical acumen—rooted in his PhD in cloud computing and his strong grip on big data and analytics—but also his ability to build diverse, high-performing teams. I worked alongside colleagues from neuroscience, business, and physics—testament to his belief in cross-disciplinary innovation. As he steps into his new entrepreneurial and educational venture, it feels like a natural evolution—one that aligns perfectly with his vision and values. His ambition to blend AR, VR, AI, and Cloud to redefine the future of education is inspiring. I have no doubt his efforts will leave a lasting impact—not just on learners, but on society at large. Wishing him all the success he truly deserves.`,
@@ -57,6 +60,7 @@ const TestimonialsCarousel = () => {
     {
       id: 7,
       name: "Dhruv Mittal",
+      patent:"DMIF Research Paper Track Student",
       position: "BS in Data Science, University of California San Diego, USA",
       text: `I am currently working with Dr. Dr.Madhan Institute of Future on a research paper focused on developing security taxonomies for cloud computing systems. What began as a rough idea has now grown into a structured academic project, thanks to Dr. Dr.Madhan’s support and strategic guidance. His ability to connect high-level research themes with real-world security challenges has been critical in giving direction to this work. DMIF’s support has been a key factor in transforming this project into a meaningful contribution to the cloud security domain.`,
       image: "/Testimonials/Dhruv Mittal.png",
@@ -95,6 +99,24 @@ const TestimonialsCarousel = () => {
       text: `I had the privilege of working with Dr.Madhan during our time at Accenture, where our discussions on technology and the future of AI were always thought-provoking and deeply insightful. Beyond conversations, I had the pleasure of collaborating with him in co-authoring a successful patent—a journey that was both enriching and rewarding. Dr.Madhan is not only a brilliant colleague and mentor but also a wonderful friend. His ability to simplify complex ideas, guide with clarity, and inspire those around him makes him uniquely suited for this new initiative. I am certain that students and peers alike will find in him not just an advisor, but a true Guru who can shape their journey in research and innovation.`,
       image: "/Testimonials/Arun.jpg",
     },
+      {
+      id: 13,
+      name: "Ajay Gundlapalli",
+      patent:"DMIF Patent Track Student",
+      position: "10th grade, Odessa High School Texas, USA",
+      text: `I am working on building an adaptive auction and negotiation system with Dr. Madhan.
+As a sophomore in high school I had no experience with research before meeting Dr.
+Madhan Srinivasan. Now, through his guidance, I have written a patent TID and
+developed a deeper appreciation for research. Dr. Madhan’s unique approach of
+allowing the student to retain autonomy over their project has led to a multitude of
+learning opportunities and a deeper sense of accomplishment as my project nears
+conclusion.
+His vast experience, technical depth, and constant encouragement have been both
+enlightening and inspiring. Thanks to his guidance, I have grown not only as an
+innovator but as a person, gaining the confidence and skills to pursue ambitious ideas
+with purpose and curiosity`,
+      image: "/Testimonials/ajay.png",
+    },
     {
       id: 12,
       name: "Samba Siva",
@@ -111,6 +133,31 @@ The journey with Dr. Madhan transformed me both technically and intellectually. 
 I remain deeply grateful to Dr. Madhan for his trust, mentorship, and vision, for seeing the potential in me long before I saw it myself`,
       image: "/Testimonials/Samba.png",
     },
+
+    {
+      id: 14,
+      name: "Mythili Krishnan",
+      patent:"DMIF Research Paper Track Student",
+      position: "Principal, McKinsey, Inventor of 4+ patents 40 under 40 Data scientist award 2021",
+      text: `I  have been working with Madhan for close to 5 years now and one thing that really stands out is his ability to turn a business problem into unique solutions that no one else has thought of. He has immense depth of knowledge in the domain of cloud computing and he is considered as the cloud Guru at Accenture. His passion for work as well as mentoring fellow practioners and juniors is also commendable. I wish him all the best in all his future endeavours.`,
+      image: "/Testimonials/mythili.png",
+    },
+    // {
+    //   id: 7,
+    //   name: "Chetan kapoor",
+    //   patent:"DMIF Research Paper Track Student",
+    //   position: "Technical Lead at Broadcom Software",
+    //   text: `I am currently working with Dr. Dr.Madhan Institute of Future on a research paper focused on developing security taxonomies for cloud computing systems. What began as a rough idea has now grown into a structured academic project, thanks to Dr. Dr.Madhan’s support and strategic guidance. His ability to connect high-level research themes with real-world security challenges has been critical in giving direction to this work. DMIF’s support has been a key factor in transforming this project into a meaningful contribution to the cloud security domain.`,
+    //   image: "/Testimonials/Dhruv Mittal.png",
+    // },
+    // {
+    //   id: 7,
+    //   name: "Dhruv Mittal",
+    //   patent:"DMIF Research Paper Track Student",
+    //   position: "BS in Data Science, University of California San Diego, USA",
+    //   text: `I am currently working with Dr. Dr.Madhan Institute of Future on a research paper focused on developing security taxonomies for cloud computing systems. What began as a rough idea has now grown into a structured academic project, thanks to Dr. Dr.Madhan’s support and strategic guidance. His ability to connect high-level research themes with real-world security challenges has been critical in giving direction to this work. DMIF’s support has been a key factor in transforming this project into a meaningful contribution to the cloud security domain.`,
+    //   image: "/Testimonials/Dhruv Mittal.png",
+    // },
   ];
 
   // ✅ Carousel logic
@@ -378,6 +425,24 @@ I remain deeply grateful to Dr. Madhan for his trust, mentorship, and vision, fo
           </motion.div>
         )}
       </AnimatePresence> */}
+      {/* Pagination Dots */}
+<div className="flex justify-center mt-6 space-x-2">
+  {testimonials.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => {
+        setCurrentSlide(index);
+        setShowFull(false);
+      }}
+      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+        currentSlide === index
+          ? "bg-blue-800 scale-110"
+          : "bg-gray-300 hover:bg-gray-400"
+      }`}
+    />
+  ))}
+</div>
+
       {/* Mobile Floating Arrows */}
       <div className="xl:hidden absolute top-1/2 left-4 right-4 flex justify-between items-center -translate-y-1/2">
         <button
