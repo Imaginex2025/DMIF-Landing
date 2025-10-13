@@ -137,27 +137,33 @@ I remain deeply grateful to Dr. Madhan for his trust, mentorship, and vision, fo
     {
       id: 14,
       name: "Mythili Krishnan",
-      patent:"DMIF Research Paper Track Student",
       position: "Principal, McKinsey, Inventor of 4+ patents 40 under 40 Data scientist award 2021",
       text: `I  have been working with Madhan for close to 5 years now and one thing that really stands out is his ability to turn a business problem into unique solutions that no one else has thought of. He has immense depth of knowledge in the domain of cloud computing and he is considered as the cloud Guru at Accenture. His passion for work as well as mentoring fellow practioners and juniors is also commendable. I wish him all the best in all his future endeavours.`,
       image: "/Testimonials/mythili.png",
     },
-    // {
-    //   id: 7,
-    //   name: "Chetan kapoor",
-    //   patent:"DMIF Research Paper Track Student",
-    //   position: "Technical Lead at Broadcom Software",
-    //   text: `I am currently working with Dr. Dr.Madhan Institute of Future on a research paper focused on developing security taxonomies for cloud computing systems. What began as a rough idea has now grown into a structured academic project, thanks to Dr. Dr.Madhan’s support and strategic guidance. His ability to connect high-level research themes with real-world security challenges has been critical in giving direction to this work. DMIF’s support has been a key factor in transforming this project into a meaningful contribution to the cloud security domain.`,
-    //   image: "/Testimonials/Dhruv Mittal.png",
-    // },
-    // {
-    //   id: 7,
-    //   name: "Dhruv Mittal",
-    //   patent:"DMIF Research Paper Track Student",
-    //   position: "BS in Data Science, University of California San Diego, USA",
-    //   text: `I am currently working with Dr. Dr.Madhan Institute of Future on a research paper focused on developing security taxonomies for cloud computing systems. What began as a rough idea has now grown into a structured academic project, thanks to Dr. Dr.Madhan’s support and strategic guidance. His ability to connect high-level research themes with real-world security challenges has been critical in giving direction to this work. DMIF’s support has been a key factor in transforming this project into a meaningful contribution to the cloud security domain.`,
-    //   image: "/Testimonials/Dhruv Mittal.png",
-    // },
+    {
+      id: 15,
+      name: "Chetan kapoor",
+      position: "Technical Lead at Broadcom Software",
+      text: `He is my mentor. I have worked with him in Infosys. He has a thing for perfection in the things he assigns to you. He has vast knowledge of cloud computing and very creative ideology which stands him out of the crowd.`,
+      image: "/Testimonials/chetan.png",
+    },
+    {
+      id: 16,
+      name: "Arushi Jindal",
+     
+      position: "Technical PreSales | AI Engineer | Lead Data Scientist | ML Engineer",
+      text: `Dr. Madhan Kumar has been my mentor during my internship at Infosys. He is very detail oriented person, expert in his domain. He is very meticulous when it comes to reviewing our works. 
+He has authored many research papers, and delivered expert sessions in cloud, hadoop domain. It was a privelege to get to work under his leadership, and learn from his vast knowledge and experience.`,
+      image: "/Testimonials/arushi.png",
+    },
+    {
+      id: 17,
+      name: "Truman Vincent Lim",
+      position: "Datawarehouse Manager at SM Prime Holdings Inc.",
+      text: `Dr. Madhan Kumar Srinivasan was our training instructor for the Certified Business Analysis Specialist (CBAS) course under GSTF. He was a very good instructor who has definite subject matter expertise and real-world experience of the topics he taught. He also presented it to us in a very understandable manner and interacted with us to clarify any questions we had. Very highly recommended`,
+      image: "/Testimonials/truman.png",
+    },
   ];
 
   // ✅ Carousel logic
