@@ -2,15 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import IconButton from "../../Components/Common/Button";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+
 
 const TestimonialsCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showFull, setShowFull] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const navigate = useNavigate();
-
+  
   // ✅ Testimonials data
   const testimonials = [
     {
