@@ -17,7 +17,7 @@ const TestimonialsCarousel = () => {
       patent:"DMIF Multi-Patent Holder ",
 
       position:
-        "DevOps Consultant, Accenture (While working with me) | Vice President, Wells Fargo (Current)",
+        "Vice President, Wells Fargo | Formar  Software Consultant, Accenture",
       text: `Dr.Madhan has been a true inspiration to build the research acumen and to ignite the passion to innovate. I got an opportunity to work under his leadership in Accenture where I started my journey as an inventor.\n\nAs a devops cloud engineer, I never had exposure in the field of research and inventions. Dr. Dr.Madhan has identified my passion in innovation and gave me an opportunity to ideate on unique cloud architectural frameworks hosting complex data analytic solutions. It's been a great learning under his leadership to be able to pursue the ideation in the right path.\n\nSuccessfully accomplished 6 patents as an inventor with grants received from multiple global regions under his leadership. His vast knowledge & expertise has helped sail through many challenges encountered during the patenting process.\n\nIt is a commendable cause by Dr. Dr.Madhan to launch Dr. Dr.Madhan institute for future (DMIF) which will immensely help many aspiring students for the larger goal of nurturing the future inventors & entrepreneurs. Above all, his humble and approachable attitude will empower students to create the research papers & patents on their own under his guidance.\n\nWishing all the best to all the aspiring students & to Dr. Dr.Madhan for being a role model to many of us.`,
       image: "/Testimonials/Vijaya Tapaswi Achanta.jpg",
       
