@@ -12,102 +12,60 @@ const TestimonialsCarousel = () => {
  
 
   // ✅ Testimonials data
+  // ✅ Testimonials data
   const testimonials = [
     {
       id: 1,
       name: "Vijaya Tapaswi Achanta",
       patent:"DMIF Multi-Patent Holder ",
-
       position:
         "Vice President, Wells Fargo | Formar  Software Consultant, Accenture",
       text: `Dr.Madhan has been a true inspiration to build the research acumen and to ignite the passion to innovate. I got an opportunity to work under his leadership in Accenture where I started my journey as an inventor.\n\nAs a devops cloud engineer, I never had exposure in the field of research and inventions. Dr.Madhan has identified my passion in innovation and gave me an opportunity to ideate on unique cloud architectural frameworks hosting complex data analytic solutions. It's been a great learning under his leadership to be able to pursue the ideation in the right path.\n\nSuccessfully accomplished 6 patents as an inventor with grants received from multiple global regions under his leadership. His vast knowledge & expertise has helped sail through many challenges encountered during the patenting process.\n\nIt is a commendable cause by Dr.Madhan to launch Dr.Madhan institute for future (DMIF) which will immensely help many aspiring students for the larger goal of nurturing the future inventors & entrepreneurs. Above all, his humble and approachable attitude will empower students to create the research papers & patents on their own under his guidance.\n\nWishing all the best to all the aspiring students & to Dr.Madhan for being a role model to many of us.`,
       image: "/Testimonials/Vijaya Tapaswi Achanta.jpg",
-      
     },
     {
       id: 2,
-      name: "Guruprasad P V",
+      name: "Samba Siva",
       patent:"DMIF Multi-Patent Holder",
-      position: "Director - Data Science, Zensar | Formar Cloud Advisory Consultant, Accenture",
-      text: `Some mentors teach. A rare few ignite a spark that fuels a lifetime of innovation — and Dr.Madhan is undoubtedly the latter. Working with Dr.Madhan has been one of the most intellectually fulfilling experiences of my career. Thanks to his unwavering belief in me, I had the privilege of being a co-innovator in over 20 patents. He didn’t just see potential — he nurtured it, challenged it, and led it to flourish. His ability to guide, inspire, and push boundaries makes him a true catalyst for innovation. His mentorship is a rare combination of vision, rigor, and empathy, and I'm certain DMIF will be a game-changer for aspiring scholars and researchers.`,
-      image: "/Testimonials/Guruprasad P V.jpg",
+      position: "Lead Cloud Professional, Rockefeller Capital Management, USA | Former Cloud AI Consultant, Accenture India",
+      text: `When I joined Dr.Madhan's Cloud AI team at Accenture, I came from a Data Science background with limited exposure to innovation or patents. Under his mentorship, everything changed. Dr. Madhan not only guided me through advanced Cloud tools and real-world projects but also introduced me to the world of intellectual property and innovation.
+
+Through his structured frameworks, cognitive mentoring techniques, and deep technical insights, he helped me transform the way I approached problems, from thinking like a developer to thinking like an inventor. I learned to turn ideas into impact — resulting in 13 patent filings and 9 grants across the U.S., Europe, Australia, Singapore, and India.
+
+Working with him was a masterclass in clarity, creativity, and disciplined innovation. He has an exceptional ability to ignite curiosity, sharpen technical reasoning, and push you to explore beyond your comfort zone, all while keeping the focus on practical, impactful outcomes.
+
+The journey with Dr. Madhan transformed me both technically and intellectually. From a Data Science role, I evolved into an Advanced Cloud Engineer, and today I'm proud to work in the U.S. as a Lead Cloud Professional.
+
+I remain deeply grateful to Dr. Madhan for his trust, mentorship, and vision, for seeing the potential in me long before I saw it myself`,
+      image: "/Testimonials/Samba.png",
     },
     {
       id: 3,
       name: "Varun Mittal",
       patent:"DMIF Research Paper Holder",
       position:
-        "Software Engineer, Walmart Labs, USA | BS CS, University of Illinois  Urbana-Champaign (UIUC), USA",
+        "Software Engineer, Walmart Labs, USA | BS CS, University of Illinois  Urbana-Champaign (UIUC), USA",
       text: `I am incredibly grateful to Dr.Madhan for his invaluable assistance and guidance throughout the process of completing my research paper. His mentorship was truly exceptional, providing not just direction but also fostering a deep understanding of the subject matter.\n\nDr.Madhan's commitment was evident in his comprehensive knowledge sessions, which were instrumental in clarifying complex concepts and refining our approach. What truly set his support apart was his dedicated assignment of time, even extending to weekends, to meticulously track progress, delve into additional research, and ensure every aspect of the paper was thoroughly addressed. This level of commitment significantly accelerated our work and elevated the quality of the final output.\n\nHis rich background and extensive experience with research papers, coupled with being the inventor of over 125 patents, provided an unparalleled depth of insight and practical advice. Beyond the paper itself, Dr.Madhan's foresight and expertise have led to ongoing discussions about completing a patent based on our research findings. This speaks volumes about his vision and his ability to identify and nurture impactful work.\n\nDr.Madhan's Institute of Future is a great initiative that will undoubtedly produce many future innovators, creators, and thinkers.`,
       image: "/Testimonials/Varun Mittal.jpg",
     },
     {
       id: 4,
-            patent:"DMIF Multi-Patent Holder",
-      name: "Kishore Kumar Gajula",
-      position: "Lead Data Scientist, Software COE(AI/ML), Medtronic | Former Cloud Advisory Consultant, Accenture",
-      text: `Over a decade at Accenture, I had the privilege of spending more than half that time working closely with Dr.Madhan—an experience that shaped both my career and character. He welcomed me during a difficult professional period, overlooking past biases and believing in my potential when few others did. That trust opened doors to transformative work, including my first steps into the world of intellectual property and patents. When I needed to move back home to support my family, he extended full remote flexibility—long before it became common. He also championed my academic aspirations, going out of his way to secure funding for me to present at an international conference, even though it lay outside our immediate scope of work. What always stood out was not just his deep technical acumen—rooted in his PhD in cloud computing and his strong grip on big data and analytics—but also his ability to build diverse, high-performing teams. I worked alongside colleagues from neuroscience, business, and physics—testament to his belief in cross-disciplinary innovation. As he steps into his new entrepreneurial and educational venture, it feels like a natural evolution—one that aligns perfectly with his vision and values. His ambition to blend AR, VR, AI, and Cloud to redefine the future of education is inspiring. I have no doubt his efforts will leave a lasting impact—not just on learners, but on society at large. Wishing him all the success he truly deserves.`,
-      image: "/Testimonials/Kishore Kumar Gajula .jpg",
-    },
-    {
-      id: 6,
-      name: "Gagan Deep Khosla",
-      patent:"DMIF Patent Holder",
-      position: "Senior Manager, Accenture",
-      text: `Working with Dr.Madhan Srinivasan on our patent application was a transformative experience. From the very beginning, he brought remarkable clarity and direction to the process — recommending the ideal format, enriching the application with his deep technical expertise, and guiding every step with precision and insight.\n\nWhat truly stood out was his ability to translate complex ideas into a robust, compelling patent draft that not only reflected the innovation accurately but also anticipated and addressed potential challenges. Thanks to his meticulous approach and nuanced understanding of patenting, the application sailed through the review process and was granted without any hurdles.\n\nDr.Madhan's contribution was instrumental, and I wholeheartedly recommend his services to anyone looking to secure their innovations with confidence and quality.`,
-      image: "/Testimonials/Gagan Deep Khosla.jpg",
-    },
-    {
-      id: 7,
-      name: "Dhruv Mittal",
-      patent:"DMIF Research Paper Track Student",
-      position: "BS in Data Science, University of California San Diego, USA",
-      text: `I am currently working with Dr.Madhan Institute of Future on a research paper focused on developing security taxonomies for cloud computing systems. What began as a rough idea has now grown into a structured academic project, thanks to Dr.Madhan’s support and strategic guidance. His ability to connect high-level research themes with real-world security challenges has been critical in giving direction to this work. DMIF’s support has been a key factor in transforming this project into a meaningful contribution to the cloud security domain.`,
-      image: "/Testimonials/Dhruv Mittal.png",
-    },
-    {
-      id: 9,
-      name: "Dr.Sreekumar Vobugari",
-      position: "Senior Principal Consultant, Infosys | Ph.D. CSE, NIT Warangal, India",
-      text: `My professional collaboration with Dr.Madhan Kumar Srinivasan, CEO of Wise Work in Bangalore, can be best narrated through our shared commitment to advancing knowledge in the field of Information Technology. My association with Dr.Madhan is clearly reflected in our co-authorship of several academic research papers.\nOur work, found in publications from international conferences and journals, demonstrates a strong synergy between our areas of expertise. Together, we have explored topics such as:\n• Enterprise Architecture: Co-authoring a "Roadmap for building effective complex enterprise architecture in digital transformation," they've shared an industry-based perspective on best practices.\n• Cloud Computing: Their research has delved into "improved performance-centric cloud storage estimation" and other critical aspects of cloud environments.\n• Data Systems: They have also collaborated on papers related to software systems performance improvements and the intricacies of data retrieval processes.\nThis body of work suggests a productive and complementary professional relationship, where both of us have contributed our knowledge to produce impactful research. \nBeyond our collaboration in research work, Dr.Madhan was part of my team at Infosys for nearly 5 years and his tenacity and commitment towards work is worth emulating. Coming from a modest family background, Dr.Madhan works very hard and his commitment and focus towards client’s expectations is unwavering.\nI am glad to be associated with Dr.Madhan and seeing him to be one of the very few individuals across the globe having more than 90+ approved patents in the field of Cloud and Machine Learning. This is really incredible and I am sure Dr.Madhan is capable of building world class products and services making India proud.\nMy best wishes for Dr Dr.Madhan and his family for their future endeavors.`,
-      image: "/Testimonials/SreeKumar.jpg",
-      patent:"DMIF Multi-Research Paper Holde"
-    },
-    {
-      id: 8,
-      name: "Abdul Hammed Sheik",
-      patent:"DMIF Patent Holder",
-      position:
-        "Senior Manager, Accenture India | Patent Holder",
-      text: `It was a truly enriching experience collaborating with Dr.Madhan during his tenure at Accenture.\nWhen it comes to mentorship in the area of patent filing, I could speak at length about his contributions—but I’ll attempt to capture the essence here. Coming from a core Cloud and Infrastructure background, my focus over the past eight years has shifted toward leading enterprise automation and AI/Analytics initiatives across various business portfolios. Like many others in the infrastructure space, my efforts had primarily centered around building scalable products and driving adoption—considered key success metrics in our field.\nIt wasn’t until I met Dr.Madhan that I truly understood the significance and potential of patenting innovative ideas. He introduced me to the world of intellectual property and helped me recognize the impact that patents can create—not just in the corporate landscape, but also in society at large.\nDr.Madhan’s mentorship was instrumental in shaping my approach toward identifying and articulating unique, value-driven ideas. His motivation, support, and deep knowledge made the entire patent filing journey seamless for me. With his guidance, I was able to file multiple patents—one of which was officially granted in April 2024, with others currently in progress.\nDr.Madhan’s mastery in the patenting process, combined with his strong domain expertise in IT and product development, truly makes him a “Patent Guru”—or as I often say, a walking Wikipedia on the subject.\nHaving closely witnessed his transition from a successful IT professional to a visionary entrepreneur in the AI/GenAI space, I am both inspired and confident in his journey ahead. I wish him continued success in all his endeavors and sincerely hope to collaborate again on more innovative patent opportunities—should his time allow.`,
-      image: "/Testimonials/Abdul Hammed Sheik .jpg",
-    },
-    {
-      id: 10,
       name: "Keerthi Bala Sundram",
+      patent:"DMIF Multi-Research Paper Holder",
       position:
         "Senior Manager, Oracle, USA | MS CS, The University of Texas at Dallas, USA | Former Scientist, Researchers Academy | Former Software Engineer, Infosys India",
-      text: `Dr.Madhan’s mentorship was pivotal during a collaborative phase at Infosys, where we expanded my undergraduate research into multiple peer reviewed publications with prestigious venues including Springer and ACM. Beyond subject matter expertise, Dr.Madhan has a rare ability to translate ideas into rigorous, publishable work, guiding the full journey from framing research questions to shaping manuscripts and navigating submission processes. His structured feedback, clarity of thought, and consistent encouragement elevated the quality and impact of the research, resulting in tangible outcomes and scholarly recognition for me. I strongly recommend Dr.Madhan to students and early career professionals seeking to transform novelty into solid, well crafted research. His mentorship accelerates progress and builds confidence at every step`,
+      text: `Dr.Madhan's mentorship was pivotal during a collaborative phase at Infosys, where we expanded my undergraduate research into multiple peer reviewed publications with prestigious venues including Springer and ACM. Beyond subject matter expertise, Dr.Madhan has a rare ability to translate ideas into rigorous, publishable work, guiding the full journey from framing research questions to shaping manuscripts and navigating submission processes. His structured feedback, clarity of thought, and consistent encouragement elevated the quality and impact of the research, resulting in tangible outcomes and scholarly recognition for me. I strongly recommend Dr.Madhan to students and early career professionals seeking to transform novelty into solid, well crafted research. His mentorship accelerates progress and builds confidence at every step`,
       image: "/Testimonials/Keerthi.jpg",
-      patent:"DMIF Multi-Research Paper Holder"
     },
     {
-      id: 11,
-      name: "Arun Krishnamurthy",
-      patent:"DMIF Patent Holder",
-      position: "Analytics Leader, GSK",
-      text: `I had the privilege of working with Dr.Madhan during our time at Accenture, where our discussions on technology and the future of AI were always thought-provoking and deeply insightful. Beyond conversations, I had the pleasure of collaborating with him in co-authoring a successful patent—a journey that was both enriching and rewarding. Dr.Madhan is not only a brilliant colleague and mentor but also a wonderful friend. His ability to simplify complex ideas, guide with clarity, and inspire those around him makes him uniquely suited for this new initiative. I am certain that students and peers alike will find in him not just an advisor, but a true Guru who can shape their journey in research and innovation.`,
-      image: "/Testimonials/Arun.jpg",
-    },
-      {
-      id: 13,
+      id: 5,
       name: "Ajay Gundlapalli",
       patent:"DMIF Patent Track Student",
       position: "10th grade, Odessa High School Texas, USA",
       text: `I am working on building an adaptive auction and negotiation system with Dr. Madhan.
 As a sophomore in high school I had no experience with research before meeting Dr.
 Madhan Srinivasan. Now, through his guidance, I have written a patent TID and
-developed a deeper appreciation for research. Dr. Madhan’s unique approach of
+developed a deeper appreciation for research. Dr. Madhan's unique approach of
 allowing the student to retain autonomy over their project has led to a multitude of
 learning opportunities and a deeper sense of accomplishment as my project nears
 conclusion.
@@ -118,22 +76,69 @@ with purpose and curiosity`,
       image: "/Testimonials/ajay.png",
     },
     {
-      id: 12,
-      name: "Samba Siva",
-      patent:"DMIF Multi-Patent Holder",
-      position: "Lead Cloud Professional, Rockefeller Capital Management, USA | Former Cloud AI Consultant, Accenture India",
-      text: `When I joined Dr.Madhan’s Cloud AI team at Accenture, I came from a Data Science background with limited exposure to innovation or patents. Under his mentorship, everything changed. Dr. Madhan not only guided me through advanced Cloud tools and real-world projects but also introduced me to the world of intellectual property and innovation.
-
-Through his structured frameworks, cognitive mentoring techniques, and deep technical insights, he helped me transform the way I approached problems, from thinking like a developer to thinking like an inventor. I learned to turn ideas into impact — resulting in 13 patent filings and 9 grants across the U.S., Europe, Australia, Singapore, and India.
-
-Working with him was a masterclass in clarity, creativity, and disciplined innovation. He has an exceptional ability to ignite curiosity, sharpen technical reasoning, and push you to explore beyond your comfort zone, all while keeping the focus on practical, impactful outcomes.
-
-The journey with Dr. Madhan transformed me both technically and intellectually. From a Data Science role, I evolved into an Advanced Cloud Engineer, and today I’m proud to work in the U.S. as a Lead Cloud Professional.
-
-I remain deeply grateful to Dr. Madhan for his trust, mentorship, and vision, for seeing the potential in me long before I saw it myself`,
-      image: "/Testimonials/Samba.png",
+      id: 6,
+      name: "Krithik S M",
+      patent:"DMIF Young Innovator | Winner – National Patent Hackathon 2024",
+      position: "Student, National Public School, Bengaluru",
+      text: `I started my primary schooling in Singapore and continued there until Grade 4. During that time, I was an average student; I studied well but never thought much beyond textbooks and exams. When I moved back to India, my father, Dr. Madhan Kumar Srinivasan, began coaching me from Grade 8 using the methods of the Dr. Madhan Institute of Future (DMIF) — especially its Active Learning Methodology™ and Brain 2.0 Discovery Frameworks™. At first, I followed the challenges and tasks because he asked me to. But slowly, I began to see their real purpose. They helped me think more clearly, stay focused, and come up with new ideas. My confidence grew, and my grades improved too. By Grade 10, I became one of my school toppers with 95% (475/500). The biggest turning point came when I took part in the National Patent Hackathon by RV University and Bharatiya Vidya Bhavan in December 2024. It was mainly for college students and working professionals, but I was allowed to join as the only 10th-grade school student among 102 participants — and I won the 1st Prize. That day made me realize the power of what I'd been learning.Now, I understand why my father trained me this way. Today, I see myself as a young innovator and future entrepreneur. I'm currently in the DMIF Patent Track, exploring patents, product ideas, and research — always driven by the curiosity DMIF helped me find in myself.`,
+      image: "/Testimonials/Krithik.jpeg",
     },
-
+    {
+      id: 7,
+      name: "Dhruv Mittal",
+      patent:"DMIF Research Paper Track Student",
+      position: "BS in Data Science, University of California San Diego, USA",
+      text: `I am currently working with Dr.Madhan Institute of Future on a research paper focused on developing security taxonomies for cloud computing systems. What began as a rough idea has now grown into a structured academic project, thanks to Dr.Madhan's support and strategic guidance. His ability to connect high-level research themes with real-world security challenges has been critical in giving direction to this work. DMIF's support has been a key factor in transforming this project into a meaningful contribution to the cloud security domain.`,
+      image: "/Testimonials/Dhruv Mittal.png",
+    },
+    {
+      id: 8,
+      name: "Guruprasad P V",
+      patent:"DMIF Multi-Patent Holder",
+      position: "Director - Data Science, Zensar | Formar Cloud Advisory Consultant, Accenture",
+      text: `Some mentors teach. A rare few ignite a spark that fuels a lifetime of innovation — and Dr.Madhan is undoubtedly the latter. Working with Dr.Madhan has been one of the most intellectually fulfilling experiences of my career. Thanks to his unwavering belief in me, I had the privilege of being a co-innovator in over 20 patents. He didn't just see potential — he nurtured it, challenged it, and led it to flourish. His ability to guide, inspire, and push boundaries makes him a true catalyst for innovation. His mentorship is a rare combination of vision, rigor, and empathy, and I'm certain DMIF will be a game-changer for aspiring scholars and researchers.`,
+      image: "/Testimonials/Guruprasad P V.jpg",
+    },
+    {
+      id: 9,
+      name: "Dr.Sreekumar Vobugari",
+      patent:"DMIF Multi-Research Paper Holde",
+      position: "Senior Principal Consultant, Infosys | Ph.D. CSE, NIT Warangal, India",
+      text: `My professional collaboration with Dr.Madhan Kumar Srinivasan, CEO of Wise Work in Bangalore, can be best narrated through our shared commitment to advancing knowledge in the field of Information Technology. My association with Dr.Madhan is clearly reflected in our co-authorship of several academic research papers.\nOur work, found in publications from international conferences and journals, demonstrates a strong synergy between our areas of expertise. Together, we have explored topics such as:\n• Enterprise Architecture: Co-authoring a "Roadmap for building effective complex enterprise architecture in digital transformation," they've shared an industry-based perspective on best practices.\n• Cloud Computing: Their research has delved into "improved performance-centric cloud storage estimation" and other critical aspects of cloud environments.\n• Data Systems: They have also collaborated on papers related to software systems performance improvements and the intricacies of data retrieval processes.\nThis body of work suggests a productive and complementary professional relationship, where both of us have contributed our knowledge to produce impactful research. \nBeyond our collaboration in research work, Dr.Madhan was part of my team at Infosys for nearly 5 years and his tenacity and commitment towards work is worth emulating. Coming from a modest family background, Dr.Madhan works very hard and his commitment and focus towards client's expectations is unwavering.\nI am glad to be associated with Dr.Madhan and seeing him to be one of the very few individuals across the globe having more than 90+ approved patents in the field of Cloud and Machine Learning. This is really incredible and I am sure Dr.Madhan is capable of building world class products and services making India proud.\nMy best wishes for Dr Dr.Madhan and his family for their future endeavors.`,
+      image: "/Testimonials/SreeKumar.jpg",
+    },
+    {
+      id: 10,
+      name: "Kishore Kumar Gajula",
+      patent:"DMIF Multi-Patent Holder",
+      position: "Lead Data Scientist, Software COE(AI/ML), Medtronic | Former Cloud Advisory Consultant, Accenture",
+      text: `Over a decade at Accenture, I had the privilege of spending more than half that time working closely with Dr.Madhan—an experience that shaped both my career and character. He welcomed me during a difficult professional period, overlooking past biases and believing in my potential when few others did. That trust opened doors to transformative work, including my first steps into the world of intellectual property and patents. When I needed to move back home to support my family, he extended full remote flexibility—long before it became common. He also championed my academic aspirations, going out of his way to secure funding for me to present at an international conference, even though it lay outside our immediate scope of work. What always stood out was not just his deep technical acumen—rooted in his PhD in cloud computing and his strong grip on big data and analytics—but also his ability to build diverse, high-performing teams. I worked alongside colleagues from neuroscience, business, and physics—testament to his belief in cross-disciplinary innovation. As he steps into his new entrepreneurial and educational venture, it feels like a natural evolution—one that aligns perfectly with his vision and values. His ambition to blend AR, VR, AI, and Cloud to redefine the future of education is inspiring. I have no doubt his efforts will leave a lasting impact—not just on learners, but on society at large. Wishing him all the success he truly deserves.`,
+      image: "/Testimonials/Kishore Kumar Gajula .jpg",
+    },
+    {
+      id: 11,
+      name: "Arun Krishnamurthy",
+      patent:"DMIF Patent Holder",
+      position: "Director - Data Science, GSK (GlaxoSmithKline) Pharma | Formar Analytics Manager, Accenture India",
+      text: `I had the privilege of working with Dr.Madhan during our time at Accenture, where our discussions on technology and the future of AI were always thought-provoking and deeply insightful. Beyond conversations, I had the pleasure of collaborating with him in co-authoring a successful patent—a journey that was both enriching and rewarding. Dr.Madhan is not only a brilliant colleague and mentor but also a wonderful friend. His ability to simplify complex ideas, guide with clarity, and inspire those around him makes him uniquely suited for this new initiative. I am certain that students and peers alike will find in him not just an advisor, but a true Guru who can shape their journey in research and innovation.`,
+      image: "/Testimonials/Arun.jpg",
+    },
+    {
+      id: 12,
+      name: "Abdul Hammed Sheik",
+      patent:"DMIF Patent Holder",
+      position: "Senior Manager, Accenture India | Patent Holder",
+      text: `It was a truly enriching experience collaborating with Dr.Madhan during his tenure at Accenture.\nWhen it comes to mentorship in the area of patent filing, I could speak at length about his contributions—but I'll attempt to capture the essence here. Coming from a core Cloud and Infrastructure background, my focus over the past eight years has shifted toward leading enterprise automation and AI/Analytics initiatives across various business portfolios. Like many others in the infrastructure space, my efforts had primarily centered around building scalable products and driving adoption—considered key success metrics in our field.\nIt wasn't until I met Dr.Madhan that I truly understood the significance and potential of patenting innovative ideas. He introduced me to the world of intellectual property and helped me recognize the impact that patents can create—not just in the corporate landscape, but also in society at large.\nDr.Madhan's mentorship was instrumental in shaping my approach toward identifying and articulating unique, value-driven ideas. His motivation, support, and deep knowledge made the entire patent filing journey seamless for me. With his guidance, I was able to file multiple patents—one of which was officially granted in April 2024, with others currently in progress.\nDr.Madhan's mastery in the patenting process, combined with his strong domain expertise in IT and product development, truly makes him a "Patent Guru"—or as I often say, a walking Wikipedia on the subject.\nHaving closely witnessed his transition from a successful IT professional to a visionary entrepreneur in the AI/GenAI space, I am both inspired and confident in his journey ahead. I wish him continued success in all his endeavors and sincerely hope to collaborate again on more innovative patent opportunities—should his time allow.`,
+      image: "/Testimonials/Abdul Hammed Sheik .jpg",
+    },
+    {
+      id: 13,
+      name: "Gagan Deep Khosla",
+      patent:"DMIF Patent Holder",
+      position: "Senior Manager, Accenture",
+      text: `Working with Dr.Madhan Srinivasan on our patent application was a transformative experience. From the very beginning, he brought remarkable clarity and direction to the process — recommending the ideal format, enriching the application with his deep technical expertise, and guiding every step with precision and insight.\n\nWhat truly stood out was his ability to translate complex ideas into a robust, compelling patent draft that not only reflected the innovation accurately but also anticipated and addressed potential challenges. Thanks to his meticulous approach and nuanced understanding of patenting, the application sailed through the review process and was granted without any hurdles.\n\nDr.Madhan's contribution was instrumental, and I wholeheartedly recommend his services to anyone looking to secure their innovations with confidence and quality.`,
+      image: "/Testimonials/Gagan Deep Khosla.jpg",
+    },
     {
       id: 14,
       name: "Mythili Krishnan",
@@ -143,7 +148,7 @@ I remain deeply grateful to Dr. Madhan for his trust, mentorship, and vision, fo
     },
     {
       id: 15,
-      name: "Chetan kapoor",
+      name: "Chetan Kapoor",
       position: "Technical Lead at Broadcom Software",
       text: `He is my mentor. I have worked with him in Infosys. He has a thing for perfection in the things he assigns to you. He has vast knowledge of cloud computing and very creative ideology which stands him out of the crowd.`,
       image: "/Testimonials/chetan.png",
@@ -151,7 +156,6 @@ I remain deeply grateful to Dr. Madhan for his trust, mentorship, and vision, fo
     {
       id: 16,
       name: "Arushi Jindal",
-     
       position: "Technical PreSales | AI Engineer | Lead Data Scientist | ML Engineer",
       text: `Dr. Madhan Kumar has been my mentor during my internship at Infosys. He is very detail oriented person, expert in his domain. He is very meticulous when it comes to reviewing our works. 
 He has authored many research papers, and delivered expert sessions in cloud, hadoop domain. It was a privelege to get to work under his leadership, and learn from his vast knowledge and experience.`,
@@ -163,14 +167,6 @@ He has authored many research papers, and delivered expert sessions in cloud, ha
       position: "Datawarehouse Manager at SM Prime Holdings Inc.",
       text: `Dr. Madhan Kumar Srinivasan was our training instructor for the Certified Business Analysis Specialist (CBAS) course under GSTF. He was a very good instructor who has definite subject matter expertise and real-world experience of the topics he taught. He also presented it to us in a very understandable manner and interacted with us to clarify any questions we had. Very highly recommended`,
       image: "/Testimonials/truman.png",
-    },
-    {
-      id: 18,
-      name: "Krithik S M",
-      patent:"DMIF Young Innovator | Winner – National Patent Hackathon 2024",
-      position: "Student, National Public School, Bengaluru",
-      text: `I started my primary schooling in Singapore and continued there until Grade 4. During that time, I was an average student; I studied well but never thought much beyond textbooks and exams. When I moved back to India, my father, Dr. Madhan Kumar Srinivasan, began coaching me from Grade 8 using the methods of the Dr. Madhan Institute of Future (DMIF) — especially its Active Learning Methodology™ and Brain 2.0 Discovery Frameworks™. At first, I followed the challenges and tasks because he asked me to. But slowly, I began to see their real purpose. They helped me think more clearly, stay focused, and come up with new ideas. My confidence grew, and my grades improved too. By Grade 10, I became one of my school toppers with 95% (475/500). The biggest turning point came when I took part in the National Patent Hackathon by RV University and Bharatiya Vidya Bhavan in December 2024. It was mainly for college students and working professionals, but I was allowed to join as the only 10th-grade school student among 102 participants — and I won the 1st Prize. That day made me realize the power of what I’d been learning.Now, I understand why my father trained me this way. Today, I see myself as a young innovator and future entrepreneur. I’m currently in the DMIF Patent Track, exploring patents, product ideas, and research — always driven by the curiosity DMIF helped me find in myself.`,
-      image: "/Testimonials/Krithik.jpeg",
     },
   ];
 

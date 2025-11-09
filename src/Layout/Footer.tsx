@@ -106,7 +106,7 @@ const handleNavClick = (path: string) => {
   </h4>
   <div className="flex gap-3 justify-center sm:justify-start flex-wrap">
     <a
-      href="https://www.linkedin.com/in/drDr.Madhaniimcal/"
+      href="https://www.linkedin.com/in/Dr.Madhaniimcal/"
       target="_blank"
       rel="noopener noreferrer"
       className="p-2 rounded-md bg-blue-100 text-blue-600 hover:bg-blue-200"
@@ -137,7 +137,7 @@ const handleNavClick = (path: string) => {
       {/* Bottom Bar */}
       <div className="border-t py-4 text-xs sm:text-sm text-gray-600 flex justify-center px-4 sm:px-8 max-w-7xl mx-auto">
         <p className="text-center">
-          Copyright © {new Date().getFullYear()} Dr. Dr.Madhan Institute of Future.
+          Copyright © {new Date().getFullYear()} Dr.Madhan Institute of Future.
           All rights reserved.
         </p>
       </div>

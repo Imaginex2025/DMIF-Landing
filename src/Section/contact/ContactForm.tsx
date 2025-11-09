@@ -145,10 +145,10 @@ const ContactForm = () => {
             <div
               className="flex flex-col cursor-pointer text-gray-700 hover:text-[#003579] transition-colors"
               onClick={() =>
-                (window.location.href = "mailto:reach@drDr.Madhan.in")
+                (window.location.href = "mailto:reach@drmadhan.in")
               }
             >
-              <p>reach@drDr.Madhan.in</p>
+              <p>reach@drmadhan.in</p>
             </div>
           </div>
         </motion.div>

@@ -81,7 +81,7 @@ const ResearchAndIp = () => {
         viewport={{ once: true }}
       >
         <motion.button
-          onClick={() => navigate(APPROUTES.CONTACT_US)}
+          onClick={() => navigate(APPROUTES.APPLY_NOW)}
           className="bg-white cursor-pointer text-blue-900 px-8 py-3 rounded-lg font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
           whileHover={{ scale: 1.08, backgroundColor: "#f3f4f6" }}
           transition={{ duration: 0.3 }}
